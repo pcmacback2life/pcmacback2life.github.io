@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC • Mac • Back‑2‑Life — Zorin & Plex Upgrades</title>
+  <meta name="description" content="We revive older PCs & Macs with Zorin OS and Plex. Local pickup & delivery in Colorado. Transparent pricing, fast turnaround, and friendly support." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap (cheapest/easiest; no build step) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root { --brand: #1b9aaa; --brand-dark:#127b87; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; }
+    .btn-brand { background: var(--brand); color:#fff; }
+    .btn-brand:hover { background: var(--brand-dark); color:#fff; }
+    .bg-hero { background: radial-gradient(1000px 600px at 80% -10%, rgba(27,154,170,.12), transparent),
+                          linear-gradient(180deg, #f7fafb 0%, #ffffff 60%); }
+    .badge-soft { background: rgba(27,154,170,.12); color: var(--brand-dark); border:1px solid rgba(27,154,170,.25) }
+    .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+    .icon { width: 28px; height: 28px; }
+    .price-card { border:1px solid #e9ecef; border-radius: 16px; }
+    .gallery img { aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; }
+    .code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#f6f8fa; padding:.15rem .35rem; border-radius:.25rem }
+    .nav-link { font-weight: 600 }
+    .yt-thumb { aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; }
+  </style>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="PC • Mac • Back‑2‑Life — Zorin & Plex Upgrades" />
+  <meta property="og:description" content="Turn old PCs & Macs into fast, modern machines with Zorin OS or a home media server with Plex. Local pickup & delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pc-mac-back-2-life.com/" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=PC+Mac+Back-2-Life" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- LocalBusiness schema (edit values below) -->
+  <script type="application/ld+json" id="jsonld-business"></script>
+
+  <!-- EASY SETTINGS: edit these in one spot -->
+  <script id="site-settings" type="application/json">
+  {
+    "businessName": "PC • Mac • Back‑2‑Life",
+    "ownerName": "Tony Angiola",
+    "serviceArea": "Florissant & Woodland Park, CO",
+    "email": "hello@pc-mac-back-2-life.com",
+    "phone": "(555) 555-1234",
+    "affiliate": [
+      {"label": "Zorin OS (official)", "url": "https://zorin.com/os/"},
+      {"label": "External USB SSD (example)", "url": "https://www.amazon.com/"},
+      {"label": "Wi‑Fi extender (example)", "url": "https://www.amazon.com/"}
+    ],
+    "availability": [
+      {"date": "2025-09-22", "slots": ["10:00", "14:00"]},
+      {"date": "2025-09-23", "slots": ["09:30", "13:30", "16:30"]},
+      {"date": "2025-09-25", "slots": ["11:00"]}
+    ],
+    "youtube": {
+      "channel": "@YourChannelName",
+      "videos": [
+        {"title":"Zorin vs Windows: 5-Minute Tour","id":"dQw4w9WgXcQ"},
+        {"title":"Turn an Old MacBook into a Plex Server","id":"O6D3m4w8LKE"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">PC • Mac • Back‑2‑Life</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#availability">Availability</a></li>
+          <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-hero py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge badge-soft rounded-pill mb-3">Local pickup & delivery • Zorin • Plex</span>
+          <h1 class="display-5 fw-extrabold lh-tight">Bring Your Old PC or Mac <span class="text-primary">Back to Life</span></h1>
+          <p class="lead text-secondary mt-3">We turn older computers into fast, secure daily drivers with <strong>Zorin OS</strong> or into powerful home media hubs with <strong>Plex</strong>—without buying new hardware.</p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#contact" class="btn btn-brand btn-lg">Get a Quote</a>
+            <a href="#showcase" class="btn btn-outline-secondary btn-lg">See It In Action</a>
+          </div>
+          <div class="mt-3 small text-muted">Serving <span id="serviceArea">your area</span></div>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-3 bg-white shadow-soft rounded-4">
+            <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+              <iframe id="heroVideo" src="" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Services</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 h-100 bg-white price-card">
+            <div class="d-flex align-items-center mb-2"><img class="icon me-2" src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/device-laptop.svg" alt=""/> <h5 class="mb-0">Zorin OS Refresh</h5></div>
+            <p class="text-secondary">We install Zorin OS, drivers, updates, and set up user accounts. Includes Office‑compatible suite, browser, media tools, and privacy tweaks.</p>
+            <ul class="small text-secondary mb-3">
+              <li>Faster boot & browsing</li>
+              <li>LibreOffice (Word/Excel/PowerPoint compatible)</li>
+              <li>Email & cloud sign‑ins configured</li>
+            </ul>
+            <a href="#pricing" class="btn btn-outline-primary w-100">See Pricing</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 h-100 bg-white price-card">
+            <div class="d-flex align-items-center mb-2"><img class="icon me-2" src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/player-play.svg" alt=""/> <h5 class="mb-0">Plex Media Server</h5></div>
+            <p class="text-secondary">We configure Plex on your hardware, organize your library, optimize streaming, and set up remote access on your network.</p>
+            <ul class="small text-secondary mb-3">
+              <li>Library & metadata setup</li>
+              <li>Recommended storage upgrades</li>
+              <li>Remote streaming setup</li>
+            </ul>
+            <a href="#pricing" class="btn btn-outline-primary w-100">See Pricing</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 h-100 bg-white price-card">
+            <div class="d-flex align-items-center mb-2"><img class="icon me-2" src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/truck.svg" alt=""/> <h5 class="mb-0">Pickup & Delivery</h5></div>
+            <p class="text-secondary">Convenient local service. We pick up your device, complete the upgrade, and deliver it back ready to go.</p>
+            <ul class="small text-secondary mb-3">
+              <li>Fair flat‑rate in service area</li>
+              <li>Secure device handling</li>
+              <li>Quick turnaround</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-primary w-100">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Transparent Pricing</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-white price-card h-100">
+            <h5 class="fw-semibold">Zorin OS Refresh</h5>
+            <div class="display-6 fw-bold">$129<span class="fs-6 text-muted"> flat</span></div>
+            <ul class="mt-3 text-secondary">
+              <li>Install & configure Zorin OS</li>
+              <li>LibreOffice, browser, media tools</li>
+              <li>Data backup (up to 100 GB)</li>
+            </ul>
+            <a href="#contact" class="btn btn-brand w-100">Start</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-white price-card h-100">
+            <h5 class="fw-semibold">Plex Server Setup</h5>
+            <div class="display-6 fw-bold">$149<span class="fs-6 text-muted"> flat</span></div>
+            <ul class="mt-3 text-secondary">
+              <li>Plex install & library setup</li>
+              <li>Metadata & remote access</li>
+              <li>Storage recommendations</li>
+            </ul>
+            <a href="#contact" class="btn btn-brand w-100">Start</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-white price-card h-100 border border-2 border-primary">
+            <h5 class="fw-semibold">Bundle: Zorin + Plex</h5>
+            <div class="display-6 fw-bold">$249<span class="fs-6 text-muted"> save $29</span></div>
+            <ul class="mt-3 text-secondary">
+              <li>Everything in both packages</li>
+              <li>Priority turnaround</li>
+              <li>Post‑install check‑in</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary w-100">Book Bundle</a>
+          </div>
+        </div>
+      </div>
+      <p class="small text-muted mt-3">* Pickup & delivery priced by distance; mail‑in option available. Add‑ons: SSD upgrade, RAM, data migration beyond 100 GB.</p>
+    </div>
+  </section>
+
+  <!-- Availability / Schedule (edit in site-settings JSON) -->
+  <section id="availability" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Availability</h2>
+      <p class="text-secondary">Update your open slots by editing the <span class="code">availability</span> list in the <span class="code">site-settings</span> JSON at the top of this file. Changes go live as soon as you redeploy.</p>
+      <div id="availCards" class="row g-3"></div>
+    </div>
+  </section>
+
+  <!-- Showcase: Photos & YouTube -->
+  <section id="showcase" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Showcase</h2>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="p-3 bg-white rounded-4 h-100">
+            <h5>Zorin vs Windows — Comparable Apps</h5>
+            <ul class="small text-secondary">
+              <li><strong>Office:</strong> LibreOffice ↔ Microsoft Office (reads/writes DOCX/XLSX/PPTX)</li>
+              <li><strong>Browser:</strong> Firefox/Chromium ↔ Chrome/Edge</li>
+              <li><strong>Mail:</strong> Thunderbird ↔ Outlook</li>
+              <li><strong>Photos:</strong> Shotwell ↔ Photos</li>
+              <li><strong>Video:</strong> VLC ↔ Movies & TV</li>
+              <li><strong>Notes:</strong> Sticky Notes (Xpad) ↔ Sticky Notes</li>
+            </ul>
+            <div class="row row-cols-2 g-2 gallery mt-2">
+              <div class="col"><img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1200&auto=format&fit=crop" class="w-100" alt="Desktop" loading="lazy"></div>
+              <div class="col"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" class="w-100" alt="Coding" loading="lazy"></div>
+              <div class="col"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" class="w-100" alt="Laptop" loading="lazy"></div>
+              <div class="col"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" class="w-100" alt="Team" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-3 bg-white rounded-4 h-100">
+            <h5>Latest Videos</h5>
+            <div id="ytGrid" class="row g-3"></div>
+            <div class="mt-2 small"><a id="ytChannelLink" href="#" target="_blank" rel="noopener">Visit YouTube channel →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-white rounded-4">
+        <h5>Recommended Upgrades (Affiliate)</h5>
+        <ul id="affiliateList" class="mb-0"></ul>
+        <p class="small text-muted mt-2">As an affiliate, we may earn from qualifying purchases at no extra cost to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">FAQ</h2>
+      <div class="accordion" id="faqAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">Can you work with very old computers?</button></h2>
+          <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">Yes. We evaluate your device and recommend RAM/SSD upgrades if needed. Zorin OS runs well on older hardware.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">Is Plex legal to use with my DVDs?</button></h2>
+          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Plex itself is legal. You should only stream content you own and follow local laws regarding backups and format shifting.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">Do you offer mail‑in service?</button></h2>
+          <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes. We provide packing guidance and receive laptop‑to‑desktop size shipments. Turnaround times vary by queue.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (Netlify form: free & easy) -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Contact</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <form name="contact" method="POST" data-netlify="true" class="p-4 bg-white rounded-4 shadow-soft">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="mb-3"><label class="form-label">Name</label><input class="form-control" name="name" required></div>
+            <div class="mb-3"><label class="form-label">Email</label><input class="form-control" type="email" name="email" required></div>
+            <div class="mb-3"><label class="form-label">How can we help?</label><textarea class="form-control" name="message" rows="5" required></textarea></div>
+            <button class="btn btn-brand btn-lg" type="submit">Send</button>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 bg-white rounded-4 h-100">
+            <h5>Service Area</h5>
+            <p class="text-secondary mb-2" id="contactServiceArea">Local pickup & delivery available.</p>
+            <p class="mb-0 small">Email: <a id="contactEmail" href="#"></a><br>Phone: <span id="contactPhone"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <p class="mb-0 small">© <span id="year"></span> <span id="bizName"></span>. All rights reserved.</p>
+      <p class="mb-0 small"><a href="#contact">Get a quote</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // hydrate site from settings JSON
+    const settings = JSON.parse(document.getElementById('site-settings').textContent);
+    const fmt = (d) => new Date(d + 'T00:00:00').toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric' });
+
+    // business basics
+    document.getElementById('serviceArea').textContent = settings.serviceArea;
+    document.getElementById('contactServiceArea').textContent = `Serving ${settings.serviceArea}`;
+    document.getElementById('contactEmail').textContent = settings.email; document.getElementById('contactEmail').href = `mailto:${settings.email}`;
+    document.getElementById('contactPhone').textContent = settings.phone; 
+    document.getElementById('bizName').textContent = settings.businessName; 
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // hero video uses the first YouTube id
+    const hero = settings.youtube?.videos?.[0]?.id;
+    if (hero) document.getElementById('heroVideo').src = `https://www.youtube.com/embed/${hero}`;
+
+    // YouTube grid
+    const ytGrid = document.getElementById('ytGrid');
+    (settings.youtube?.videos || []).forEach(v => {
+      const col = document.createElement('div'); col.className = 'col-12';
+      col.innerHTML = `
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/${v.id}" title="${v.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="small mt-1">${v.title}</div>`;
+      ytGrid.appendChild(col);
+    });
+    if (settings.youtube?.channel) {
+      const ch = settings.youtube.channel.startsWith('@') ? settings.youtube.channel : `@${settings.youtube.channel}`;
+      document.getElementById('ytChannelLink').href = `https://www.youtube.com/${ch}`;
+    }
+
+    // Availability cards
+    const availWrap = document.getElementById('availCards');
+    (settings.availability || []).forEach(slot => {
+      const col = document.createElement('div'); col.className = 'col-md-4';
+      col.innerHTML = `
+        <div class="p-3 bg-white rounded-4 border h-100">
+          <div class="fw-semibold">${fmt(slot.date)}</div>
+          <div class="mt-2 d-flex flex-wrap gap-2">
+            ${slot.slots.map(s => `<span class='badge text-bg-light border'>${s}</span>`).join('')}
+          </div>
+          <a href="#contact" class="btn btn-sm btn-outline-primary mt-3">Request this date</a>
+        </div>`;
+      availWrap.appendChild(col);
+    });
+
+    // Affiliate links
+    const aff = document.getElementById('affiliateList');
+    (settings.affiliate || []).forEach(a => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${a.url}" target="_blank" rel="nofollow noopener sponsored">${a.label}</a>`;
+      aff.appendChild(li);
+    });
+
+    // LocalBusiness JSON-LD
+    const org = {
+      "@context":"https://schema.org",
+      "@type":"LocalBusiness",
+      "name": settings.businessName,
+      "areaServed": settings.serviceArea,
+      "telephone": settings.phone,
+      "email": settings.email,
+      "url": "https://pc-mac-back-2-life.com/",
+      "sameAs": settings.youtube?.channel ? [`https://www.youtube.com/${settings.youtube.channel}`] : []
+    };
+    document.getElementById('jsonld-business').textContent = JSON.stringify(org);
+  </script>
+</body>
+</html>
