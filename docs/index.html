@@ -118,7 +118,8 @@
     <h2 style="margin:0 0 12px">Contact</h2>
     <p class="muted" style="margin:0 0 12px">Prefer email? <a href="mailto:pcmacback2life@gmail.com" style="color:#22d3ee">pcmacback2life@gmail.com</a></p>
 
-    <form id="contactForm" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" style="display:grid;gap:10px;max-width:720px">
+    <!-- NOTE: target=_blank opens confirmation in a new tab; helps when the main tab is strict. -->
+    <form id="contactForm" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" target="_blank" style="display:grid;gap:10px;max-width:720px">
       <input type="hidden" name="_subject" value="Website inquiry — PC • Mac • Back 2 Life">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://pcmacback2life.github.io/pc-mac-back-2-life/thanks.html">
@@ -148,7 +149,13 @@
               style="justify-self:start;padding:10px 16px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">
         Send
       </button>
+
       <noscript><p class="muted">JavaScript is off. After submit you’ll see a confirmation screen.</p></noscript>
+
+      <p class="muted" style="margin:8px 0 0;font-size:13px">
+        Trouble submitting (e.g., SSL error)? Email us directly:
+        <a href="mailto:pcmacback2life@gmail.com?subject=Website%20inquiry">pcmacback2life@gmail.com</a>.
+      </p>
     </form>
 
     <script>
