@@ -672,3 +672,35 @@
       window.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
     })();
   </script>
+
+  <!-- Script: zorinAdvAskHandler (close modal, jump to #contact, focus field) -->
+  <script>
+    (function(){
+      var modal = document.getElementById('zorinAdvModal');
+      if (!modal) return;
+      var ask = modal.querySelector('a[href="#contact"]');
+      if (!ask) return;
+
+      function hide(){ modal.style.display = 'none'; document.body.style.overflow = ''; }
+
+      ask.addEventListener('click', function(e){
+        e.preventDefault();
+        hide();
+
+        var target = document.getElementById('contact');
+        if (target && target.scrollIntoView) {
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          // keep the hash in the URL for refresh / share
+          if (location.hash !== '#contact') { history.pushState(null, '', '#contact'); }
+        } else {
+          location.hash = '#contact';
+        }
+
+        // After we scroll, try to focus the first field
+        setTimeout(function(){
+          var fld = document.querySelector('#contact input[type="email"], #contact input, #contact textarea');
+          if (fld && typeof fld.focus === 'function') fld.focus();
+        }, 250);
+      });
+    })();
+  </script>
