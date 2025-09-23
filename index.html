@@ -109,20 +109,20 @@
   <section id="services" class="card">
     <h2 style="margin:0 0 12px">Services</h2>
     <ul style="margin:0;padding-left:0;list-style:none;display:grid;gap:10px">
-      <!-- Zorin: button inline -->
+      <!-- Zorin -->
       <li style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <span>Zorin OS install & tuning</span>
         <button id="btnZorinLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
       </li>
-      <!-- Data migration: NEW button inline -->
+      <!-- Data migration -->
       <li style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <span>Data migration</span>
         <button id="btnDataLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
       </li>
-      <!-- Plex: placeholder for now -->
+      <!-- Plex setup: NEW button inline -->
       <li style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <span>Plex setup</span>
-        <span class="muted" style="font-size:12px">More details soon</span>
+        <button id="btnPlexLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
       </li>
     </ul>
   </section>
@@ -387,6 +387,91 @@
       var btn = document.getElementById('btnDataLearn');
       var modal = document.getElementById('dataModal');
       var close = document.getElementById('dataClose');
+      if(!btn || !modal || !close) return;
+
+      function show(){ modal.style.display='flex'; document.body.style.overflow='hidden'; }
+      function hide(){ modal.style.display='none'; document.body.style.overflow=''; }
+
+      btn.addEventListener('click', show);
+      close.addEventListener('click', hide);
+      modal.addEventListener('click', function(e){ if(e.target===modal) hide(); });
+      window.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+    })();
+  </script>
+
+  <!-- Modal: Plex Learn More -->
+  <div id="plexModal" role="dialog" aria-modal="true" aria-label="Plex setup — Learn More"
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
+    <div style="position:relative;max-width:900px;width:min(900px,96vw);max-height:90vh;overflow:auto;
+                background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+                border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
+      <button id="plexClose"
+              style="position:absolute;top:10px;right:10px;font-size:18px;padding:6px 10px;border-radius:10px;
+                     border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;cursor:pointer">✕</button>
+
+      <h3 style="margin:0 0 10px">What is a Plex Server and Why You Might Want One</h3>
+      <p><b>Think of Plex as your own personal Netflix.</b><br>
+      Instead of paying for streaming subscriptions to access movies and shows you already own, Plex turns your PC or Mac into a media server.
+      This means all your movies, TV shows, music, and even home videos live in one place — and you can enjoy them on any device in your home, like a smart TV, phone, or tablet.</p>
+
+      <h4 style="margin:14px 0 6px">Why You Need It</h4>
+      <ul style="margin:0 0 10px 20px">
+        <li><b>One Library for Everything:</b> Plex organizes your collection with cover art, titles, and categories, making it easy to browse just like Netflix.</li>
+        <li><b>Simple Backups:</b> We’ll place easy-to-use icons on your Zorin desktop so you can back up your media to a Plex folder with a single click.</li>
+        <li><b>Expandable Storage:</b> If your drive isn’t big enough, we can upgrade it or use an external USB drive.</li>
+        <li><b>Smart TV Ready:</b> Many smart TVs (like Samsung) already include the Plex app for quick, easy viewing.</li>
+      </ul>
+
+      <h4 style="margin:14px 0 6px">Local vs. Remote</h4>
+      <p><b>Local Use (Included):</b> We configure Plex to work perfectly inside your home network — anyone on your Wi-Fi can watch from TVs, phones, tablets, or laptops.</p>
+      <p><b>Remote Access (Optional):</b> Stream your library away from home. Requires router configuration and testing; offered as an advanced service at <b>$120/hr</b>.</p>
+
+      <h4 style="margin:14px 0 6px">Licensing</h4>
+      <p>To unlock all features, a Plex license (<b>Plex Pass</b>) is required. We can help you purchase and activate it so everything runs smoothly from day one.</p>
+
+      <p style="margin:12px 0"><b>✅ Bottom Line:</b> With Plex, your Zorin computer becomes the heart of your entertainment system. We make sure your media is organized, backed up, and ready to enjoy — whether you’re watching on your computer, a smart TV, or mobile devices.</p>
+
+      <div style="margin:14px 0;border-top:1px solid rgba(255,255,255,.12)"></div>
+
+      <h3 style="margin:10px 0 8px">Your Plex Journey with Zorin</h3>
+      <h4 style="margin:0 0 8px">Turn Your Zorin Computer into Your Own Netflix</h4>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">🖥️▶️ Step 1 – Install & Configure Plex</div>
+          <div class="muted" style="font-size:14px">We install Plex Server on your Zorin PC or Mac, link it to your account, and make sure it’s ready to go.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">📂🎬🎵 Step 2 – Organize Your Media</div>
+          <div class="muted" style="font-size:14px">Simple desktop icons let you copy movies, shows, and music into your Plex folder. Plex adds artwork and titles automatically.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">💾➕🔌 Step 3 – Expand if Needed</div>
+          <div class="muted" style="font-size:14px">We can upgrade your drive or use an external USB drive if you need more space.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">📺📶 Step 4 – Enjoy at Home</div>
+          <div class="muted" style="font-size:14px">Install the Plex app on your smart TV (e.g., Samsung) and stream directly over your home Wi-Fi.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">☁️🔐 Step 5 – Advanced Options</div>
+          <div class="muted" style="font-size:14px">Want access away from home? We can configure secure remote streaming. (Billed at $120/hr.)</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">🔑 Licensing Reminder</div>
+          <div class="muted" style="font-size:14px">A Plex Pass license unlocks all features. We’ll help you purchase and activate it.</div>
+        </div>
+      </div>
+
+      <p style="margin:16px 0 0;font-style:italic">“With Plex, we set you up with a personal streaming service that’s secure, organized, and built around your own collection.”</p>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('btnPlexLearn');
+      var modal = document.getElementById('plexModal');
+      var close = document.getElementById('plexClose');
       if(!btn || !modal || !close) return;
 
       function show(){ modal.style.display='flex'; document.body.style.overflow='hidden'; }
