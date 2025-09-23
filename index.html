@@ -118,8 +118,8 @@
     <h2 style="margin:0 0 12px">Contact</h2>
     <p class="muted" style="margin:0 0 12px">Prefer email? <a href="mailto:pcmacback2life@gmail.com" style="color:#22d3ee">pcmacback2life@gmail.com</a></p>
 
-    <!-- NOTE: target=_blank opens confirmation in a new tab; helps when the main tab is strict. -->
-    <form id="contactForm" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" target="_blank" style="display:grid;gap:10px;max-width:720px">
+    <form id="contactForm" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" style="display:grid;gap:10px;max-width:720px">
+      <!-- FormSubmit options (also applied by JS) -->
       <input type="hidden" name="_subject" value="Website inquiry — PC • Mac • Back 2 Life">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://pcmacback2life.github.io/pc-mac-back-2-life/thanks.html">
@@ -149,22 +149,68 @@
               style="justify-self:start;padding:10px 16px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">
         Send
       </button>
+      <noscript><p class="muted" style="margin:8px 0 0">JavaScript is off — submitting will open a confirmation page.</p></noscript>
 
-      <noscript><p class="muted">JavaScript is off. After submit you’ll see a confirmation screen.</p></noscript>
-
-      <p class="muted" style="margin:8px 0 0;font-size:13px">
-        Trouble submitting (e.g., SSL error)? Email us directly:
-        <a href="mailto:pcmacback2life@gmail.com?subject=Website%20inquiry">pcmacback2life@gmail.com</a>.
-      </p>
+      <div id="contactStatus" class="muted" style="display:none;margin-top:8px;font-size:13px"></div>
     </form>
 
     <script>
       (function(){
-        var f=document.getElementById('contactForm');
-        if(!f) return;
-        f.addEventListener('submit', function(){
-          var b=f.querySelector('button[type=submit]');
-          if(b){ b.disabled=true; b.textContent='Sending…'; }
+        const endpoint = "https://formsubmit.co/pcmacback2life@gmail.com";
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('contactStatus');
+
+        function toURLEncoded(fd){ return new URLSearchParams([...fd]).toString(); }
+        function mailtoFallback(fd){
+          const data = Object.fromEntries(fd);
+          const subj = encodeURIComponent("Website inquiry — PC • Mac • Back 2 Life");
+          const body = encodeURIComponent(
+            `Name: ${data.name||''}\nEmail: ${data.email||''}\nPhone: ${data.phone||''}\n\nMessage:\n${data.message||''}\n`
+          );
+          window.location.href = `mailto:pcmacback2life@gmail.com?subject=${subj}&body=${body}`;
+        }
+
+        form.addEventListener('submit', async (e)=>{
+          if (!window.fetch || !AbortController) return; // let normal submit happen
+          e.preventDefault();
+
+          const btn = form.querySelector('button[type=submit]');
+          if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
+          status.style.display='none'; status.textContent='';
+
+          const fd = new FormData(form);
+          // ensure these are set even if a browser strips hidden fields
+          fd.set('_subject','Website inquiry — PC • Mac • Back 2 Life');
+          fd.set('_template','table');
+          fd.set('_next','https://pcmacback2life.github.io/pc-mac-back-2-life/thanks.html');
+          fd.set('_honey', fd.get('_honey')||'');
+
+          const body = toURLEncoded(fd);
+          const ctrl = new AbortController();
+          const timer = setTimeout(()=>ctrl.abort(), 7000); // 7s timeout
+
+          try{
+            const res = await fetch(endpoint, {
+              method: 'POST',
+              mode: 'cors',
+              headers: {'Content-Type':'application/x-www-form-urlencoded'},
+              body, signal: ctrl.signal
+            });
+            clearTimeout(timer);
+            if (res.ok || (res.status>=300 && res.status<400)) {
+              window.location.href = 'thanks.html';
+              return;
+            }
+            throw new Error('Status '+res.status);
+          }catch(err){
+            clearTimeout(timer);
+            status.style.display='block';
+            status.innerHTML = 'Having trouble submitting (security software or network filter)? <a href=\"#\" id=\"altEmail\" style=\"color:#22d3ee\">Click here to email us instead</a>.';
+            const alt = document.getElementById('altEmail');
+            alt.addEventListener('click', (ev)=>{ ev.preventDefault(); mailtoFallback(fd); });
+          }finally{
+            if(btn){ btn.disabled=false; btn.textContent='Send'; }
+          }
         });
       })();
     </script>
