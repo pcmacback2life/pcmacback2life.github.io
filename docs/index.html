@@ -1,20 +1,59 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PC • Mac • Back 2 Life — RAW image test</title>
-<h1>RAW image test (should show below)</h1>
+<title>PC • Mac • Back 2 Life</title>
+<style>
+  :root{--bg:#0b1220;--text:#e5e7eb;--muted:#9ca3af;--brand:#22d3ee;--radius:18px;--maxw:1080px}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:rgba(16,24,39,.85);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .hero{display:grid;place-items:center;text-align:center;padding:28px 0}
+  .title{font-size:clamp(28px,4.2vw,48px);margin:0 0 12px 0}
+  .kicker{color:var(--muted)}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;margin:24px 0}
+  figure{margin:0;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:#0a1020}
+  figcaption{padding:10px 12px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+  img{max-width:100%;height:auto;display:block}
+  .grid{display:grid;gap:16px}
+  @media(min-width:880px){.grid{grid-template-columns:repeat(4,1fr)}}
+</style>
 
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-  <img src="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot1.jpg?ts=1758596018" style="width:320px;border:4px solid #0f0" alt="s1" referrerpolicy="no-referrer" crossorigin="anonymous">
-  <img src="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot2.jpg?ts=1758596018" style="width:320px;border:4px solid #0f0" alt="s2" referrerpolicy="no-referrer" crossorigin="anonymous">
-  <img src="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot3.jpg?ts=1758596018" style="width:320px;border:4px solid #0f0" alt="s3" referrerpolicy="no-referrer" crossorigin="anonymous">
-  <img src="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot4.jpg?ts=1758596018" style="width:320px;border:4px solid #0f0" alt="s4" referrerpolicy="no-referrer" crossorigin="anonymous">
-</div>
+<header><div class="wrap">
+  <div class="hero">
+    <h1 class="title">PC • Mac • Back 2 Life</h1>
+    <p class="kicker">Zorin OS installs, data migration, and Plex setup.</p>
+  </div>
+</div></header>
 
-<p>Direct links (open each):</p>
-<ul>
-  <li><a href="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot1.jpg" target="_blank">screenshot1.jpg</a></li>
-  <li><a href="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot2.jpg" target="_blank">screenshot2.jpg</a></li>
-  <li><a href="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot3.jpg" target="_blank">screenshot3.jpg</a></li>
-  <li><a href="https://raw.githubusercontent.com/pcmacback2life/pc-mac-back-2-life/main/images/screenshot4.jpg" target="_blank">screenshot4.jpg</a></li>
-</ul>
+<main class="wrap">
+  <section id="screens" class="card">
+    <h2>Screenshots (embedded)</h2>
+    <div class="grid">
+      <figure>
+        <img src="data:image/jpeg;base64,cGxhY2Vob2xkZXIxCg==" alt="s1">
+        <figcaption>❗ This PC does not meet Windows 11 requirements — we install Zorin OS.</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/jpeg;base64,cGxhY2Vob2xkZXIyCg==" alt="s2">
+        <figcaption>Zorin OS desktop — familiar and fast.</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/jpeg;base64,cGxhY2Vob2xkZXIzCg==" alt="s3">
+        <figcaption>App store & updates made simple.</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/jpeg;base64,cGxhY2Vob2xkZXI0Cg==" alt="s4">
+        <figcaption>Plex media server setup.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services" class="card">
+    <h2>Services</h2>
+    <ul>
+      <li>Zorin OS install & tuning</li>
+      <li>Data migration</li>
+      <li>Plex setup</li>
+    </ul>
+  </section>
+</main>
