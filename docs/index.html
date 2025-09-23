@@ -87,12 +87,88 @@
   <!-- Services -->
   <section id="services" class="card">
     <h2 style="margin:0 0 12px">Services</h2>
-    <ul style="margin:0;padding-left:20px">
-      <li>Zorin OS install & tuning</li>
-      <li>Data migration</li>
-      <li>Plex setup</li>
+    <ul style="margin:0;padding-left:0;list-style:none;display:grid;gap:10px">
+      <li style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
+        <span>Zorin OS install & tuning</span>
+        <button id="btnZorinLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
+      </li>
+      <li style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
+        <span>Data migration</span>
+        <span class="muted" style="font-size:12px">More details soon</span>
+      </li>
+      <li style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
+        <span>Plex setup</span>
+        <span class="muted" style="font-size:12px">More details soon</span>
+      </li>
     </ul>
   </section>
+
+  <!-- Modal: Zorin Learn More -->
+  <div id="zorinModal" role="dialog" aria-modal="true" aria-label="Zorin OS Learn More"
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
+    <div style="position:relative;max-width:900px;width:min(900px,96vw);max-height:90vh;overflow:auto;
+                background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+                border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
+      <button id="zorinClose"
+              style="position:absolute;top:10px;right:10px;font-size:18px;padding:6px 10px;border-radius:10px;
+                     border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;cursor:pointer">✕</button>
+
+      <h3 style="margin:0 0 10px">Give Your Old Computer a New Life with Zorin OS</h3>
+
+      <p>Do you have a laptop or desktop sitting in the closet because it’s “too old” for Windows 11 or the latest macOS updates?
+      You don’t need to spend hundreds—or thousands—on a new machine. Instead, breathe new life into the computer you already own with Zorin OS.</p>
+
+      <h4 style="margin:14px 0 6px">Why Zorin?</h4>
+      <ul style="margin:0 0 10px 20px">
+        <li><b>Runs great on hardware up to 10 years old</b> — lightweight and fast; makes older machines feel responsive again.</li>
+        <li><b>Looks familiar</b> — desktop layout feels natural for Windows or macOS users; minimal learning curve.</li>
+        <li><b>Secure & up-to-date</b> — frequent security updates without the bloat of an aging OS.</li>
+        <li><b>No hidden costs</b> — free to install and use; no licenses or subscriptions.</li>
+      </ul>
+
+      <h4 style="margin:14px 0 6px">Small Upgrades, Big Difference</h4>
+      <ul style="margin:0 0 10px 20px">
+        <li>Add RAM for smoother multitasking.</li>
+        <li>Swap in an SSD for lightning-fast boot and app launches.</li>
+      </ul>
+      <p style="margin:8px 0">Even older Macs benefit — e.g., a 2012 MacBook Air (i5, 4GB) runs beautifully as a fast, reliable web surfer.</p>
+
+      <h4 style="margin:14px 0 6px">What You Can Do with Zorin</h4>
+      <ul style="margin:0 0 10px 20px">
+        <li>Smooth web browsing and streaming (Netflix, YouTube, Hulu).</li>
+        <li>Work with <b>LibreOffice</b> (a full replacement for Microsoft Office).</li>
+        <li>Organize media with <b>Plex</b> and enjoy it on all your devices.</li>
+        <li>Use Zoom, Skype, and Teams with excellent performance.</li>
+      </ul>
+
+      <h4 style="margin:14px 0 6px">Why Choose My Zorin Solution</h4>
+      <ul style="margin:0 0 10px 20px">
+        <li>Pre-configured for speed and stability.</li>
+        <li>Friendly, Windows-style desktop with a short learning curve.</li>
+        <li>Extra apps and tweaks included — ready to go from first boot.</li>
+        <li>Physical cleaning and airflow refresh for a like-new feel.</li>
+      </ul>
+
+      <p style="margin:12px 0"><b>Bottom line:</b> If your computer is less than 10 years old, don’t let it gather dust. With Zorin OS — plus a simple RAM or SSD upgrade and a professional cleaning — you can give it a brand-new life: faster, safer, and more fun than ever.</p>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('btnZorinLearn');
+      var modal = document.getElementById('zorinModal');
+      var close = document.getElementById('zorinClose');
+      if(!btn || !modal || !close) return;
+
+      function show(){ modal.style.display='flex'; document.body.style.overflow='hidden'; }
+      function hide(){ modal.style.display='none'; document.body.style.overflow=''; }
+
+      btn.addEventListener('click', show);
+      close.addEventListener('click', hide);
+      modal.addEventListener('click', function(e){ if(e.target===modal) hide(); });
+      window.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+    })();
+  </script>
 
   <!-- How it works -->
   <section id="how" class="card">
