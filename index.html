@@ -122,6 +122,52 @@
   <!-- Contact -->
   <section id="contact" style="border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:16px;margin:14px 0;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))">
     <h2 style="margin:0 0 12px">Contact</h2>
-    <p style="margin:0">Email: <a href="mailto:pcmacback2life@gmail.com" style="color:#22d3ee">pcmacback2life@gmail.com</a></p>
+    <p style="color:#9ca3af;margin:0 0 12px">Prefer email? <a href="mailto:pcmacback2life@gmail.com" style="color:#22d3ee">pcmacback2life@gmail.com</a></p>
+
+    <form id="contactForm" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" style="display:grid;gap:10px;max-width:720px">
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_subject" value="Website inquiry — PC • Mac • Back 2 Life">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://pcmacback2life.github.io/pc-mac-back-2-life/thanks.html">
+      <!-- Honeypot (spam trap) -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+      <label> Name
+        <input name="name" required placeholder="Your name"
+               style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#0a1020;color:#e5e7eb">
+      </label>
+
+      <label> Email
+        <input type="email" name="email" required placeholder="you@example.com"
+               style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#0a1020;color:#e5e7eb">
+      </label>
+
+      <label> Phone (optional)
+        <input name="phone" placeholder="(optional)"
+               style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#0a1020;color:#e5e7eb">
+      </label>
+
+      <label> Message
+        <textarea name="message" required rows="5" placeholder="How can we help?"
+                  style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#0a1020;color:#e5e7eb"></textarea>
+      </label>
+
+      <button type="submit"
+              style="justify-self:start;padding:10px 16px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">
+        Send
+      </button>
+      <noscript><p style="color:#9ca3af">JavaScript is off. After submit you’ll see a confirmation screen.</p></noscript>
+    </form>
+
+    <script>
+      (function(){
+        var f=document.getElementById('contactForm');
+        if(!f) return;
+        f.addEventListener('submit', function(){
+          var b=f.querySelector('button[type=submit]');
+          if(b){ b.disabled=true; b.textContent='Sending…'; }
+        });
+      })();
+    </script>
   </section>
 </div>
