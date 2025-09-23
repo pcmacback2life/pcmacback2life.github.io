@@ -22,24 +22,73 @@
   <!-- Screenshots (ABSOLUTE URLs, background tiles) -->
   <section id="screens" style="border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:16px;margin:14px 0;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))">
     <h2 style="margin:0 0 12px">Screenshots</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:12px">
-      <figure style="flex:1 1 220px;max-width:260px;margin:0">
-        <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot1.png?v=1758641965" alt="Windows 11 not eligible" style="display:block;width:100%;border:1px solid rgba(255,255,255,.15);border-radius:10px">
-        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">❗ Not eligible for Windows 11 — install Zorin OS. <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot1.png?v=1758641965" target="_blank" style="color:#22d3ee">Open</a></figcaption>
+    <style>
+      .shots{display:flex;flex-wrap:wrap;gap:12px}
+      .shot{flex:1 1 220px;max-width:260px;margin:0}
+      .shot a{display:block;border:1px solid rgba(255,255,255,.15);border-radius:10px;overflow:hidden}
+      .shot img{display:block;width:100%;height:auto}
+      .shot a{cursor:zoom-in}
+      /* Lightbox */
+      #viewer{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88);z-index:9999}
+      #viewer img{max-width:95%;max-height:90%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+      #viewer .close{position:absolute;top:14px;right:14px;font-size:22px;padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;cursor:pointer}
+    </style>
+    <div class="shots">
+      <figure class="shot">
+        <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot1.png?v=1758642895" data-full="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot1.png?v=1758642895" title="Click to enlarge">
+          <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot1.png?v=1758642895" alt="screenshot1" loading="lazy">
+        </a>
+        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">screenshot1 · <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot1.png?v=1758642895" target="_blank" style="color:#22d3ee">Open</a></figcaption>
       </figure>
-      <figure style="flex:1 1 220px;max-width:260px;margin:0">
-        <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot2.jpeg?v=1758641965" alt="Zorin desktop" style="display:block;width:100%;border:1px solid rgba(255,255,255,.15);border-radius:10px">
-        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">Zorin OS desktop — familiar & fast. <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot2.jpeg?v=1758641965" target="_blank" style="color:#22d3ee">Open</a></figcaption>
+      <figure class="shot">
+        <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot3.png?v=1758642895" data-full="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot3.png?v=1758642895" title="Click to enlarge">
+          <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot3.png?v=1758642895" alt="screenshot3" loading="lazy">
+        </a>
+        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">screenshot3 · <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot3.png?v=1758642895" target="_blank" style="color:#22d3ee">Open</a></figcaption>
       </figure>
-      <figure style="flex:1 1 220px;max-width:260px;margin:0">
-        <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot3.png?v=1758641965" alt="Zorin store" style="display:block;width:100%;border:1px solid rgba(255,255,255,.15);border-radius:10px">
-        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">App store & updates made simple. <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot3.png?v=1758641965" target="_blank" style="color:#22d3ee">Open</a></figcaption>
+      <figure class="shot">
+        <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot4.jpg?v=1758642895" data-full="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot4.jpg?v=1758642895" title="Click to enlarge">
+          <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot4.jpg?v=1758642895" alt="screenshot4" loading="lazy">
+        </a>
+        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">screenshot4 · <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot4.jpg?v=1758642895" target="_blank" style="color:#22d3ee">Open</a></figcaption>
       </figure>
-      <figure style="flex:1 1 220px;max-width:260px;margin:0">
-        <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot5.jpeg?v=1758641965" alt="Plex setup" style="display:block;width:100%;border:1px solid rgba(255,255,255,.15);border-radius:10px">
-        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">Plex media server setup. <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot5.jpeg?v=1758641965" target="_blank" style="color:#22d3ee">Open</a></figcaption>
+      <figure class="shot">
+        <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot2.jpeg?v=1758642895" data-full="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot2.jpeg?v=1758642895" title="Click to enlarge">
+          <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot2.jpeg?v=1758642895" alt="screenshot2" loading="lazy">
+        </a>
+        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">screenshot2 · <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot2.jpeg?v=1758642895" target="_blank" style="color:#22d3ee">Open</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot5.jpeg?v=1758642895" data-full="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot5.jpeg?v=1758642895" title="Click to enlarge">
+          <img src="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot5.jpeg?v=1758642895" alt="screenshot5" loading="lazy">
+        </a>
+        <figcaption style="font-size:12px;color:#9ca3af;margin-top:6px">screenshot5 · <a href="https://pcmacback2life.github.io/pc-mac-back-2-life/screenshots/screenshot5.jpeg?v=1758642895" target="_blank" style="color:#22d3ee">Open</a></figcaption>
       </figure>
     </div>
+    <!-- Lightbox markup -->
+    <div id="viewer" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button id="viewerClose" class="close">✕ Close</button>
+      <img id="viewerImg" src="" alt="Large screenshot">
+    </div>
+    <script>
+      (function(){
+        const v = document.getElementById('viewer');
+        const img = document.getElementById('viewerImg');
+        const close = document.getElementById('viewerClose');
+        document.querySelectorAll('#screens [data-full]').forEach(a=>{
+          a.addEventListener('click', (e)=>{
+            e.preventDefault();
+            img.src = a.getAttribute('data-full');
+            v.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          });
+        });
+        function hide(){ v.style.display='none'; img.src=''; document.body.style.overflow=''; }
+        close.addEventListener('click', hide);
+        v.addEventListener('click', (e)=>{ if(e.target === v) hide(); });
+        window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
+      })();
+    </script>
   </section>
 
   <!-- Services -->
