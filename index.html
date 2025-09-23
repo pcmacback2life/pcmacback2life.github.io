@@ -137,15 +137,24 @@
         </div>
       </li>
 
-      <!-- Plex: inline button + blurb underneath -->
+      <!-- Plex: inline button + blurb + caveats -->
       <li style="display:block;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
           <span>Plex setup</span>
           <button id="btnPlexLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
         </div>
-        <p class="muted" style="margin:8px 0 0;font-size:14px">
+
+        <!-- Quick blurb so users don't have to click -->
+        <p class="muted" style="margin:8px 0 6px;font-size:14px">
           <b>Plex Setup</b> – We turn your Zorin computer into your own personal Netflix. We install and configure Plex, create simple desktop icons so you can easily back up media, and set up your library to stream smoothly on your home network — including directly to smart TVs like Samsung. If your drive is too small, we can upgrade it or connect an external USB for storage. A Plex license is required, and we’ll help you get it. (Remote streaming setup available at $120/hr.)
         </p>
+
+        <!-- NEW: Caveats directly under the button -->
+        <ul class="muted" style="margin:0 0 0 18px;font-size:13px">
+          <li>If you plan to stream to <b>more than one TV at the same time</b>, your Zorin machine will benefit from <b>more RAM</b>.</li>
+          <li>A <b>large movie library</b> benefits from a <b>larger internal or external drive</b> for storage.</li>
+          <li>The <b>optical drive</b> should be reasonably modern; if you’ll be importing many discs, we recommend an <b>external drive</b> such as the <b>OWC Mercury Pro</b> — we can assist.</li>
+        </ul>
       </li>
     </ul>
   </section>
