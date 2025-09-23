@@ -3,63 +3,117 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PC • Mac • Back 2 Life</title>
 <style>
-  :root{--bg:#0b1220;--text:#e5e7eb;--muted:#9ca3af;--brand:#22d3ee;--radius:18px;--maxw:1080px}
-  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+  :root{--bg:#0b1220;--panel:#101827;--text:#e5e7eb;--muted:#9ca3af;--brand:#22d3ee;--r:18px;--maxw:1080px}
+  html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
-  header{position:sticky;top:0;background:rgba(16,24,39,.85);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
-  .hero{display:grid;place-items:center;text-align:center;padding:28px 0}
-  .title{font-size:clamp(28px,4.2vw,48px);margin:0 0 12px 0}
+  header{position:sticky;top:0;background:rgba(16,24,39,.85);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08);z-index:10}
+  nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  nav a{display:inline-block;padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--brand);text-decoration:none}
+  nav a:hover{text-decoration:underline}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:24px;margin:24px 0}
+  .brand-hero{text-align:center}
+  .brand-hero .logoTile{width:min(220px,42vw);height:min(220px,42vw);margin:0 auto 12px;border-radius:22px;border:1px solid rgba(255,255,255,.12);background:#0a1020 center/contain no-repeat url('images/logo.png?v=6')}
+  .title{font-size:clamp(28px,4.2vw,48px);margin:6px 0 8px}
   .kicker{color:var(--muted)}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;margin:24px 0}
-  img{max-width:100%;height:auto;display:block}
   .grid{display:grid;gap:16px}
-  @media(min-width:880px){.grid{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:880px){.grid-4{grid-template-columns:repeat(4,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}}
+  figure{margin:0;background:#0a1020;border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .shot{aspect-ratio:16/10;background:#0a1020 center/cover no-repeat;border-bottom:1px solid rgba(255,255,255,.08)}
+  figcaption{padding:10px 12px;color:var(--muted)}
+  .tiny{font-size:12px;opacity:.85}
 </style>
 
-<header><div class="wrap">
-  <div class="hero">
+<header>
+  <div class="wrap brand-hero">
+    <div class="logoTile" aria-label="PC • Mac • Back 2 Life logo"></div>
     <h1 class="title">PC • Mac • Back 2 Life</h1>
     <p class="kicker">Zorin OS installs, data migration, and Plex setup.</p>
+    <nav>
+      <a href="#screens">Screenshots</a>
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-</div></header>
+</header>
 
 <main class="wrap">
-  <section class="card brand-hero" id="brand">
-    <style>
-      .brand-hero{ text-align:center }
-      .brand-hero .logoTile{
-        width:min(200px,40vw);
-        height:min(200px,40vw);
-        margin:0 auto 10px auto;
-        border-radius:20px;
-        border:1px solid rgba(255,255,255,.12);
-        background:#0a1020 center/contain no-repeat url('images/logo.png?v=4');
-      }
-      .brand-hero .kicker{ color:#9ca3af }
-      .brand-hero a{ color:#22d3ee; text-decoration:none }
-      .brand-hero a:hover{ text-decoration:underline }
-    </style>
-    <div class="logoTile" title="PC • Mac • Back 2 Life logo"></div>
-    <h1 class="title" style="margin:10px 0 6px 0">PC • Mac • Back 2 Life</h1>
-    <p class="kicker">Zorin OS installs, data migration, and Plex setup.</p>
-    <div style="margin-top:6px"><a href="images/logo.png" target="_blank" rel="noopener">Open logo</a></div>
-  </section>
-<section id="screens" class="card">
+
+  <section id="screens" class="card">
     <h2>Screenshots</h2>
-    <div class="grid">
-      <img src="screenshots/screenshot1.png" alt="s1">
-      <img src="screenshots/screenshot2.jpeg" alt="s2">
-      <img src="screenshots/screenshot3.png" alt="s3">
-      <img src="screenshots/screenshot5.jpeg" alt="s4">
+    <div class="grid grid-4">
+      <figure>
+        <div class="shot" style="background-image:url('images/screenshot1.jpg?v=6')"></div>
+        <figcaption>❗ Not eligible for Windows 11 → we install Zorin OS to restore performance. <span class="tiny"><a href="images/screenshot1.jpg" target="_blank" rel="noopener">Open</a></span></figcaption>
+      </figure>
+      <figure>
+        <div class="shot" style="background-image:url('images/screenshot2.jpg?v=6')"></div>
+        <figcaption>Zorin OS desktop — familiar layout and fast. <span class="tiny"><a href="images/screenshot2.jpg" target="_blank" rel="noopener">Open</a></span></figcaption>
+      </figure>
+      <figure>
+        <div class="shot" style="background-image:url('images/screenshot3.jpg?v=6')"></div>
+        <figcaption>App store & updates made simple. <span class="tiny"><a href="images/screenshot3.jpg" target="_blank" rel="noopener">Open</a></span></figcaption>
+      </figure>
+      <figure>
+        <div class="shot" style="background-image:url('images/screenshot4.jpg?v=6')"></div>
+        <figcaption>Plex media server setup. <span class="tiny"><a href="images/screenshot4.jpg" target="_blank" rel="noopener">Open</a></span></figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="services" class="card">
     <h2>Services</h2>
-    <ul>
-      <li>Zorin OS install & tuning</li>
-      <li>Data migration</li>
-      <li>Plex setup</li>
-    </ul>
+    <div class="grid grid-3">
+      <div>
+        <h3>Clean Zorin install</h3>
+        <ul>
+          <li>Fresh install & drivers</li>
+          <li>Windows-like layout</li>
+          <li>Essential apps</li>
+          <li>Performance & privacy tuning</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Data migration</h3>
+        <ul>
+          <li>Docs/photos/music moved</li>
+          <li>Email/browser import (when possible)</li>
+          <li>Disk health check</li>
+          <li>Optional backup</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Plex setup</h3>
+        <ul>
+          <li>Install & configure Plex</li>
+          <li>Library paths & users</li>
+          <li>Remote streaming</li>
+          <li>TV/phone apps</li>
+        </ul>
+      </div>
+    </div>
   </section>
+
+  <section id="how" class="card">
+    <h2>How it works</h2>
+    <ol>
+      <li><b>Free assessment:</b> Tell us your model & what you want to keep.</li>
+      <li><b>Mail-in or local drop-off:</b> Colorado (80816) & shipped desktops/laptops.</li>
+      <li><b>Install & configure:</b> Zorin + apps + (optional) Plex; migrate files.</li>
+      <li><b>Quality check:</b> Updates applied, hardware tested.</li>
+      <li><b>Return & handoff:</b> Quick start guide.</li>
+    </ol>
+  </section>
+
+  <section id="pricing" class="card">
+    <h2>Pricing</h2>
+    <p><b>$129</b> Zorin install • +$40 migration (up to 200GB) • +$35 Plex setup</p>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:pcmacback2life@gmail.com">pcmacback2life@gmail.com</a></p>
+  </section>
+
 </main>
