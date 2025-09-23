@@ -130,14 +130,16 @@
       <a href="#contact" style="display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;text-decoration:none">Get a quote</a>
     </div>
   </section>
-<section id="services" class="card">
+  <section id="services" class="card">
     <h2 style="margin:0 0 12px">Services</h2>
     <ul style="margin:0;padding-left:0;list-style:none;display:grid;gap:10px">
-      <!-- Zorin: inline button -->
+
+      <!-- Zorin: inline buttons (Learn More + ZORIN advantages) -->
       <li style="display:block;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span>Zorin OS install & tuning</span>
+          <span>Zorin OS install &amp; tuning</span>
           <button id="btnZorinLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
+          <button id="btnZorinAdv"   style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">ZORIN advantages</button>
         </div>
       </li>
 
@@ -156,12 +158,10 @@
           <button id="btnPlexLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
         </div>
 
-        <!-- Quick blurb so users don't have to click -->
         <p class="muted" style="margin:8px 0 6px;font-size:14px">
           <b>Plex Setup</b> – We turn your Zorin computer into your own personal Netflix. We install and configure Plex, create simple desktop icons so you can easily back up media, and set up your library to stream smoothly on your home network — including directly to smart TVs like Samsung. If your drive is too small, we can upgrade it or connect an external USB for storage. A Plex license is required, and we’ll help you get it. (Remote streaming setup available at $120/hr.)
         </p>
 
-        <!-- NEW: Caveats directly under the button -->
         <ul class="muted" style="margin:0 0 0 18px;font-size:13px">
           <li>If you plan to stream to <b>more than one TV at the same time</b>, your Zorin machine will benefit from <b>more RAM</b>.</li>
           <li>A <b>large movie library</b> benefits from a <b>larger internal or external drive</b> for storage.</li>
@@ -565,6 +565,110 @@
       btn.addEventListener('click', show);
       close.addEventListener('click', hide);
       modal.addEventListener('click', function(e){ if(e.target===modal) hide(); });
+      window.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+    })();
+  </script>
+
+  <!-- Modal: ZORIN advantages -->
+  <div id="zorinAdvModal" role="dialog" aria-modal="true" aria-label="Zorin advantages"
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
+    <div style="position:relative;max-width:920px;width:min(920px,96vw);max-height:90vh;overflow:auto;
+                background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+                border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
+      <button id="zorinAdvClose"
+              style="position:absolute;top:10px;right:10px;font-size:18px;padding:6px 10px;border-radius:10px;
+                     border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;cursor:pointer">✕</button>
+
+      <h3 style="margin:0 0 8px">Zorin advantages — why clients love it</h3>
+      <p style="margin:6px 0 12px" class="muted">
+        License-free software, great support ecosystem, solid and secure by design — and no paid antivirus needed.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+
+        <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px">
+          <div style="font-size:18px;margin:0 0 6px">📲 Zorin Connect</div>
+          <p class="muted" style="margin:0 0 6px">Seamlessly link your Android phone with your Zorin PC.</p>
+          <ul style="margin:0 0 0 18px">
+            <li>See phone notifications on your computer</li>
+            <li>Reply to SMS from your desktop</li>
+            <li>Share files and links instantly</li>
+            <li>Control your computer’s media playback with your phone</li>
+          </ul>
+          <p style="margin:8px 0 0" class="muted">Feels like the Apple “iPhone + Mac” ecosystem — but free.</p>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px">
+          <div style="font-size:18px;margin:0 0 6px">🛠 Zorin Software Center</div>
+          <p class="muted" style="margin:0 0 6px">Friendly app store with one-click installs.</p>
+          <ul style="margin:0 0 0 18px">
+            <li>Zoom, Spotify, Steam, LibreOffice, and more</li>
+            <li>Much simpler than terminal commands</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px">
+          <div style="font-size:18px;margin:0 0 6px">📂 Zorin Files</div>
+          <p class="muted" style="margin:0 0 6px">The file manager (like Windows Explorer or Mac Finder).</p>
+          <ul style="margin:0 0 0 18px">
+            <li>Clean design with easy sidebar shortcuts</li>
+            <li>Quick access to Documents, Downloads, Pictures, NAS drives, etc.</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px">
+          <div style="font-size:18px;margin:0 0 6px">🌐 Preinstalled Essentials</div>
+          <ul style="margin:0 0 0 18px">
+            <li>Firefox — fast, secure, private</li>
+            <li>LibreOffice — full office suite</li>
+            <li>Rhythmbox — simple music player</li>
+            <li>Shotwell — photo organizer</li>
+            <li>Videos (Totem) — built-in player</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px">
+          <div style="font-size:18px;margin:0 0 6px">🔒 Security &amp; Updates</div>
+          <ul style="margin:0 0 0 18px">
+            <li>Built-in firewall tool</li>
+            <li>Automatic security updates (no nagging pop-ups)</li>
+            <li>No paid antivirus required — Linux is more secure by design</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="margin:14px 0;border-top:1px solid rgba(255,255,255,.12)"></div>
+
+      <h4 style="margin:8px 0 6px">Top 5 Native Zorin Features That Make Switching Easy</h4>
+
+      <ol style="margin:0 0 0 18px">
+        <li style="margin:6px 0"><b>Zorin Appearance</b> — Switch your desktop layout with one click (Windows 11, macOS, even classic XP).</li>
+        <li style="margin:6px 0"><b>Zorin Connect</b> — See notifications, send texts, share files, and use your phone as a remote.</li>
+        <li style="margin:6px 0"><b>Zorin Software Center</b> — App-store experience; Zoom, Spotify, Steam, LibreOffice, etc.</li>
+        <li style="margin:6px 0"><b>Zorin Files</b> — Familiar file manager for organizing docs, pictures, downloads.</li>
+        <li style="margin:6px 0"><b>Built-In Security &amp; Updates</b> — Automatic patches, easy firewall, no paid AV needed.</li>
+      </ol>
+
+      <p style="margin:12px 0 0"><b>✅ Bottom line:</b> Zorin isn’t just “another Linux.” Friendly tools like Zorin Appearance and Zorin Connect make switching smooth, familiar, and actually fun.</p>
+
+      <div style="margin-top:12px">
+        <a href="#contact" style="display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;text-decoration:none">Ask a question</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var btn  = document.getElementById('btnZorinAdv');
+      var mod  = document.getElementById('zorinAdvModal');
+      var x    = document.getElementById('zorinAdvClose');
+      if(!btn || !mod || !x) return;
+      function show(){ mod.style.display='flex'; document.body.style.overflow='hidden'; }
+      function hide(){ mod.style.display='none'; document.body.style.overflow=''; }
+      btn.addEventListener('click', show);
+      x.addEventListener('click', hide);
+      mod.addEventListener('click', function(e){ if(e.target===mod) hide(); });
       window.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
     })();
   </script>
