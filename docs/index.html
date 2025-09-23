@@ -88,15 +88,17 @@
   <section id="services" class="card">
     <h2 style="margin:0 0 12px">Services</h2>
     <ul style="margin:0;padding-left:0;list-style:none;display:grid;gap:10px">
-      <!-- Button now sits immediately after the text, aligned left -->
+      <!-- Zorin: button inline -->
       <li style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <span>Zorin OS install & tuning</span>
         <button id="btnZorinLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
       </li>
+      <!-- Data migration: NEW button inline -->
       <li style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <span>Data migration</span>
-        <span class="muted" style="font-size:12px">More details soon</span>
+        <button id="btnDataLearn" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(34,211,238,.5);background:#0b2a33;color:#e5e7eb;cursor:pointer">Learn More</button>
       </li>
+      <!-- Plex: placeholder for now -->
       <li style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px">
         <span>Plex setup</span>
         <span class="muted" style="font-size:12px">More details soon</span>
@@ -292,3 +294,86 @@
     </script>
   </section>
 </div>
+
+  <!-- Modal: Data Migration Learn More -->
+  <div id="dataModal" role="dialog" aria-modal="true" aria-label="Data migration — Learn More"
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
+    <div style="position:relative;max-width:900px;width:min(900px,96vw);max-height:90vh;overflow:auto;
+                background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+                border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
+      <button id="dataClose"
+              style="position:absolute;top:10px;right:10px;font-size:18px;padding:6px 10px;border-radius:10px;
+                     border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;cursor:pointer">✕</button>
+
+      <h3 style="margin:0 0 10px">Example: How We Move Your Data to Your New Zorin Computer</h3>
+
+      <h4 style="margin:14px 0 6px">Step 1 – Collecting Your Files</h4>
+      <p>We begin by connecting a USB flash drive or external hard drive to your old PC or Mac. This becomes the “moving truck” for your digital belongings.</p>
+
+      <h4 style="margin:14px 0 6px">Step 2 – Packing Up</h4>
+      <p>We carefully copy your important folders—Documents, Pictures, Music, Desktop, and anything else you choose—onto the USB drive. If your old computer has multiple user profiles, we’ll gather the files from each one so no one’s data is left behind.</p>
+
+      <h4 style="margin:14px 0 6px">Step 3 – Safe Transfer</h4>
+      <p>Once everything is copied, we safely remove the USB and connect it to your new Zorin OS computer.</p>
+
+      <h4 style="margin:14px 0 6px">Step 4 – Unpacking on Zorin OS</h4>
+      <p>We place your files into the right spots on Zorin—Documents, Pictures, Music—so everything is organized and familiar. If there were multiple profiles on your old computer, we’ll create matching profiles on Zorin and place each person’s files in their own account.</p>
+
+      <h4 style="margin:14px 0 6px">Step 5 – Secure Login Setup</h4>
+      <p>When you receive your new Zorin PC or Mac, we provide a temporary password for each user profile. Along with it, you’ll get simple step-by-step instructions on how to change the password to something unique and personal to you.</p>
+
+      <h4 style="margin:16px 0 8px">✅ What this means for you:</h4>
+      <ul style="margin:0 0 12px 20px">
+        <li>We handle the entire transfer process from start to finish.</li>
+        <li>All personal files, from all profiles, move safely from the old computer to your new Zorin system.</li>
+        <li>Everyone gets their own account on Zorin, just like before.</li>
+        <li>You start with a secure temporary password, and then set your own personal password.</li>
+        <li>No cloud accounts, complicated tools, or tech headaches—just a smooth, safe move.</li>
+      </ul>
+
+      <div style="margin:14px 0;border-top:1px solid rgba(255,255,255,.12)"></div>
+
+      <h4 style="margin:14px 0 10px">Step-by-step at a glance</h4>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">💻🔌 Step 1 – Collect</div>
+          <div class="muted" style="font-size:14px">Connect a USB drive to your old computer — this is the “moving truck”.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">📁➡️🔌 Step 2 – Pack</div>
+          <div class="muted" style="font-size:14px">Copy Documents, Pictures, Music, Desktop, etc. All profiles included.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">💾➡️🖥️ Step 3 – Transfer</div>
+          <div class="muted" style="font-size:14px">Safely remove the USB and plug into your new Zorin OS system.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">🗂️👤 Step 4 – Unpack</div>
+          <div class="muted" style="font-size:14px">Place files in the right folders; create separate user accounts as needed.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px">
+          <div style="font-size:22px;margin-bottom:6px">🔐 Step 5 – Secure Setup</div>
+          <div class="muted" style="font-size:14px">Temporary password provided + simple steps to set your personal password.</div>
+        </div>
+      </div>
+
+      <p style="margin:16px 0 0;font-style:italic">“We make the move easy, safe, and stress-free – so you can start enjoying your new Zorin computer right away.”</p>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('btnDataLearn');
+      var modal = document.getElementById('dataModal');
+      var close = document.getElementById('dataClose');
+      if(!btn || !modal || !close) return;
+
+      function show(){ modal.style.display='flex'; document.body.style.overflow='hidden'; }
+      function hide(){ modal.style.display='none'; document.body.style.overflow=''; }
+
+      btn.addEventListener('click', show);
+      close.addEventListener('click', hide);
+      modal.addEventListener('click', function(e){ if(e.target===modal) hide(); });
+      window.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+    })();
+  </script>
