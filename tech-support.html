@@ -98,6 +98,30 @@
   #acks .chk input[type="checkbox"]{ margin:3px 0 0 0 !important; }
   #acks .chk *{ text-align:left !important; }
 </style>
+<style id="ts-fixes">
+  /* Keep the submit row in normal flow and aligned left */
+  .ts-actions, .form-actions, .actions {
+    position: static !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin: 8px 0 16px !important;
+  }
+  .ts-actions .btn, .form-actions .btn, .actions .btn,
+  .ts-actions button, .form-actions button, .actions button,
+  .ts-actions input[type="submit"], .form-actions input[type="submit"], .actions input[type="submit"] {
+    margin: 0 !important;
+  }
+
+  /* Acknowledgements stay left/stacked (in case old markup shows) */
+  #acks2{all:revert;display:grid;gap:14px;max-width:860px;text-align:left}
+  #acks2 label{all:revert;display:flex;gap:10px;align-items:flex-start;
+               font:500 16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  #acks2 input[type="checkbox"]{all:revert;margin-top:4px;width:18px;height:18px}
+</style>
 </head><body>
 <div id="acks" class="wrap">
   <h1>Request Tech Support</h1>
@@ -216,4 +240,21 @@
     </form>
   </div>
 </div>
+<script id="ts-actions-fix">
+(function(){
+  var btn = Array.from(document.querySelectorAll('button, input[type="submit"]'))
+    .find(el => /submit support request/i.test((el.textContent||el.value||'').trim()));
+  if(!btn) return;
+  var row = btn.closest('.ts-actions, .form-actions, .actions, .row, .grid, div') || btn.parentElement;
+  if(!row) return;
+  Object.assign(row.style, {
+    position:'static', display:'flex', flexWrap:'wrap',
+    gap:'12px', alignItems:'center', justifyContent:'flex-start', margin:'8px 0 16px'
+  });
+  btn.style.position = 'static';
+  btn.style.margin = '0';
+  var cancel = Array.from(row.querySelectorAll('a')).find(a => /cancel/i.test((a.textContent||'').trim()));
+  if(cancel){ cancel.style.marginLeft='8px'; cancel.style.alignSelf='center'; }
+})();
+</script>
 </body></html>
