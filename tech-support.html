@@ -3,7 +3,7 @@
 <title>Request Tech Support</title>
 <style>
   /* isolate from site styles */
-  #island, #island * { all: revert !important; box-sizing: border-box; }
+  #island * { box-sizing: border-box; }
   body{margin:0;background:#0b0b0c;color:#e5e7eb;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
   .wrap{max-width:980px;margin:32px auto;padding:0 16px}
   h1{font:800 40px/1.1 system-ui;margin:0 0 8px}
@@ -42,6 +42,24 @@
   }
   #acks input[type="checkbox"]{ grid-column:1 !important; margin:3px 0 0 0 !important; width:18px; height:18px; }
   #acks label, #acks .label, #acks span, #acks p{ grid-column:2 !important; margin:0 !important; text-align:left !important; }
+</style>
+<style id="acks-align-only">
+  /* Only the Acknowledgements container */
+  #acks{
+    display:grid !important;
+    grid-template-columns: 24px 1fr !important;
+    row-gap:14px !important;
+    column-gap:12px !important;
+    justify-items:start !important;
+    align-items:start !important;
+    text-align:left !important;
+  }
+  #acks input[type="checkbox"]{
+    grid-column:1 !important; margin:3px 0 0 0 !important; width:18px; height:18px;
+  }
+  #acks label, #acks span, #acks p{
+    grid-column:2 !important; margin:0 !important; text-align:left !important;
+  }
 </style>
 </head>
 <body>
