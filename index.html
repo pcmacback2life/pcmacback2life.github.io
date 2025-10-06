@@ -877,3 +877,19 @@
 #ss1:hover .track{ animation-play-state: paused !important; }
 </style>
 <!-- ss1-hard-override ${ts} -->
+<style id="hide-screenshot-grid">
+/* Hide common grid/gallery containers that contain screenshots */
+.grid:has(img[src*="screenshots/"]),
+.gallery:has(img[src*="screenshots/"]),
+section:has(img[src*="screenshots/"]),
+div:has(img[src*="screenshots/"]),
+figure:has(img[src*="screenshots/"]) {
+  display: none !important;
+}
+
+/* Fallback for browsers without :has(): hide the images on the host page.
+   (Does NOT affect the iframe scroller.) */
+body :not(#screenshots-strip) img[src*="screenshots/"] {
+  display: none !important;
+}
+</style>
