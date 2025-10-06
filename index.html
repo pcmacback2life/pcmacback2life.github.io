@@ -883,3 +883,19 @@
 #screenshots,
 #screenshot-grid { display: none !important; }
 </style>
+<script id="remove-old-screenshot-grid">
+(function(){
+  var anchor = document.getElementById('after-logo-anchor');
+  if (!anchor) return;
+  var el = anchor.nextElementSibling;
+  while (el) {
+    // stop before footer just in case
+    if (/^footer$/i.test(el.tagName)) break;
+
+    var count = el.querySelectorAll('img[src*="screenshots/"]').length;
+    if (count >= 3) { el.remove(); break; }
+
+    el = el.nextElementSibling;
+  }
+})();
+</script>
