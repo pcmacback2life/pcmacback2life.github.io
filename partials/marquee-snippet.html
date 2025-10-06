@@ -1,0 +1,34 @@
+<style id="marquee-fallback">
+.marquee{overflow:hidden;width:100%}
+.marquee__track{display:flex;gap:16px;align-items:center;animation:mar 40s linear infinite;will-change:transform}
+.marquee__item{flex:0 0 auto}
+.marquee__item img{height:150px;border-radius:10px;display:block}
+@keyframes mar{to{transform:translateX(calc(var(--dist,50%)*-1))}}
+/* hide old grids so only the marquee shows */
+#screenshots,.screenshots,.screenshot-grid,.screens-grid,.gallery,.grid.gallery,.grid.screenshots{display:none!important}
+</style>
+<section class="marquee" aria-label="Screenshots scrolling showcase"><div class="marquee__track">
+    <a class="marquee__item" href="screenshots/screenshot4.jpg" target="_blank" rel="noopener"><img src="screenshots/screenshot4.jpg" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot9.jpg" target="_blank" rel="noopener"><img src="screenshots/screenshot9.jpg" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot2.jpeg" target="_blank" rel="noopener"><img src="screenshots/screenshot2.jpeg" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot5.jpeg" target="_blank" rel="noopener"><img src="screenshots/screenshot5.jpeg" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot1.png" target="_blank" rel="noopener"><img src="screenshots/screenshot1.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot10.png" target="_blank" rel="noopener"><img src="screenshots/screenshot10.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot11.png" target="_blank" rel="noopener"><img src="screenshots/screenshot11.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot12.png" target="_blank" rel="noopener"><img src="screenshots/screenshot12.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot3.png" target="_blank" rel="noopener"><img src="screenshots/screenshot3.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot6.png" target="_blank" rel="noopener"><img src="screenshots/screenshot6.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot7.png" target="_blank" rel="noopener"><img src="screenshots/screenshot7.png" alt=""></a>
+    <a class="marquee__item" href="screenshots/screenshot8.png" target="_blank" rel="noopener"><img src="screenshots/screenshot8.png" alt=""></a>
+</div></section>
+<script id="marquee-fallback-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const t=document.querySelector('.marquee__track'); if(tar: .: file changed as we read it) return;
+  t.innerHTML+=t.innerHTML;
+  requestAnimationFrame(()=>{const gap=parseFloat(getComputedStyle(t).gap||'0');
+    const kids=[...t.children]; const half=kids.slice(0,kids.length/2);
+    const w=half.reduce((s,el)=>s+el.getBoundingClientRect().width+gap,0);
+    t.style.setProperty('--dist', w+'px');
+  });
+});
+</script>
