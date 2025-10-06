@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Request Tech Support</title>
+<!-- support-standalone -->
 <style>
-  /* This page is completely self-styled and does not rely on the site CSS */
   :root{--bg:#0b0b0c;--panel:#121316;--border:#222;--text:#e5e7eb;--muted:#9ca3af;--accent:#dc2626}
   *{box-sizing:border-box}
   html,body{height:100%}
@@ -10,26 +10,21 @@
   .wrap{max-width:960px;margin:28px auto;padding:0 16px}
   h1{font:800 34px/1.15 system-ui;margin:0 0 6px}
   p.lead{margin:0 0 18px;color:var(--muted)}
-
   .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:22px}
   .section{margin:10px 0 18px}
   .section h2{font:800 22px/1.2 system-ui;margin:0 0 10px}
   .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
-
   .field label{display:block;font-weight:650;margin:6px 0 6px}
   .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2a2d33;border-radius:12px;color:var(--text)}
   textarea.control{min-height:110px;resize:vertical}
   select.control{appearance:auto}
-
-  /* actions row (left, normal flow) */
   .actions{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin:10px 0 18px}
   .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;border:0;cursor:pointer}
   .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
   .btn-primary:hover{filter:brightness(1.06)}
   .btn-ghost{background:transparent;color:var(--muted)}
-
-  /* acknowledgements (ONLY this block is left-justified) */
+  /* Only the Acknowledgements are left-aligned + stacked */
   .acks{display:grid;gap:12px;max-width:860px;text-align:left}
   .ack{display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start}
   .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
@@ -42,7 +37,6 @@
     <p class="lead">Fill this out and we’ll get back to you ASAP.</p>
 
     <form class="card" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data">
-      <!-- FormSubmit options -->
       <input type="hidden" name="_subject" value="New Tech Support Request">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
