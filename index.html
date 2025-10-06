@@ -859,10 +859,6 @@
 #ss1:hover .track{ animation-play-state: paused !important; }
 </style>
 <!-- ss1-hard-override ${ts} -->
-<style id="hide-old-scrollers">
-.marquee, .marquee * { display: none !important; }
-.ssstrip, .ssstrip * { display: none !important; }
-</style>
 <!-- hide-old-scrollers -->
 <style id="ss1-hard-override">
 #ss1, #ss1 * { all: revert !important; }
@@ -878,13 +874,12 @@
 #ss1:hover .track{ animation-play-state: paused !important; }
 </style>
 <!-- ss1-hard-override ${ts} -->
-<style id="hide-grid-min">
-/* Hide only host-page screenshots, not the iframe */
-img[src*="screenshots/"],
-img[srcset*="screenshots/"],
-img[data-src*="screenshots/"],
-picture source[srcset*="screenshots/"],
-figure:has(img[src*="screenshots/"]) {
-  display: none !important;
-}
+<style id="hide-old-gallery">
+/* Hide only the old screenshot gallery containers */
+.marquee,
+.marquee *,
+.gallery,
+.gallery-grid,
+#screenshots,
+#screenshot-grid { display: none !important; }
 </style>
