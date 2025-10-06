@@ -6,13 +6,13 @@
   *{box-sizing:border-box}
   html,body{height:100%;margin:0}
   body{background:var(--bg);color:var(--fg);display:flex;align-items:center;justify-content:center}
-  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2.5vh}
-  img{max-width:96vw;max-height:95vh;object-fit:contain;display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-  .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+  .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between;z-index:1000}
   .btn{background:#111a;border:1px solid #fff3;color:#fff;padding:.5rem .8rem;border-radius:10px;font:600 16px/1 system-ui;text-decoration:none}
   .btn:hover{background:#222a}
   .spacer{flex:1}
   .name{opacity:.85;font:500 14px/1.1 system-ui;max-width:65vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2.5vh;z-index:0}
+  img{max-width:96vw;max-height:95vh;object-fit:contain;display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 </style>
 </head><body>
 <div class="topbar">
@@ -22,12 +22,13 @@
 </div>
 <div class="wrap"><img id="pic" alt="Screenshot"></div>
 <script>
-  // Read ?img=, lock to /screenshots/
+  // Read ?img= and lock to /screenshots/
   const p = new URLSearchParams(location.search);
   const raw = p.get('img') || '';
   const safe = raw.startsWith('screenshots/') ? raw : '';
   const pic  = document.getElementById('pic');
   const name = document.getElementById('imgName');
+
   if (!safe) {
     document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>';
   } else {
@@ -35,8 +36,7 @@
     name.textContent = safe.split('/').pop();
   }
 
-  // Compute a reliable return URL:
-  // 1) ?ret= (same-origin)   2) same-origin referrer       3) "/"
+  // Best-return URL: ?ret= (same-origin) → same-origin referrer → "/"
   function sameOrigin(u){ try { return new URL(u, location.href).origin === location.origin } catch(e){ return false } }
   let backHref = '/';
   const ret = p.get('ret');
