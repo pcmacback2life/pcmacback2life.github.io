@@ -29,20 +29,24 @@
   .ack{display:grid;grid-template-columns:22px 1fr;column-gap:12px;align-items:start}
   .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
 </style>
-<style id="isolate-tech-form">
-  /* show ONLY the self-contained form island on this page */
-  body > :not(#island){ display:none !important; }
-</style>
-<style id="actions-left-fix">
-  #island .actions{ position:static!important; inset:auto!important; display:flex!important;
-    flex-wrap:wrap!important; gap:12px!important; align-items:center!important; justify-content:flex-start!important;
-    margin:12px 0 18px!important;
+<style id="acks-align">
+  /* Only affect the acknowledgements block */
+  #acks{
+    display:grid !important;
+    grid-template-columns: 24px 1fr !important;
+    row-gap:14px !important;
+    column-gap:12px !important;
+    justify-items:start !important;
+    align-items:start !important;
+    text-align:left !important;
   }
+  #acks input[type="checkbox"]{ grid-column:1 !important; margin:3px 0 0 0 !important; width:18px; height:18px; }
+  #acks label, #acks .label, #acks span, #acks p{ grid-column:2 !important; margin:0 !important; text-align:left !important; }
 </style>
 </head>
 <body>
 <div id="island">
-  <div class="wrap">
+  <div id="acks" class="wrap">
     <h1>Request Tech Support</h1>
     <p class="lead">Fill this out and we’ll get back to you ASAP.</p>
 
