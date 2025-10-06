@@ -933,3 +933,22 @@
 #ss1:hover .track{ animation-play-state: paused !important; }
 </style>
 <!-- ss1-hard-override ${ts} -->
+<style id="hide-old-scrollers">
+.marquee, .marquee * { display: none !important; }
+.ssstrip, .ssstrip * { display: none !important; }
+</style>
+<!-- hide-old-scrollers -->
+<style id="ss1-hard-override">
+#ss1, #ss1 * { all: revert !important; }
+#ss1{ position:relative; display:block !important; width:100%; overflow:hidden; padding:.5rem 0; }
+#ss1 .track{
+  display:flex !important; flex-wrap:nowrap !important; gap:1rem;
+  will-change:transform; animation:ss1-move 25s linear infinite !important;
+}
+#ss1 a{ display:inline-block !important; flex:0 0 auto !important; text-decoration:none; }
+#ss1 img{ display:block !important; height:140px !important; width:auto !important;
+          border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.15); }
+@keyframes ss1-move { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+#ss1:hover .track{ animation-play-state: paused !important; }
+</style>
+<!-- ss1-hard-override ${ts} -->
