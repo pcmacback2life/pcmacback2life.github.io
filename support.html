@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request Tech Support</title>
+<style>
+  /* This page is completely self-styled and does not rely on the site CSS */
+  :root{--bg:#0b0b0c;--panel:#121316;--border:#222;--text:#e5e7eb;--muted:#9ca3af;--accent:#dc2626}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:960px;margin:28px auto;padding:0 16px}
+  h1{font:800 34px/1.15 system-ui;margin:0 0 6px}
+  p.lead{margin:0 0 18px;color:var(--muted)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:22px}
+  .section{margin:10px 0 18px}
+  .section h2{font:800 22px/1.2 system-ui;margin:0 0 10px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
+
+  .field label{display:block;font-weight:650;margin:6px 0 6px}
+  .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2a2d33;border-radius:12px;color:var(--text)}
+  textarea.control{min-height:110px;resize:vertical}
+  select.control{appearance:auto}
+
+  /* actions row (left, normal flow) */
+  .actions{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin:10px 0 18px}
+  .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;border:0;cursor:pointer}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
+  .btn-primary:hover{filter:brightness(1.06)}
+  .btn-ghost{background:transparent;color:var(--muted)}
+
+  /* acknowledgements (ONLY this block is left-justified) */
+  .acks{display:grid;gap:12px;max-width:860px;text-align:left}
+  .ack{display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start}
+  .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
+  .hint{color:var(--muted);font-size:14px;margin-top:6px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Request Tech Support</h1>
+    <p class="lead">Fill this out and we’ll get back to you ASAP.</p>
+
+    <form class="card" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data">
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_subject" value="New Tech Support Request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://pc-mac-back-2-life.com/?submitted=1">
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Submit Support Request</button>
+        <a class="btn btn-ghost" href="/">Cancel</a>
+      </div>
+
+      <div class="section">
+        <h2>🧩 1. Basic Contact Information</h2>
+        <div class="grid-2">
+          <div class="field"><label for="name">Full Name *</label><input id="name" name="name" class="control" required></div>
+          <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" class="control" required></div>
+          <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" class="control" required></div>
+          <div class="field"><label for="contact">Preferred Contact Method</label>
+            <select id="contact" name="contact_method" class="control"><option>Email</option><option>Call</option><option>Chat</option></select></div>
+          <div class="field"><label for="company">Company / Organization</label><input id="company" name="company" class="control"></div>
+          <div class="field"><label for="location">Location / Time Zone</label><input id="location" name="location" class="control" placeholder="e.g., Colorado (MT)"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>💻 2. Device or System Information</h2>
+        <div class="grid-2">
+          <div class="field"><label for="dtype">Device Type</label>
+            <select id="dtype" name="device_type" class="control"><option>Laptop</option><option>Desktop</option><option>Server</option></select></div>
+          <div class="field"><label for="model">Brand / Model</label><input id="model" name="brand_model" class="control" placeholder="e.g., Dell Optiplex 7060"></div>
+          <div class="field"><label for="os">Operating System</label>
+            <select id="os" name="os" class="control"><option>Windows 11</option><option>Windows 10</option><option>Other</option></select></div>
+          <div class="field"><label for="net">Network Environment</label>
+            <select id="net" name="network_env" class="control"><option>Home</option><option>Office</option><option>Shared</option><option>Remote</option></select></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>⚙️ 3. Problem Description</h2>
+        <div class="grid-2">
+          <div class="field"><label for="cat">Category of Issue</label>
+            <select id="cat" name="category" class="control">
+              <option>Hardware</option><option>Software</option><option>Networking</option>
+              <option>Security</option><option>Data Recovery / Backup</option>
+            </select></div>
+          <div class="field"><label for="started">When did the issue start?</label>
+            <input id="started" name="started" class="control" placeholder="Today / Last week / Date"></div>
+          <div class="field" style="grid-column:1/-1"><label for="desc">Detailed Description</label>
+            <textarea id="desc" name="description" class="control" placeholder='Describe symptoms (“won’t boot,” “stuck at logo,” error code)'></textarea></div>
+          <div class="field" style="grid-column:1/-1"><label for="tried">What troubleshooting have you tried?</label>
+            <textarea id="tried" name="tried" class="control"></textarea></div>
+          <div class="field"><label for="urgency">Is this urgent?</label>
+            <select id="urgency" name="urgency" class="control"><option>Low</option><option>Normal</option><option>High</option><option>Blocking work</option></select></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🧠 4. Access & Permissions</h2>
+        <div class="grid-2">
+          <div class="field"><label for="remote_ok">Can we access remotely?</label>
+            <select id="remote_ok" name="remote_ok" class="control"><option>Yes</option><option>No</option></select></div>
+          <div class="field"><label for="admin">Do you have administrator rights?</label>
+            <select id="admin" name="admin_rights" class="control"><option>Yes</option><option>No</option></select></div>
+          <div class="field" style="grid-column:1/-1"><label for="times">Best times for remote support or call-back</label>
+            <input id="times" name="best_times" class="control" placeholder="e.g., Weekdays 9–12 MT"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>📎 5. Optional Attachments</h2>
+        <div class="grid-2">
+          <div class="field" style="grid-column:1/-1"><label for="shots">Upload screenshots or error photos</label>
+            <input id="shots" name="screenshots" type="file" class="control" multiple></div>
+          <div class="field" style="grid-column:1/-1"><label for="logs">Attach diagnostic logs / system reports</label>
+            <input id="logs" name="logs" type="file" class="control" multiple></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>💬 6. Service Preferences</h2>
+        <div class="grid-2">
+          <div class="field"><label for="pref">Preferred Support Type</label>
+            <select id="pref" name="pref_type" class="control"><option>Remote</option><option>On-site</option><option>Drop-off</option><option>Mail-in</option></select></div>
+          <div class="field"><label for="source">How did you hear about us?</label>
+            <select id="source" name="source" class="control"><option>Google</option><option>Referral</option><option>Facebook</option><option>Other</option></select></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>💲 7. Acknowledgements</h2>
+        <div class="acks">
+          <label class="ack"><input type="checkbox" name="ack_tos" required><span>I agree to the terms of service and privacy policy.</span></label>
+          <label class="ack"><input type="checkbox" name="ack_remote"><span>I authorize remote access if required.</span></label>
+          <label class="ack"><input type="checkbox" name="ack_fees"><span>I understand diagnostic fees may apply.</span></label>
+        </div>
+        <div class="hint">Required items are marked with *.</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Submit Support Request</button>
+        <a class="btn btn-ghost" href="/">Cancel</a>
+      </div>
+    </form>
+  </div>
+</body></html>
