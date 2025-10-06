@@ -4,20 +4,23 @@
 <style>
   html,body{margin:0;background:transparent}
   .wrap{display:flex;justify-content:center;align-items:center;padding:8px 0}
-  a{
-    display:inline-block;background:#dc2626;color:#fff;-webkit-text-fill-color:#fff;
-    font:800 18px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    padding:12px 18px;border-radius:9999px;text-decoration:none;
-    box-shadow:0 6px 18px rgba(220,38,38,.35)
-  }
-  a:hover{filter:brightness(1.06)}
+  .btn{display:inline-block;background:#dc2626;color:#fff;text-decoration:none;
+       font:800 18px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+       padding:12px 18px;border-radius:9999px;box-shadow:0 6px 18px rgba(220,38,38,.35)}
+  .btn:hover{filter:brightness(1.06)}
 </style>
 </head><body>
   <div class="wrap">
-    <a href="/tech-support.html"
-       target="_blank" rel="noopener"
-       aria-label="Open tech support form in a new window">
+    <a id="cta" class="btn" href="/tech-support.html"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Open tech support form in a new tab">
       Just looking for tech support for my PC
     </a>
   </div>
+  <script>
+    // Extra safety: force new tab even if target is overridden
+    document.getElementById('cta').addEventListener('click', function(e){
+      try { window.open(this.href, '_blank', 'noopener'); e.preventDefault(); } catch(_) {}
+    });
+  </script>
 </body></html>
