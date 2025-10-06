@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request Tech Support</title>
+<style>
+  :root{--red:#dc2626;--bg:#0b0b0b;--card:#111;--muted:#9ca3af}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#000;color:#fff;font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  .wrap{max-width:900px;margin:24px auto;padding:20px}
+  .card{background:var(--card);border:1px solid #222;border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  h1{margin:0 0 10px;font-size:26px}
+  h2{margin:24px 0 8px;font-size:18px;color:#e5e7eb}
+  .grid{display:grid;gap:12px}
+  @media (min-width:720px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+  label{display:block;font-weight:600;font-size:14px}
+  .req::after{content:" *";color:#fca5a5}
+  input,select,textarea{width:100%;padding:10px 12px;border:1px solid #333;background:#0e0e0e;color:#fff;border-radius:10px}
+  textarea{min-height:110px;resize:vertical}
+  .hint{color:var(--muted);font-size:12px;margin-top:4px}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .chk{display:flex;gap:8px;align-items:center}
+  .submit{margin-top:16px;display:flex;gap:10px;align-items:center}
+  .btn{appearance:none;border:0;border-radius:9999px;background:var(--red);color:#fff;
+       font-weight:800;padding:12px 18px;cursor:pointer}
+  .btn:hover{filter:brightness(1.05)}
+  .mutelink{color:#9ca3af;text-decoration:none}
+</style>
+</head><body>
+<div class="wrap">
+  <h1>Request Tech Support</h1>
+  <p class="hint">Fill this out and we’ll get back to you ASAP.</p>
+
+  <div class="card">
+    <form action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data" class="grid">
+
+      <!-- FormSubmit helpers -->
+      <input type="hidden" name="_subject" value="New Tech Support Request">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="/thanks.html">
+      <!-- (Optional) enable honeypot: -->
+      <input type="text" name="_honey" style="display:none">
+
+      <h2>🧩 1. Basic Contact Information</h2>
+      <div class="grid cols-2">
+        <div><label class="req">Full Name</label><input name="full_name" required></div>
+        <div><label class="req">Email Address</label><input type="email" name="email" required></div>
+        <div><label class="req">Phone Number</label><input type="tel" name="phone" required></div>
+        <div>
+          <label>Preferred Contact Method</label>
+          <select name="contact_method">
+            <option>Email</option><option>Phone call</option><option>Text/SMS</option><option>Chat</option>
+          </select>
+        </div>
+        <div><label>Company / Organization</label><input name="company"></div>
+        <div><label>Location / Time Zone</label><input name="location_tz" placeholder="e.g., Colorado — Mountain Time"></div>
+      </div>
+
+      <h2>💻 2. Device or System Information</h2>
+      <div class="grid cols-2">
+        <div>
+          <label>Device Type</label>
+          <select name="device_type"><option>Laptop</option><option>Desktop</option><option>Server</option></select>
+        </div>
+        <div><label>Brand / Model</label><input name="brand_model" placeholder="e.g., Dell Optiplex 7060"></div>
+        <div>
+          <label>Operating System</label>
+          <select name="os">
+            <option>Windows 11</option><option>Windows 10</option><option>macOS</option><option>Linux (Zorin, Ubuntu, etc.)</option><option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label>Network Environment</label>
+          <select name="network_env"><option>Home</option><option>Office</option><option>Shared</option><option>Remote</option></select>
+        </div>
+      </div>
+
+      <h2>⚙️ 3. Problem Description</h2>
+      <div class="grid">
+        <div class="row" style="gap:14px;flex-wrap:wrap">
+          <span><strong>Category of Issue:</strong></span>
+          <label class="chk"><input type="checkbox" name="issue_cat[]" value="Hardware"> Hardware</label>
+          <label class="chk"><input type="checkbox" name="issue_cat[]" value="Software"> Software</label>
+          <label class="chk"><input type="checkbox" name="issue_cat[]" value="Networking"> Networking</label>
+          <label class="chk"><input type="checkbox" name="issue_cat[]" value="Security"> Security</label>
+          <label class="chk"><input type="checkbox" name="issue_cat[]" value="Data Recovery / Backup"> Data Recovery / Backup</label>
+        </div>
+        <div><label class="req">Detailed Description</label><textarea name="details" required placeholder="What’s happening? Errors, steps to reproduce, etc."></textarea></div>
+        <div class="grid cols-2">
+          <div><label>When did the issue start?</label><input type="date" name="start_date"></div>
+          <div>
+            <label>Urgency</label>
+            <select name="urgency">
+              <option>Not urgent</option><option>Within 24–48 hours</option><option>Urgent — blocking work</option>
+            </select>
+          </div>
+        </div>
+        <div><label>What troubleshooting have you already tried?</label><textarea name="tried" placeholder="Rebooted, safe mode, reinstalled, ran antivirus…"></textarea></div>
+      </div>
+
+      <h2>🧠 4. Access & Permissions</h2>
+      <div class="grid cols-2">
+        <div>
+          <label>Can we access the system remotely?</label>
+          <select name="remote_ok"><option>Yes</option><option>No</option></select>
+        </div>
+        <div>
+          <label>Do you have administrator rights?</label>
+          <select name="admin_rights"><option>Yes</option><option>No</option><option>Not sure</option></select>
+        </div>
+        <div class="grid cols-2" style="grid-column:1/-1">
+          <div><label>Best times for remote support / call-back</label><input name="best_times" placeholder="e.g., Weekdays 3–6pm MT"></div>
+        </div>
+      </div>
+
+      <h2>📎 5. Optional Attachments</h2>
+      <div class="grid">
+        <div><label>Upload screenshots or logs</label><input type="file" name="attachments" multiple></div>
+      </div>
+
+      <h2>💬 6. Service Preferences</h2>
+      <div class="grid cols-2">
+        <div>
+          <label>Preferred Support Type</label>
+          <select name="support_type"><option>Remote</option><option>On-site</option><option>Drop-off</option><option>Mail-in</option></select>
+        </div>
+        <div>
+          <label>How did you hear about us?</label>
+          <select name="hear_about"><option>Google</option><option>Referral</option><option>Facebook</option><option>Returning customer</option><option>Other</option></select>
+        </div>
+      </div>
+
+      <h2>💲 7. Acknowledgements</h2>
+      <div class="grid">
+        <label class="chk"><input type="checkbox" name="agree_terms" required> I agree to the terms of service and privacy policy.</label>
+        <label class="chk"><input type="checkbox" name="authorize_remote" required> I authorize remote access if required.</label>
+        <label class="chk"><input type="checkbox" name="fees_ack" required> I understand diagnostic fees may apply.</label>
+      </div>
+
+      <div class="submit">
+        <button class="btn" type="submit">Submit Support Request</button>
+        <a class="mutelink" href="/index.html#after-logo-anchor">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body></html>
