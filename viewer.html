@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>View Screenshot</title>
+<style>
+  :root{--bg: #000; --fg: #fff}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--fg);display:flex;align-items:center;justify-content:center}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2.5vh}
+  img{max-width:96vw;max-height:95vh;object-fit:contain;display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+  .btn{background:#111a;border:1px solid #fff3;color:#fff;padding:.5rem .8rem;border-radius:10px;font:600 16px/1 system-ui;cursor:pointer}
+  .btn:hover{background:#222a}
+  .spacer{flex:1}
+  .name{opacity:.85;font:500 14px/1.1 system-ui;max-width:65vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head><body>
+<div class="topbar">
+  <button class="btn" id="closeBtn" aria-label="Close">✕ Close</button>
+  <div class="spacer"></div>
+  <div class="name" id="imgName"></div>
+</div>
+<div class="wrap">
+  <img id="pic" alt="Screenshot">
+</div>
+<script>
+  // Tiny helper to read ?img=
+  const params = new URLSearchParams(location.search);
+  const raw = params.get('img') || '';
+  // Security: only allow images under /screenshots/
+  const safe = raw.startsWith('screenshots/') ? raw : '';
+  const pic = document.getElementById('pic');
+  const name = document.getElementById('imgName');
+  const closeBtn = document.getElementById('closeBtn');
+
+  if(!safe){
+    document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>';
+  } else {
+    pic.src = '/' + safe.replace(/^\/+/, '');
+    name.textContent = safe.split('/').pop();
+  }
+
+  function closeView(){
+    if (history.length > 1) history.back();
+    else location.href = '/';
+  }
+  closeBtn.addEventListener('click', closeView);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeView(); });
+</script>
+</body></html>
