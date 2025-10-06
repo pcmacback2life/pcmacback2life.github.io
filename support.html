@@ -1,34 +1,39 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Request Tech Support</title>
-<!-- support-standalone -->
+<!-- support-clean -->
 <style>
-  :root{--bg:#0b0b0c;--panel:#121316;--border:#222;--text:#e5e7eb;--muted:#9ca3af;--accent:#dc2626}
+  /* Minimal, self-contained styles — nothing from the main site */
+  :root{--bg:#0b0b0c;--panel:#121316;--bd:#23252a;--txt:#e7e9ee;--mut:#a4a9b3;--accent:#dc2626}
   *{box-sizing:border-box}
   html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-  .wrap{max-width:960px;margin:28px auto;padding:0 16px}
-  h1{font:800 34px/1.15 system-ui;margin:0 0 6px}
-  p.lead{margin:0 0 18px;color:var(--muted)}
-  .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:22px}
-  .section{margin:10px 0 18px}
-  .section h2{font:800 22px/1.2 system-ui;margin:0 0 10px}
-  .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+  .wrap{max-width:900px;margin:28px auto;padding:0 16px}
+  h1{margin:0 0 10px;font-weight:800;font-size:28px;line-height:1.2}
+  .lead{margin:0 0 18px;color:var(--mut);font-size:15px}
+
+  .card{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:20px}
+  .section{margin:14px 0 20px}
+  .section h2{margin:0 0 10px;font:700 20px/1.25 system-ui}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
-  .field label{display:block;font-weight:650;margin:6px 0 6px}
-  .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2a2d33;border-radius:12px;color:var(--text)}
+
+  .field label{display:block;margin:6px 0 6px;font-weight:650}
+  .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2b2e34;border-radius:12px;color:var(--txt)}
   textarea.control{min-height:110px;resize:vertical}
-  select.control{appearance:auto}
-  .actions{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin:10px 0 18px}
-  .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;border:0;cursor:pointer}
+
+  .actions{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin:6px 0 18px}
+  .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;cursor:pointer;border:0}
   .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
   .btn-primary:hover{filter:brightness(1.06)}
-  .btn-ghost{background:transparent;color:var(--muted)}
-  /* Only the Acknowledgements are left-aligned + stacked */
-  .acks{display:grid;gap:12px;max-width:860px;text-align:left}
-  .ack{display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start}
+  .btn-ghost{background:transparent;color:var(--mut)}
+
+  /* Only acknowledgements are left-justified + stacked */
+  .acks{display:flex;flex-direction:column;gap:12px;max-width:860px;text-align:left;margin-top:6px}
+  .ack{display:flex;gap:10px;align-items:flex-start}
   .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
-  .hint{color:var(--muted);font-size:14px;margin-top:6px}
+  .hint{color:var(--mut);font-size:14px;margin-top:6px}
 </style>
 </head>
 <body>
