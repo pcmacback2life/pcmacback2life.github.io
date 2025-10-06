@@ -27,7 +27,7 @@
     document.getElementById('imgName').textContent = safe.split('/').pop();
   }
   function sameOrigin(u){ try { return new URL(u, location.href).origin === location.origin } catch(e){ return false } }
-  let backHref = '/';
+  let backHref = '/index.html#after-logo-anchor';   // <— safe default
   const ret = p.get('ret');
   if (ret && sameOrigin(ret)) backHref = ret;
   else if (document.referrer && sameOrigin(document.referrer)) backHref = document.referrer;
