@@ -37,6 +37,33 @@
   #acks .chk{ display:grid !important; grid-template-columns:auto 1fr !important; column-gap:10px !important; align-items:start !important; }
   #acks .chk input[type="checkbox"]{ margin:3px 0 0 0 !important; }
 </style>
+<style id="acks-align">
+  /* Target only the Acknowledgements block */
+  #acks{
+    display:grid !important;
+    grid-template-columns: 28px 1fr !important;
+    row-gap:14px !important;
+    column-gap:12px !important;
+    align-items:start !important;
+    justify-items:start !important;
+    text-align:left !important;
+  }
+  /* Case A: inputs and labels are direct children (input,label,input,label,...) */
+  #acks input[type="checkbox"]{ grid-column:1 !important; margin:3px 0 0 0 !important; }
+  #acks label{ grid-column:2 !important; text-align:left !important; margin:0 !important; }
+
+  /* Case B: each row wrapped like <div class="chk"><input> <span>text</span></div> */
+  #acks .chk{
+    display:grid !important;
+    grid-template-columns: 28px 1fr !important;
+    column-gap:12px !important;
+    align-items:start !important;
+    justify-items:start !important;
+    text-align:left !important;
+  }
+  #acks .chk input[type="checkbox"]{ margin:3px 0 0 0 !important; }
+  #acks .chk *{ text-align:left !important; }
+</style>
 </head><body>
 <div id="acks" class="wrap">
   <h1>Request Tech Support</h1>
