@@ -9,7 +9,7 @@
   .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2.5vh}
   img{max-width:96vw;max-height:95vh;object-fit:contain;display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
   .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between}
-  .btn{background:#111a;border:1px solid #fff3;color:#fff;padding:.5rem .8rem;border-radius:10px;font:600 16px/1 system-ui;cursor:pointer;text-decoration:none}
+  .btn{background:#111a;border:1px solid #fff3;color:#fff;padding:.5rem .8rem;border-radius:10px;font:600 16px/1 system-ui;text-decoration:none}
   .btn:hover{background:#222a}
   .spacer{flex:1}
   .name{opacity:.85;font:500 14px/1.1 system-ui;max-width:65vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -22,11 +22,11 @@
 </div>
 <div class="wrap"><img id="pic" alt="Screenshot"></div>
 <script>
-  // read ?img= and lock to /screenshots/
-  const params = new URLSearchParams(location.search);
-  const raw = params.get('img') || '';
+  // Get ?img= and lock to /screenshots/
+  const p = new URLSearchParams(location.search);
+  const raw = p.get('img') || '';
   const safe = raw.startsWith('screenshots/') ? raw : '';
-  const pic = document.getElementById('pic');
+  const pic  = document.getElementById('pic');
   const name = document.getElementById('imgName');
   const closeBtn = document.getElementById('closeBtn');
 
@@ -37,30 +37,17 @@
     name.textContent = safe.split('/').pop();
   }
 
-  // compute safest "back" href: prefer same-origin referrer (not scroller.html), else "/"
+  // Determine best-return URL without JS tricks on click:
+  // 1) ?ret=<url> if present and same-origin; 2) same-origin referrer; 3) "/"
+  function sameOrigin(u){ try { return new URL(u, location.href).origin === location.origin } catch(e){ return false } }
   let backHref = '/';
-  try {
-    const ref = document.referrer;
-    if (ref) {
-      const u = new URL(ref, location.href);
-      const isSameOrigin = u.origin === location.origin;
-      const isScroller = /\/scroller\.html($|\?)/.test(u.pathname);
-      if (isSameOrigin && !isScroller) backHref = u.href;
-    }
-  } catch(e) {}
-  closeBtn.href = backHref;
+  const ret = p.get('ret');
+  if (ret && sameOrigin(ret))        backHref = ret;
+  else if (document.referrer && sameOrigin(document.referrer)) backHref = document.referrer;
 
-  // Enhance: if history can go back, use it (keeps scroll position)
-  closeBtn.addEventListener('click', (e) => {
-    if (history.length > 1) { e.preventDefault(); history.back(); }
-  });
+  closeBtn.setAttribute('href', backHref);
 
-  // Esc closes as well (history if possible, else href)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (history.length > 1) history.back();
-      else location.href = backHref;
-    }
-  });
+  // Esc also navigates to backHref
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') location.href = backHref; });
 </script>
 </body></html>
