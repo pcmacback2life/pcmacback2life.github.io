@@ -1,11 +1,10 @@
 <!doctype html><html lang="en"><head>
 <!-- acks2: injected clean block -->
 <style id="acks2-style">
-  /* Neutralize outside styles and make a neat vertical list */
   #acks2{all:revert;display:grid;gap:14px;max-width:860px;text-align:left}
-  #acks2 label{all:revert;display:flex;gap:10px;align-items:flex-start;
+  #acks2 label{all:revert;display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start;
                font:500 16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-  #acks2 input[type="checkbox"]{all:revert;margin-top:4px;width:18px;height:18px}
+  #acks2 input[type="checkbox"]{all:revert;margin-top:3px;width:18px;height:18px}
 </style>
 
 <div id="acks2">
@@ -18,15 +17,15 @@
 </div>
 
 <script id="acks2-hide-old">
-/* Hide any old, misaligned acknowledgement rows in this section */
 (function(){
-  var h2=[].find.call(document.querySelectorAll('h2'),
-    function(el){ return /Acknowledg/i.test((el.textContent||'')); });
+  /* Hide legacy/misaligned rows within the same section as the Acknowledgements H2 */
+  var h2=[].find.call(document.querySelectorAll('h2'), el => /Acknowledg/i.test((el.textContent||'')));
   if(!h2) return;
-  var parent=h2.parentElement; if(!parent) return;
-  parent.querySelectorAll('input[type="checkbox"]').forEach(function(cb){
+  var sec = h2.parentElement;
+  if(!sec) return;
+  sec.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
     if(!cb.closest('#acks2')){
-      var row=cb.closest('label, .chk, p, li, div');
+      var row = cb.closest('label, .chk, li, p, div');
       if(row) row.style.display='none';
     }
   });
@@ -121,6 +120,38 @@
   #acks2 label{all:revert;display:flex;gap:10px;align-items:flex-start;
                font:500 16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
   #acks2 input[type="checkbox"]{all:revert;margin-top:4px;width:18px;height:18px}
+</style>
+<style id="ts-hard-fixes">
+  /* Target the form explicitly */
+  #contactForm, form[action*="formsubmit"] { position: static !important; }
+
+  /* Kill sticky/fixed on anything inside the form */
+  #contactForm [class*="sticky"], 
+  #contactForm [style*="position:sticky"], 
+  #contactForm [style*="position:fixed"] {
+    position: static !important; top:auto !important; left:auto !important; right:auto !important;
+  }
+
+  /* Actions row: normal flow, left, tidy spacing */
+  #contactForm .ts-actions, 
+  #contactForm .form-actions, 
+  #contactForm .actions {
+    position: static !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin: 16px 0 !important;
+  }
+
+  /* Submit/Cancel buttons: no offsets */
+  #contactForm button[type="submit"],
+  #contactForm input[type="submit"] {
+    position: static !important;
+    margin: 0 !important;
+  }
 </style>
 </head><body>
 <div id="acks" class="wrap">
