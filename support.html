@@ -1,43 +1,51 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Request Tech Support</title>
-<!-- support-clean -->
+<!-- support-locked -->
 <style>
-  /* Minimal, self-contained styles — nothing from the main site */
   :root{--bg:#0b0b0c;--panel:#121316;--bd:#23252a;--txt:#e7e9ee;--mut:#a4a9b3;--accent:#dc2626}
   *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 
-  .wrap{max-width:900px;margin:28px auto;padding:0 16px}
-  h1{margin:0 0 10px;font-weight:800;font-size:28px;line-height:1.2}
-  .lead{margin:0 0 18px;color:var(--mut);font-size:15px}
+  /* Center the whole app on the page */
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center}
+  #support{width:100%;max-width:900px;margin:28px 16px}
 
+  /* Top headings centered */
+  h1{margin:0 0 6px;font:800 28px/1.25 system-ui;text-align:center}
+  .lead{margin:0 0 18px;color:var(--mut);font-size:15px;text-align:center}
+
+  /* Card container */
   .card{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:20px}
-  .section{margin:14px 0 20px}
-  .section h2{margin:0 0 10px;font:700 20px/1.25 system-ui}
+
+  /* Section "frames" for separation (table-like) */
+  fieldset{border:1px solid var(--bd);border-radius:14px;padding:16px;margin:14px 0 18px}
+  legend{padding:0 8px;font:700 18px/1.2 system-ui;color:var(--txt);text-align:left}
+
+  /* 2-col form grid */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
 
-  .field label{display:block;margin:6px 0 6px;font-weight:650}
+  .field label{display:block;margin:6px 0 6px;font-weight:650;text-align:left}
   .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2b2e34;border-radius:12px;color:var(--txt)}
   textarea.control{min-height:110px;resize:vertical}
 
-  .actions{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin:6px 0 18px}
+  /* Buttons centered */
+  .actions{display:flex;gap:12px;align-items:center;justify-content:center;margin:10px 0 6px}
   .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;cursor:pointer;border:0}
   .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
   .btn-primary:hover{filter:brightness(1.06)}
   .btn-ghost{background:transparent;color:var(--mut)}
 
-  /* Only acknowledgements are left-justified + stacked */
-  .acks{display:flex;flex-direction:column;gap:12px;max-width:860px;text-align:left;margin-top:6px}
+  /* ONLY this block is left-justified + stacked */
+  .acks{display:flex;flex-direction:column;gap:12px;max-width:860px;text-align:left}
   .ack{display:flex;gap:10px;align-items:flex-start}
   .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
-  .hint{color:var(--mut);font-size:14px;margin-top:6px}
+
+  .hint{color:var(--mut);font-size:14px;margin-top:6px;text-align:left}
 </style>
 </head>
 <body>
-  <div class="wrap">
+  <div id="support">
     <h1>Request Tech Support</h1>
     <p class="lead">Fill this out and we’ll get back to you ASAP.</p>
 
@@ -52,8 +60,8 @@
         <a class="btn btn-ghost" href="/">Cancel</a>
       </div>
 
-      <div class="section">
-        <h2>🧩 1. Basic Contact Information</h2>
+      <fieldset>
+        <legend>🧩 1. Basic Contact Information</legend>
         <div class="grid-2">
           <div class="field"><label for="name">Full Name *</label><input id="name" name="name" class="control" required></div>
           <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" class="control" required></div>
@@ -63,10 +71,10 @@
           <div class="field"><label for="company">Company / Organization</label><input id="company" name="company" class="control"></div>
           <div class="field"><label for="location">Location / Time Zone</label><input id="location" name="location" class="control" placeholder="e.g., Colorado (MT)"></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>💻 2. Device or System Information</h2>
+      <fieldset>
+        <legend>💻 2. Device or System Information</legend>
         <div class="grid-2">
           <div class="field"><label for="dtype">Device Type</label>
             <select id="dtype" name="device_type" class="control"><option>Laptop</option><option>Desktop</option><option>Server</option></select></div>
@@ -76,10 +84,10 @@
           <div class="field"><label for="net">Network Environment</label>
             <select id="net" name="network_env" class="control"><option>Home</option><option>Office</option><option>Shared</option><option>Remote</option></select></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>⚙️ 3. Problem Description</h2>
+      <fieldset>
+        <legend>⚙️ 3. Problem Description</legend>
         <div class="grid-2">
           <div class="field"><label for="cat">Category of Issue</label>
             <select id="cat" name="category" class="control">
@@ -95,10 +103,10 @@
           <div class="field"><label for="urgency">Is this urgent?</label>
             <select id="urgency" name="urgency" class="control"><option>Low</option><option>Normal</option><option>High</option><option>Blocking work</option></select></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>🧠 4. Access & Permissions</h2>
+      <fieldset>
+        <legend>🧠 4. Access & Permissions</legend>
         <div class="grid-2">
           <div class="field"><label for="remote_ok">Can we access remotely?</label>
             <select id="remote_ok" name="remote_ok" class="control"><option>Yes</option><option>No</option></select></div>
@@ -107,37 +115,37 @@
           <div class="field" style="grid-column:1/-1"><label for="times">Best times for remote support or call-back</label>
             <input id="times" name="best_times" class="control" placeholder="e.g., Weekdays 9–12 MT"></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>📎 5. Optional Attachments</h2>
+      <fieldset>
+        <legend>📎 5. Optional Attachments</legend>
         <div class="grid-2">
           <div class="field" style="grid-column:1/-1"><label for="shots">Upload screenshots or error photos</label>
             <input id="shots" name="screenshots" type="file" class="control" multiple></div>
           <div class="field" style="grid-column:1/-1"><label for="logs">Attach diagnostic logs / system reports</label>
             <input id="logs" name="logs" type="file" class="control" multiple></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>💬 6. Service Preferences</h2>
+      <fieldset>
+        <legend>💬 6. Service Preferences</legend>
         <div class="grid-2">
           <div class="field"><label for="pref">Preferred Support Type</label>
             <select id="pref" name="pref_type" class="control"><option>Remote</option><option>On-site</option><option>Drop-off</option><option>Mail-in</option></select></div>
           <div class="field"><label for="source">How did you hear about us?</label>
             <select id="source" name="source" class="control"><option>Google</option><option>Referral</option><option>Facebook</option><option>Other</option></select></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>💲 7. Acknowledgements</h2>
+      <fieldset>
+        <legend>💲 7. Acknowledgements</legend>
         <div class="acks">
           <label class="ack"><input type="checkbox" name="ack_tos" required><span>I agree to the terms of service and privacy policy.</span></label>
           <label class="ack"><input type="checkbox" name="ack_remote"><span>I authorize remote access if required.</span></label>
           <label class="ack"><input type="checkbox" name="ack_fees"><span>I understand diagnostic fees may apply.</span></label>
         </div>
         <div class="hint">Required items are marked with *.</div>
-      </div>
+      </fieldset>
 
       <div class="actions">
         <button class="btn btn-primary" type="submit">Submit Support Request</button>
