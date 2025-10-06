@@ -30,8 +30,15 @@
   #acks .chk{ display:flex; gap:10px; align-items:flex-start; }
   #acks .chk input{ margin-top:3px; }
 </style>
+<style id="acks-fix">
+  /* Only the Acknowledgements block */
+  #acks{ display:grid !important; gap:12px !important; justify-items:start !important; text-align:left !important; }
+  /* Each checkbox row: checkbox + label text */
+  #acks .chk{ display:grid !important; grid-template-columns:auto 1fr !important; column-gap:10px !important; align-items:start !important; }
+  #acks .chk input[type="checkbox"]{ margin:3px 0 0 0 !important; }
+</style>
 </head><body>
-<div class="wrap">
+<div id="acks" class="wrap">
   <h1>Request Tech Support</h1>
   <p class="hint">Fill this out and we’ll get back to you ASAP.</p>
 
