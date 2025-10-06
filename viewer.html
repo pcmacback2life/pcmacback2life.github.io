@@ -12,7 +12,7 @@
 </style>
 </head><body>
 <div class="topbar">
-  <a class="btn" id="closeBtn" href="/">✕ Close</a>
+  <a class="btn" href="/index.html#after-logo-anchor">✕ Close</a>
   <div class="name" id="imgName"></div>
 </div>
 <div class="wrap"><img id="pic" alt=""></div>
@@ -20,18 +20,12 @@
   const p   = new URLSearchParams(location.search);
   const raw = p.get('img') || '';
   const safe = raw.startsWith('screenshots/') ? raw : '';
-  if (!safe) {
-    document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>';
-  } else {
+  if (!safe) { document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>'; }
+  else {
     document.getElementById('pic').src = '/' + safe.replace(/^\/+/, '');
     document.getElementById('imgName').textContent = safe.split('/').pop();
   }
-  function sameOrigin(u){ try { return new URL(u, location.href).origin === location.origin } catch(e){ return false } }
-  let backHref = '/index.html#after-logo-anchor';   // <— safe default
-  const ret = p.get('ret');
-  if (ret && sameOrigin(ret)) backHref = ret;
-  else if (document.referrer && sameOrigin(document.referrer)) backHref = document.referrer;
-  document.getElementById('closeBtn').href = backHref;
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') location.href = backHref; });
+  // Esc closes, same as the Close link
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') location.href='/index.html#after-logo-anchor'; });
 </script>
 </body></html>
