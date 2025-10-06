@@ -1,1 +1,14 @@
-﻿["win 10 does not qualify.png","Zorin 1.jpeg","Zorin 2.png","Zorin 3.jpg","Zorin 4.jpeg"]
+{ "items": [
+  { "src": "screenshots/screenshot4.jpg", "href": "screenshots/screenshot4.jpg" },
+  { "src": "screenshots/screenshot9.jpg", "href": "screenshots/screenshot9.jpg" },
+  { "src": "screenshots/screenshot2.jpeg", "href": "screenshots/screenshot2.jpeg" },
+  { "src": "screenshots/screenshot5.jpeg", "href": "screenshots/screenshot5.jpeg" },
+  { "src": "screenshots/screenshot1.png", "href": "screenshots/screenshot1.png" },
+  { "src": "screenshots/screenshot10.png", "href": "screenshots/screenshot10.png" },
+  { "src": "screenshots/screenshot11.png", "href": "screenshots/screenshot11.png" },
+  { "src": "screenshots/screenshot12.png", "href": "screenshots/screenshot12.png" },
+  { "src": "screenshots/screenshot3.png", "href": "screenshots/screenshot3.png" },
+  { "src": "screenshots/screenshot6.png", "href": "screenshots/screenshot6.png" },
+  { "src": "screenshots/screenshot7.png", "href": "screenshots/screenshot7.png" },
+  { "src": "screenshots/screenshot8.png", "href": "screenshots/screenshot8.png" }
+]}
