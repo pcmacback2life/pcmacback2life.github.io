@@ -3,88 +3,55 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Marquee Test</title>
 <style>
-  :root{--mh:150px;--gap:16px;--dur:40s}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  .wrap{padding:24px}
-  h1{margin:0 0 12px 0;font-size:20px}
-  .hint{color:#666;margin:0 0 16px 0;font-size:14px}
-  .marquee{overflow:hidden;width:100%}
-  .marquee__track{
-    display:flex; gap:var(--gap); align-items:center;
-    width:max-content; will-change:transform;
-    animation: mar var(--dur) linear infinite;
-  }
-  .marquee__item{flex:0 0 auto}
-  .marquee__item img{height:var(--mh); display:block; border-radius:10px}
-  @keyframes mar{to{transform:translateX(calc(var(--dist,50%)*-1))}}
+:root{--mh:150px;--gap:16px;--dur:40s}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{padding:24px}
+h1{margin:0 0 12px 0;font-size:20px}
+.hint{color:#666;margin:0 0 16px 0;font-size:14px}
+.marquee{overflow:hidden;width:100%}
+.marquee__track{display:flex;gap:var(--gap);align-items:center;width:max-content;will-change:transform;animation:mar var(--dur) linear infinite}
+.marquee__item{flex:0 0 auto}
+.marquee__item img{height:var(--mh);display:block;border-radius:10px}
+@keyframes mar{to{transform:translateX(calc(var(--dist,50%)*-1))}}
 </style>
 
 <div class="wrap">
   <h1>Marquee Test</h1>
-  <p class="hint">This page loads <code>screenshots.json</code> and should auto-scroll in a single row.</p>
+  <p class="hint">Inline images from ./screenshots (auto-scrolls in one line)</p>
   <section class="marquee" aria-label="Screenshots scrolling showcase">
-    <div class="marquee__track"></div>
+    <div class="marquee__track">
+<!-- ITEMS START -->
+      <a class="marquee__item" href="screenshots/screenshot4.jpg" target="_blank" rel="noopener"><img src="screenshots/screenshot4.jpg" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot9.jpg" target="_blank" rel="noopener"><img src="screenshots/screenshot9.jpg" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot2.jpeg" target="_blank" rel="noopener"><img src="screenshots/screenshot2.jpeg" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot5.jpeg" target="_blank" rel="noopener"><img src="screenshots/screenshot5.jpeg" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot1.png" target="_blank" rel="noopener"><img src="screenshots/screenshot1.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot10.png" target="_blank" rel="noopener"><img src="screenshots/screenshot10.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot11.png" target="_blank" rel="noopener"><img src="screenshots/screenshot11.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot12.png" target="_blank" rel="noopener"><img src="screenshots/screenshot12.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot3.png" target="_blank" rel="noopener"><img src="screenshots/screenshot3.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot6.png" target="_blank" rel="noopener"><img src="screenshots/screenshot6.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot7.png" target="_blank" rel="noopener"><img src="screenshots/screenshot7.png" alt=""></a>
+      <a class="marquee__item" href="screenshots/screenshot8.png" target="_blank" rel="noopener"><img src="screenshots/screenshot8.png" alt=""></a>
+    </div>
   </section>
 </div>
 
 <script>
-(async () => {
-  const track = document.querySelector('.marquee__track');
-  if (!track) return;
-
-  // 1) Load data
-  let items = [];
-  try {
-    const r = await fetch('screenshots.json', { cache: 'no-store' });
-    if (r.ok) {
-      const j = await r.json();
-      items = Array.isArray(j) ? j : (j.items || []);
-    }
-  } catch (_) {}
-  if (!items.length) {
-    // fallback: grab any images under /screenshots in this page (if present)
-    document.querySelectorAll('img[src*="screenshots/"]').forEach(img => {
-      items.push({ src: img.src, href: img.src, alt: img.alt || '' });
-    });
-  }
-  if (!items.length) return;
-
-  // 2) Build DOM + wait for images to load before measuring width
-  const promises = [];
-  for (const it of items) {
-    const src  = it.src || it.url || it;
-    const href = it.href || it.url || it;
-    const alt  = it.alt || '';
-    const a = document.createElement('a');
-    a.className = 'marquee__item';
-    a.href = href; a.target = '_blank'; a.rel = 'noopener';
-    const img = new Image();
-    img.loading = 'lazy'; img.decoding = 'async';
-    img.src = src; img.alt = alt;
-    a.appendChild(img);
-    track.appendChild(a);
-    // Promise that resolves when this image is ready (load or error)
-    promises.push(new Promise(res => {
-      img.addEventListener('load', res, { once: true });
-      img.addEventListener('error', res, { once: true });
-    }));
-  }
-
-  await Promise.all(promises);
-
-  // Duplicate for seamless loop
-  track.innerHTML += track.innerHTML;
-
-  // 3) Measure actual pixel distance and set CSS var
-  const gap = parseFloat(getComputedStyle(track).gap || '0');
-  const kids = Array.from(track.children);
-  const half = kids.slice(0, kids.length / 2);
-  const px = half.reduce((sum, el) => sum + el.getBoundingClientRect().width + gap, 0);
-  track.style.setProperty('--dist', px + 'px');
-
-  // Optional: adjust speed (higher = faster)
-  const pxPerSec = 120;
-  const dur = Math.max(20, Math.round(px / pxPerSec));
-  document.documentElement.style.setProperty('--dur', dur + 's');
-})();
+document.addEventListener('DOMContentLoaded', ()=>{
+  const t=document.querySelector('.marquee__track'); if(!t) return;
+  const imgs=[...t.querySelectorAll('img')];
+  // wait for images before measuring
+  Promise.all(imgs.map(img => img.complete ? Promise.resolve() : new Promise(r=>{
+    img.addEventListener('load',r,{once:true}); img.addEventListener('error',r,{once:true});
+  }))).then(()=>{
+    t.innerHTML += t.innerHTML; // duplicate for seamless loop
+    const gap=parseFloat(getComputedStyle(t).gap||'16');
+    const kids=[...t.children]; const half=kids.slice(0,kids.length/2);
+    const w=half.reduce((s,el)=> s + el.getBoundingClientRect().width + gap, 0);
+    t.style.setProperty('--dist', w+'px');
+    const pxPerSec=120; const dur=Math.max(20, Math.round(w/pxPerSec));
+    document.documentElement.style.setProperty('--dur', dur+'s');
+  });
+});
 </script>
