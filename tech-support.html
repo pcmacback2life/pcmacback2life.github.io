@@ -24,6 +24,12 @@
   .btn:hover{filter:brightness(1.05)}
   .mutelink{color:#9ca3af;text-decoration:none}
 </style>
+<style id="acks-style">
+  /* Only affects the Acknowledgements block */
+  #acks{ display:grid; gap:10px; justify-items:start; text-align:left }
+  #acks .chk{ display:flex; gap:10px; align-items:flex-start; }
+  #acks .chk input{ margin-top:3px; }
+</style>
 </head><body>
 <div class="wrap">
   <h1>Request Tech Support</h1>
@@ -129,7 +135,7 @@
       </div>
 
       <h2>💲 7. Acknowledgements</h2>
-      <div class="grid">
+      <div\1id="acks" class="grid">
         <label class="chk"><input type="checkbox" name="agree_terms" required> I agree to the terms of service and privacy policy.</label>
         <label class="chk"><input type="checkbox" name="authorize_remote" required> I authorize remote access if required.</label>
         <label class="chk"><input type="checkbox" name="fees_ack" required> I understand diagnostic fees may apply.</label>
