@@ -22,14 +22,12 @@
 </div>
 <div class="wrap"><img id="pic" alt="Screenshot"></div>
 <script>
-  // Get ?img= and lock to /screenshots/
+  // Read ?img=, lock to /screenshots/
   const p = new URLSearchParams(location.search);
   const raw = p.get('img') || '';
   const safe = raw.startsWith('screenshots/') ? raw : '';
   const pic  = document.getElementById('pic');
   const name = document.getElementById('imgName');
-  const closeBtn = document.getElementById('closeBtn');
-
   if (!safe) {
     document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>';
   } else {
@@ -37,17 +35,16 @@
     name.textContent = safe.split('/').pop();
   }
 
-  // Determine best-return URL without JS tricks on click:
-  // 1) ?ret=<url> if present and same-origin; 2) same-origin referrer; 3) "/"
+  // Compute a reliable return URL:
+  // 1) ?ret= (same-origin)   2) same-origin referrer       3) "/"
   function sameOrigin(u){ try { return new URL(u, location.href).origin === location.origin } catch(e){ return false } }
   let backHref = '/';
   const ret = p.get('ret');
-  if (ret && sameOrigin(ret))        backHref = ret;
+  if (ret && sameOrigin(ret)) backHref = ret;
   else if (document.referrer && sameOrigin(document.referrer)) backHref = document.referrer;
+  document.getElementById('closeBtn').setAttribute('href', backHref);
 
-  closeBtn.setAttribute('href', backHref);
-
-  // Esc also navigates to backHref
+  // Esc closes too
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') location.href = backHref; });
 </script>
 </body></html>
