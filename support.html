@@ -1,47 +1,46 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Request Tech Support</title>
-<!-- support-locked -->
+<!-- support-centered -->
 <style>
   :root{--bg:#0b0b0c;--panel:#121316;--bd:#23252a;--txt:#e7e9ee;--mut:#a4a9b3;--accent:#dc2626}
   *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 
-  /* Center the whole app on the page */
-  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center}
-  #support{width:100%;max-width:900px;margin:28px 16px}
+  /* Center the page by width; DO NOT left-justify everything */
+  #support{max-width:900px;margin:28px auto;padding:0 16px}
 
-  /* Top headings centered */
-  h1{margin:0 0 6px;font:800 28px/1.25 system-ui;text-align:center}
+  /* Headings & top note centered */
+  h1{margin:0 0 8px;font:800 28px/1.25 system-ui;text-align:center}
   .lead{margin:0 0 18px;color:var(--mut);font-size:15px;text-align:center}
 
-  /* Card container */
   .card{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:20px}
 
-  /* Section "frames" for separation (table-like) */
+  /* Section separation via fieldsets (table-like) */
   fieldset{border:1px solid var(--bd);border-radius:14px;padding:16px;margin:14px 0 18px}
-  legend{padding:0 8px;font:700 18px/1.2 system-ui;color:var(--txt);text-align:left}
+  legend{padding:0 8px;font:700 18px/1.2 system-ui}
 
-  /* 2-col form grid */
+  /* Two-column grid for inputs; labels/fields remain LEFT (normal) */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
 
-  .field label{display:block;margin:6px 0 6px;font-weight:650;text-align:left}
+  .field label{display:block;margin:6px 0 6px;font-weight:650}
   .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2b2e34;border-radius:12px;color:var(--txt)}
   textarea.control{min-height:110px;resize:vertical}
 
   /* Buttons centered */
-  .actions{display:flex;gap:12px;align-items:center;justify-content:center;margin:10px 0 6px}
+  .actions{display:flex;gap:12px;align-items:center;justify-content:center;margin:12px 0}
   .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;cursor:pointer;border:0}
   .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
   .btn-primary:hover{filter:brightness(1.06)}
   .btn-ghost{background:transparent;color:var(--mut)}
 
-  /* ONLY this block is left-justified + stacked */
+  /* ONLY Acknowledgements is left-justified + stacked & aligned */
   .acks{display:flex;flex-direction:column;gap:12px;max-width:860px;text-align:left}
-  .ack{display:flex;gap:10px;align-items:flex-start}
-  .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
-
-  .hint{color:var(--mut);font-size:14px;margin-top:6px;text-align:left}
+  .ack{display:grid;grid-template-columns:20px 1fr;column-gap:10px;align-items:start}
+  .ack input[type=checkbox]{width:18px;height:18px;margin-top:2px}
+  .hint{color:var(--mut);font-size:14px;margin-top:6px}
 </style>
 </head>
 <body>
