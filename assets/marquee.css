@@ -5,3 +5,12 @@
 .marquee__item{flex:0 0 auto}
 .marquee__item img{height:var(--mh);display:block;border-radius:10px}
 @keyframes mar{to{transform:translateX(calc(var(--dist,50%)*-1))}}
+
+/* --- Hide old screenshot grids so only the marquee shows --- */
+#screenshots,
+.screenshots,
+.screenshot-grid,
+.screens-grid,
+.gallery,
+.grid.gallery,
+.grid.screenshots { display: none !important; }
