@@ -3,24 +3,22 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Marquee Test</title>
 <style>
-:root{--mh:150px;--gap:16px;--dur:40s}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-.wrap{padding:24px}
-h1{margin:0 0 12px 0;font-size:20px}
-.hint{color:#666;margin:0 0 16px 0;font-size:14px}
-.marquee{overflow:hidden;width:100%}
-.marquee__track{display:flex;gap:var(--gap);align-items:center;width:max-content;will-change:transform;animation:mar var(--dur) linear infinite}
-.marquee__item{flex:0 0 auto}
-.marquee__item img{height:var(--mh);display:block;border-radius:10px}
-@keyframes mar{to{transform:translateX(calc(var(--dist,50%)*-1))}}
+  :root{--mh:150px;--gap:16px;--dur:40s}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .wrap{padding:24px}
+  h1{margin:0 0 12px}
+  .hint{color:#666;margin:0 0 16px;font-size:14px}
+  .marquee{overflow:hidden;width:100%}
+  .marquee__track{display:flex;gap:var(--gap);align-items:center;width:max-content;will-change:transform;animation:mar var(--dur) linear infinite}
+  .marquee__item{flex:0 0 auto}
+  .marquee__item img{height:var(--mh);display:block;border-radius:10px}
+  @keyframes mar{to{transform:translateX(calc(var(--dist,50%)*-1))}}
 </style>
-
 <div class="wrap">
   <h1>Marquee Test</h1>
-  <p class="hint">Inline images from ./screenshots (auto-scrolls in one line)</p>
-  <section class="marquee" aria-label="Screenshots scrolling showcase">
+  <p class="hint">Auto-built from files in <code>/screenshots</code>.</p>
+  <section class="marquee" aria-label="Screenshots">
     <div class="marquee__track">
-<!-- ITEMS START -->
       <a class="marquee__item" href="screenshots/screenshot4.jpg" target="_blank" rel="noopener"><img src="screenshots/screenshot4.jpg" alt=""></a>
       <a class="marquee__item" href="screenshots/screenshot9.jpg" target="_blank" rel="noopener"><img src="screenshots/screenshot9.jpg" alt=""></a>
       <a class="marquee__item" href="screenshots/screenshot2.jpeg" target="_blank" rel="noopener"><img src="screenshots/screenshot2.jpeg" alt=""></a>
@@ -36,21 +34,19 @@ h1{margin:0 0 12px 0;font-size:20px}
     </div>
   </section>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
   const t=document.querySelector('.marquee__track'); if(!t) return;
   const imgs=[...t.querySelectorAll('img')];
-  // wait for images before measuring
-  Promise.all(imgs.map(img => img.complete ? Promise.resolve() : new Promise(r=>{
+  Promise.all(imgs.map(img=>img.complete?Promise.resolve():new Promise(r=>{
     img.addEventListener('load',r,{once:true}); img.addEventListener('error',r,{once:true});
   }))).then(()=>{
-    t.innerHTML += t.innerHTML; // duplicate for seamless loop
+    t.innerHTML += t.innerHTML; // seamless loop
     const gap=parseFloat(getComputedStyle(t).gap||'16');
     const kids=[...t.children]; const half=kids.slice(0,kids.length/2);
-    const w=half.reduce((s,el)=> s + el.getBoundingClientRect().width + gap, 0);
+    const w=half.reduce((s,el)=>s+el.getBoundingClientRect().width+gap,0);
     t.style.setProperty('--dist', w+'px');
-    const pxPerSec=120; const dur=Math.max(20, Math.round(w/pxPerSec));
+    const pxPerSec=120; const dur=Math.max(20,Math.round(w/pxPerSec));
     document.documentElement.style.setProperty('--dur', dur+'s');
   });
 });
