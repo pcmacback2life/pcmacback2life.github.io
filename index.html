@@ -877,9 +877,13 @@
 #ss1:hover .track{ animation-play-state: paused !important; }
 </style>
 <!-- ss1-hard-override ${ts} -->
-<style id="hide-grid-narrow">
-main img[src*="screenshots/"] { display: none !important; }
-</style>
-<style id="hide-grid-narrow">
-main img[src*="screenshots/"] { display: none !important; }
+<style id="hide-grid-min">
+/* Hide only host-page screenshots, not the iframe */
+img[src*="screenshots/"],
+img[srcset*="screenshots/"],
+img[data-src*="screenshots/"],
+picture source[srcset*="screenshots/"],
+figure:has(img[src*="screenshots/"]) {
+  display: none !important;
+}
 </style>
