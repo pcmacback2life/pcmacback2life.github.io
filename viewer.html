@@ -3,7 +3,7 @@
 <title>View Screenshot</title>
 <style>
   html,body{height:100%;margin:0;background:#000;color:#fff}
-  .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between;z-index:9999;pointer-events:auto}
+  .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between;z-index:9999}
   .btn{background:#111a;border:1px solid #fff3;color:#fff;padding:.5rem .8rem;border-radius:10px;text-decoration:none;font:600 16px/1 system-ui}
   .btn:hover{background:#222a}
   .name{opacity:.85;font:500 14px/1.1 system-ui;max-width:60vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -17,23 +17,21 @@
 </div>
 <div class="wrap"><img id="pic" alt=""></div>
 <script>
-  // Read ?img= and lock to /screenshots/
-  const p = new URLSearchParams(location.search);
+  const p   = new URLSearchParams(location.search);
   const raw = p.get('img') || '';
   const safe = raw.startsWith('screenshots/') ? raw : '';
-  if (!safe) { document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>'; }
-  else {
+  if (!safe) {
+    document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>';
+  } else {
     document.getElementById('pic').src = '/' + safe.replace(/^\/+/, '');
     document.getElementById('imgName').textContent = safe.split('/').pop();
   }
-  // Return URL: ?ret= (same-origin) → same-origin referrer → "/"
   function sameOrigin(u){ try { return new URL(u, location.href).origin === location.origin } catch(e){ return false } }
   let backHref = '/';
   const ret = p.get('ret');
   if (ret && sameOrigin(ret)) backHref = ret;
   else if (document.referrer && sameOrigin(document.referrer)) backHref = document.referrer;
   document.getElementById('closeBtn').href = backHref;
-  // Esc closes too
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') location.href = backHref; });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') location.href = backHref; });
 </script>
 </body></html>
