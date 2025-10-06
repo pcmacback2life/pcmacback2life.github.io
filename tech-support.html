@@ -1,75 +1,39 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Request Tech Support</title>
+<title>Tech Support</title>
 <style>
-  /* isolate from site styles */
-  #island * { box-sizing: border-box; }
-  body{margin:0;background:#0b0b0c;color:#e5e7eb;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-  .wrap{max-width:980px;margin:32px auto;padding:0 16px}
-  h1{font:800 40px/1.1 system-ui;margin:0 0 8px}
-  p.lead{margin:0 0 20px;color:#9ca3af}
-  .card{background:#121316;border-radius:18px;padding:22px;border:1px solid #222}
-  .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-  .field label{font-weight:600;margin:6px 0 6px;display:block}
-  .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2a2d33;border-radius:12px;color:#e5e7eb}
-  select.control{appearance:auto}
-  textarea.control{min-height:120px;resize:vertical}
-
-  /* actions */
-  .actions{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin:10px 0 18px}
-  .btn{display:inline-block;border-radius:9999px;padding:14px 22px;font-weight:800;text-decoration:none;border:0;cursor:pointer}
-  .btn-primary{background:#dc2626;color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
+  :root{--bg:#0b0b0c;--panel:#121316;--bd:#23252a;--txt:#e7e9ee;--mut:#a4a9b3;--accent:#dc2626}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:900px;margin:32px auto;padding:0 16px}
+  h1{margin:0 0 8px;font:800 28px/1.2 system-ui;text-align:center}
+  .lead{margin:0 0 18px;color:var(--mut);font-size:15px;text-align:center}
+  .card{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:20px}
+  fieldset{border:1px solid var(--bd);border-radius:14px;padding:16px;margin:14px 0 18px}
+  legend{padding:0 8px;font:700 18px/1.2 system-ui}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
+  .field label{display:block;margin:6px 0 6px;font-weight:650}
+  .control{display:block;width:100%;padding:12px 14px;background:#0f1013;border:1px solid #2b2e34;border-radius:12px;color:var(--txt)}
+  textarea.control{min-height:110px;resize:vertical}
+  .actions{display:flex;gap:12px;align-items:center;justify-content:center;margin:12px 0}
+  .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;cursor:pointer;border:0}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(220,38,38,.35)}
   .btn-primary:hover{filter:brightness(1.06)}
-  .btn-ghost{background:transparent;color:#9ca3af}
-  .section h2{font:800 26px/1.2 system-ui;margin:18px 0 8px}
-  .hint{color:#9ca3af;font-size:14px;margin-top:6px}
-
-  /* acknowledgements – left, one per line */
-  .acks{display:grid;gap:14px;max-width:860px;text-align:left}
-  .ack{display:grid;grid-template-columns:22px 1fr;column-gap:12px;align-items:start}
-  .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
-</style>
-<style id="acks-align">
-  /* Only affect the acknowledgements block */
-  #acks{
-    display:grid !important;
-    grid-template-columns: 24px 1fr !important;
-    row-gap:14px !important;
-    column-gap:12px !important;
-    justify-items:start !important;
-    align-items:start !important;
-    text-align:left !important;
-  }
-  #acks input[type="checkbox"]{ grid-column:1 !important; margin:3px 0 0 0 !important; width:18px; height:18px; }
-  #acks label, #acks .label, #acks span, #acks p{ grid-column:2 !important; margin:0 !important; text-align:left !important; }
-</style>
-<style id="acks-align-only">
-  /* Only the Acknowledgements container */
-  #acks{
-    display:grid !important;
-    grid-template-columns: 24px 1fr !important;
-    row-gap:14px !important;
-    column-gap:12px !important;
-    justify-items:start !important;
-    align-items:start !important;
-    text-align:left !important;
-  }
-  #acks input[type="checkbox"]{
-    grid-column:1 !important; margin:3px 0 0 0 !important; width:18px; height:18px;
-  }
-  #acks label, #acks span, #acks p{
-    grid-column:2 !important; margin:0 !important; text-align:left !important;
-  }
+  .btn-ghost{background:transparent;color:var(--mut)}
+  /* Acknowledgements: simply stacked, tidy */
+  .acks{display:flex;flex-direction:column;gap:12px}
+  .ack{display:grid;grid-template-columns:20px 1fr;column-gap:10px;align-items:start}
+  .ack input[type=checkbox]{width:18px;height:18px;margin-top:2px}
+  .hint{color:var(--mut);font-size:14px;margin-top:6px}
 </style>
 </head>
 <body>
-<div id="island">
-  <div id="acks" class="wrap">
+  <div class="wrap">
     <h1>Request Tech Support</h1>
     <p class="lead">Fill this out and we’ll get back to you ASAP.</p>
 
-    <form class="card" id="contactForm" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data">
-      <!-- formsubmit options -->
+    <form class="card" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="New Tech Support Request">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -80,97 +44,82 @@
         <a class="btn btn-ghost" href="/">Cancel</a>
       </div>
 
-      <div class="section">
-        <h2>🧩 1. Basic Contact Information</h2>
+      <fieldset>
+        <legend>🧩 Basic Contact</legend>
         <div class="grid-2">
           <div class="field"><label for="name">Full Name *</label><input id="name" name="name" class="control" required></div>
           <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" class="control" required></div>
           <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" class="control" required></div>
-          <div class="field"><label for="contact_method">Preferred Contact Method</label>
-            <select id="contact_method" name="contact_method" class="control"><option>Email</option><option>Call</option><option>Chat</option></select></div>
+          <div class="field"><label for="contact">Preferred Contact</label>
+            <select id="contact" name="contact_method" class="control"><option>Email</option><option>Call</option><option>Chat</option></select></div>
           <div class="field"><label for="company">Company / Organization</label><input id="company" name="company" class="control"></div>
-          <div class="field"><label for="location">Location / Time Zone</label><input id="location" name="location" placeholder="e.g., Colorado (MT)" class="control"></div>
+          <div class="field"><label for="location">Location / Time Zone</label><input id="location" name="location" class="control" placeholder="e.g., Colorado (MT)"></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>💻 2. Device or System Information</h2>
+      <fieldset>
+        <legend>💻 Device / System</legend>
         <div class="grid-2">
-          <div class="field"><label for="device_type">Device Type</label>
-            <select id="device_type" name="device_type" class="control"><option>Laptop</option><option>Desktop</option><option>Server</option></select></div>
-          <div class="field"><label for="brand_model">Brand / Model</label><input id="brand_model" name="brand_model" placeholder="e.g., Dell Optiplex 7060" class="control"></div>
+          <div class="field"><label for="dtype">Device Type</label>
+            <select id="dtype" name="device_type" class="control"><option>Laptop</option><option>Desktop</option><option>Server</option></select></div>
+          <div class="field"><label for="model">Brand / Model</label><input id="model" name="brand_model" class="control" placeholder="e.g., Dell Optiplex 7060"></div>
           <div class="field"><label for="os">Operating System</label>
             <select id="os" name="os" class="control"><option>Windows 11</option><option>Windows 10</option><option>Other</option></select></div>
-          <div class="field"><label for="network_env">Network Environment</label>
-            <select id="network_env" name="network_env" class="control"><option>Home</option><option>Office</option><option>Shared</option><option>Remote</option></select></div>
+          <div class="field"><label for="net">Network Environment</label>
+            <select id="net" name="network_env" class="control"><option>Home</option><option>Office</option><option>Shared</option><option>Remote</option></select></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>⚙️ 3. Problem Description</h2>
+      <fieldset>
+        <legend>⚙️ Problem</legend>
         <div class="grid-2">
-          <div class="field"><label for="category">Category of Issue</label>
-            <select id="category" name="category" class="control">
+          <div class="field"><label for="cat">Category</label>
+            <select id="cat" name="category" class="control">
               <option>Hardware</option><option>Software</option><option>Networking</option>
               <option>Security</option><option>Data Recovery / Backup</option>
             </select></div>
-          <div class="field"><label for="started">When did the issue start?</label>
-            <input id="started" name="started" class="control" placeholder="e.g., Today / Last week / Date"></div>
-          <div class="field" style="grid-column:1/-1"><label for="description">Detailed Description</label>
-            <textarea id="description" name="description" class="control" placeholder='Describe symptoms (e.g., “won’t boot,” “stuck at logo,” error code)'></textarea></div>
-          <div class="field" style="grid-column:1/-1"><label for="tried">What have you already tried?</label>
+          <div class="field"><label for="started">When did it start?</label>
+            <input id="started" name="started" class="control" placeholder="Today / Last week / Date"></div>
+          <div class="field" style="grid-column:1/-1"><label for="desc">Detailed Description</label>
+            <textarea id="desc" name="description" class="control" placeholder='Describe symptoms (“won’t boot,” “stuck at logo,” error code)'></textarea></div>
+          <div class="field" style="grid-column:1/-1"><label for="tried">What have you tried?</label>
             <textarea id="tried" name="tried" class="control"></textarea></div>
-          <div class="field"><label for="urgency">Is this urgent?</label>
+          <div class="field"><label for="urgency">Urgency</label>
             <select id="urgency" name="urgency" class="control"><option>Low</option><option>Normal</option><option>High</option><option>Blocking work</option></select></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>🧠 4. Access & Permissions</h2>
+      <fieldset>
+        <legend>🧠 Access & Permissions</legend>
         <div class="grid-2">
-          <div class="field"><label for="remote_ok">Can we access remotely?</label>
+          <div class="field"><label for="remote_ok">Remote access ok?</label>
             <select id="remote_ok" name="remote_ok" class="control"><option>Yes</option><option>No</option></select></div>
-          <div class="field"><label for="admin_rights">Do you have admin rights?</label>
-            <select id="admin_rights" name="admin_rights" class="control"><option>Yes</option><option>No</option></select></div>
-          <div class="field" style="grid-column:1/-1"><label for="best_times">Best times for remote support or call-back</label>
-            <input id="best_times" name="best_times" class="control" placeholder="e.g., Weekdays 9–12 MT"></div>
+          <div class="field"><label for="admin">Admin rights?</label>
+            <select id="admin" name="admin_rights" class="control"><option>Yes</option><option>No</option></select></div>
+          <div class="field" style="grid-column:1/-1"><label for="times">Best times</label>
+            <input id="times" name="best_times" class="control" placeholder="e.g., Weekdays 9–12 MT"></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>📎 5. Optional Attachments</h2>
+      <fieldset>
+        <legend>📎 Attachments</legend>
         <div class="grid-2">
-          <div class="field" style="grid-column:1/-1"><label for="screens">Upload screenshots or error photos</label>
-            <input id="screens" name="screenshots" type="file" class="control" multiple></div>
-          <div class="field" style="grid-column:1/-1"><label for="logs">Attach diagnostic logs / system reports</label>
+          <div class="field" style="grid-column:1/-1"><label for="shots">Upload screenshots</label>
+            <input id="shots" name="screenshots" type="file" class="control" multiple></div>
+          <div class="field" style="grid-column:1/-1"><label for="logs">Diagnostic logs</label>
             <input id="logs" name="logs" type="file" class="control" multiple></div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="section">
-        <h2>💬 6. Service Preferences</h2>
-        <div class="grid-2">
-          <div class="field"><label for="pref_type">Preferred Support Type</label>
-            <select id="pref_type" name="pref_type" class="control"><option>Remote</option><option>On-site</option><option>Drop-off</option><option>Mail-in</option></select></div>
-          <div class="field"><label for="source">How did you hear about us?</label>
-            <select id="source" name="source" class="control">
-              <option>Google</option><option>Referral</option><option>Facebook</option><option>Other</option>
-            </select></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>💲 7. Acknowledgements</h2>
+      <fieldset>
+        <legend>💲 Acknowledgements</legend>
         <div class="acks">
-          <label class="ack"><input type="checkbox" name="ack_tos" required>
-            <span>I agree to the terms of service and privacy policy.</span></label>
-          <label class="ack"><input type="checkbox" name="ack_remote">
-            <span>I authorize remote access if required.</span></label>
-          <label class="ack"><input type="checkbox" name="ack_fees">
-            <span>I understand diagnostic fees may apply.</span></label>
+          <label class="ack"><input type="checkbox" name="ack_tos" required><span>I agree to the terms of service and privacy policy.</span></label>
+          <label class="ack"><input type="checkbox" name="ack_remote"><span>I authorize remote access if required.</span></label>
+          <label class="ack"><input type="checkbox" name="ack_fees"><span>I understand diagnostic fees may apply.</span></label>
         </div>
-        <div class="hint">Required items are marked with *</div>
-      </div>
+        <div class="hint">Required items are marked with *.</div>
+      </fieldset>
 
       <div class="actions">
         <button class="btn btn-primary" type="submit">Submit Support Request</button>
@@ -178,5 +127,4 @@
       </div>
     </form>
   </div>
-</div>
 </body></html>
