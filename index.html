@@ -899,3 +899,42 @@
   }
 })();
 </script>
+<script id="kill-legacy-screenshot-grid">
+(function(){
+  try{
+    // Collect all host-page images that reference /screenshots/
+    var shots = Array.from(document.querySelectorAll('img')).filter(function(img){
+      var s = (img.currentSrc || img.src || '');
+      return /\/screenshots\//.test(s);
+    });
+    if (!shots.length) return;
+
+    // Score ancestors to find the biggest container holding those images
+    var counts = new Map();
+    function bump(n){ if(n && n.nodeType===1) counts.set(n, (counts.get(n)||0)+1); }
+
+    shots.forEach(function(img){
+      var n = img;
+      for (var depth=0; depth<8 && (n = n.parentElement); depth++){
+        // Don’t climb into/through the iframe or the embedded strip
+        if (n.id === 'screenshots-strip' || n.classList.contains('screenshots-strip')) break;
+        if (n.tagName === 'IFRAME') break;
+        bump(n);
+      }
+    });
+
+    // Pick the max-count element (must contain at least 3 screenshots)
+    var target=null, max=0;
+    counts.forEach(function(cnt, node){
+      if (cnt>=3 && !node.closest('#screenshots-strip')) {
+        if (cnt > max) { max = cnt; target = node; }
+      }
+    });
+    if (!target) return;
+
+    // Remove the nearest sensible container around it to avoid leftover spacing
+    var rm = target.closest('section, .gallery, .gallery-grid, #screenshots, .marquee, div') || target;
+    rm.remove();
+  }catch(e){}
+})();
+</script>
