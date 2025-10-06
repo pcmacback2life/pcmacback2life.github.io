@@ -29,6 +29,16 @@
   .ack{display:grid;grid-template-columns:22px 1fr;column-gap:12px;align-items:start}
   .ack input[type=checkbox]{width:18px;height:18px;margin-top:3px}
 </style>
+<style id="isolate-tech-form">
+  /* show ONLY the self-contained form island on this page */
+  body > :not(#island){ display:none !important; }
+</style>
+<style id="actions-left-fix">
+  #island .actions{ position:static!important; inset:auto!important; display:flex!important;
+    flex-wrap:wrap!important; gap:12px!important; align-items:center!important; justify-content:flex-start!important;
+    margin:12px 0 18px!important;
+  }
+</style>
 </head>
 <body>
 <div id="island">
