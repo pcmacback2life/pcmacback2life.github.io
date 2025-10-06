@@ -14,3 +14,9 @@
 .gallery,
 .grid.gallery,
 .grid.screenshots { display: none !important; }
+
+/* Hide old screenshot grids so only the marquee shows */
+#screenshots:has(img),
+.screenshots:has(img),
+.gallery:has(img),
+[class*="grid"]:has(img[src*="screenshots/"]) { display: none !important; }
