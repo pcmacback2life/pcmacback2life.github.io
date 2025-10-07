@@ -1184,3 +1184,30 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-163552 -->
+<style id="logo-fix-4">
+  /* kill the empty top search/bar */
+  header .search, header .searchbar, header .search-box,
+  header input[type="search"], .hero input[type="search"],
+  #search, #Search { display:none !important; height:0 !important; margin:0 !important; padding:0 !important; border:0 !important; }
+
+  /* order + spacing: logo → button → screenshots */
+  #hero-logo { display:block !important; margin:10px auto 8px !important; max-height:110px !important; }
+
+  .btn-support-wrap{
+    display:flex !important; justify-content:center !important;
+    position:relative !important; z-index:20 !important;
+    margin:12px 0 18px !important; clear:both !important;
+  }
+  .btn-support-wrap ~ .btn-support-wrap{ display:none !important; }
+
+  .screenshots, .screenshot-row, .screenshot-grid{
+    position:static !important; clear:both !important;
+    display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:12px !important;
+    max-width:1200px !important; margin:0 auto 12px !important;
+  }
+  .screenshots img, .screenshot-row img, .screenshot-grid img{
+    position:static !important; max-width:320px !important; height:auto !important; margin:8px !important; object-fit:contain !important;
+  }
+</style>
+
+<!-- deploy-marker 20251007-163847 -->
