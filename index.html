@@ -1292,3 +1292,43 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-164453 -->
+<style id="hero-reset-2">
+  /* hide any search UI in header/hero */
+  header form, header input[type="search"],
+  .hero form, .hero input[type="search"],
+  .top form,  .top  input[type="search"],
+  [role="search"], [aria-label*="search" i], [class*="search" i], [id*="search" i]{
+    display:none !important; height:0 !important; margin:0 !important; padding:0 !important; border:0 !important;
+  }
+
+  /* keep ONLY the first support button in the hero */
+  .hero a[href*="support"]:not(:first-of-type),
+  .hero a[href*="tech-support"]:not(:first-of-type),
+  .top  a[href*="support"]:not(:first-of-type),
+  .top  a[href*="tech-support"]:not(:first-of-type){
+    display:none !important;
+  }
+
+  /* simple vertical stack for hero; kill absolute layout that causes overlap */
+  #hero, .hero, .site-hero, .top{
+    display:flex !important; flex-direction:column !important; align-items:center !important; gap:12px !important;
+  }
+  #hero img, .hero img{ position:static !important; transform:none !important; }
+
+  /* logo sizing */
+  img[src*="images/logo.png"]{
+    max-height:110px !important; width:auto !important; height:auto !important;
+    display:block !important; margin:10px auto !important;
+  }
+
+  /* screenshots as tidy grid */
+  .screenshots, .screenshot-row, .screenshot-grid{
+    display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:12px !important;
+    max-width:1200px !important; margin:0 auto 12px !important;
+  }
+  .screenshots img, .screenshot-row img, .screenshot-grid img{
+    max-width:320px !important; height:auto !important; object-fit:contain !important; margin:8px !important;
+  }
+</style>
+
+<!-- deploy-marker 20251007-164731 -->
