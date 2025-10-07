@@ -1133,3 +1133,30 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- deploy-marker 20251007-152531 -->
 
 <!-- deploy-marker 20251007-163006 -->
+<style id="logo-fix-2">
+  /* keep the keeper logo a sane size */
+  img[src*="images/logo.png"]{
+    max-height:110px !important; width:auto !important; height:auto !important;
+    display:block !important; margin:10px auto !important;
+  }
+
+  /* screenshots: prevent overlap and huge sizing */
+  img[src*="/screenshots/"], img[src^="screenshots/"]{
+    position:static !important;
+    display:inline-block !important;
+    max-width:300px !important;
+    height:auto !important;
+    margin:8px !important;
+    vertical-align:top !important;
+    object-fit:contain !important;
+    border-radius:10px; box-shadow:0 8px 18px rgba(0,0,0,.25);
+    z-index:auto !important;
+  }
+
+  /* if there is a screenshots container, make it a neat wrap */
+  .screenshots, .screenshot-row, .screenshot-grid{
+    display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:12px !important;
+  }
+</style>
+
+<!-- deploy-marker 20251007-163351 -->
