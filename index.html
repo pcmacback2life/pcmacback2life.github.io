@@ -1363,3 +1363,21 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-165144 -->
+<style id="hero-one-step">
+  /* kill the top ghost bar: hide the FIRST element inside the hero */
+  .hero > *:first-child,
+  #hero  > *:first-child { display:none !important; }
+
+  /* keep ONLY the first support button anywhere on the page */
+  a[href*="tech-support"], a[href*="support"] { display:none !important; }
+  a[href*="tech-support"]:first-of-type,
+  a[href*="support"]:first-of-type { display:inline-flex !important; }
+
+  /* de-dupe logos: keep only images/logo.png */
+  img[src*="logo"]:not([src*="images/logo.png"]) { display:none !important; }
+
+  /* stop overlap inside hero */
+  .hero * , #hero * { position:static !important; transform:none !important; }
+</style>
+
+<!-- deploy-marker 20251007-165541 -->
