@@ -1160,3 +1160,27 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-163351 -->
+<style id="logo-fix-3">
+  /* keep screenshot rows neat, centered, and non-overlapping */
+  .screenshots, .screenshot-row, .screenshot-grid {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+  .screenshots img, .screenshot-row img, .screenshot-grid img {
+    position: static !important;
+    max-width: 300px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 8px !important;
+  }
+
+  /* exactly one Tech Support button (keep the first, hide the rest) */
+  .btn-support-wrap { display:flex !important; justify-content:center !important; }
+  .btn-support-wrap ~ .btn-support-wrap { display:none !important; }
+</style>
+
+<!-- deploy-marker 20251007-163552 -->
