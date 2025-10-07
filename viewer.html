@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>View Screenshot</title>
+<style>
+  html,body{height:100%;margin:0;background:#000;color:#fff}
+  .topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;justify-content:space-between;z-index:9999}
+  .btn{background:#111a;border:1px solid #fff3;color:#fff;padding:.5rem .8rem;border-radius:10px;text-decoration:none;font:600 16px/1 system-ui}
+  .btn:hover{background:#222a}
+  .name{opacity:.85;font:500 14px/1.1 system-ui;max-width:60vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2.5vh;z-index:1}
+  img{max-width:96vw;max-height:95vh;object-fit:contain;display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+</style>
+</head><body>
+<div class="topbar">
+  <a class="btn" href="/index.html#after-logo-anchor">✕ Close</a>
+  <div class="name" id="imgName"></div>
+</div>
+<div class="wrap"><img id="pic" alt=""></div>
+<script>
+  const p   = new URLSearchParams(location.search);
+  const raw = p.get('img') || '';
+  const safe = raw.startsWith('screenshots/') ? raw : '';
+  if (!safe) { document.body.innerHTML = '<div style="color:#fff;padding:2rem;font:600 18px system-ui">No image specified.</div>'; }
+  else {
+    document.getElementById('pic').src = '/' + safe.replace(/^\/+/, '');
+    document.getElementById('imgName').textContent = safe.split('/').pop();
+  }
+  // Esc closes, same as the Close link
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') location.href='/index.html#after-logo-anchor'; });
+</script>
+</body></html>
