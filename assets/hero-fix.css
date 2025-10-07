@@ -6,7 +6,7 @@
 #btn-tech-support{display:inline-block;text-align:center}
 
 /* If anything else with “logo” sneaks in, hide it */
-img[src*="logo"]:not(#hero-logo),
-picture img[src*="logo"]:not(#hero-logo),
-img[alt*="logo" i]:not(#hero-logo),
-svg[aria-label*="logo" i]:not(#hero-logo){display:none !important}
+img[src*="logo"]:not(#hero-logo-img),
+picture img[src*="logo"]:not(#hero-logo-img),
+img[alt*="logo" i]:not(#hero-logo-img),
+svg[aria-label*="logo" i]:not(#hero-logo-img){display:none !important}
