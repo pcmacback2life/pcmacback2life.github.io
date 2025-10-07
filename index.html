@@ -1211,3 +1211,45 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-163847 -->
+<style id="logo-fix-5">
+  /* 1) remove the top search/ghost bar anywhere on the page */
+  [role="search"], [aria-label*="search" i], [class*="search" i], [id*="search" i],
+  input[type="search"] {
+    display:none !important; height:0 !important; margin:0 !important; padding:0 !important; border:0 !important;
+  }
+
+  /* 2) make the hero stack vertically and center things so they don't overlap */
+  .hero, #hero, .site-hero, .top, header .hero {
+    display:flex !important; flex-direction:column !important; align-items:center !important; gap:12px !important;
+    position:relative !important; z-index:1 !important;
+  }
+
+  /* 3) keeper logo sane + centered */
+  img[src*="images/logo.png"]{
+    max-height:110px !important; width:auto !important; height:auto !important;
+    display:block !important; margin:10px auto !important;
+    position:static !important; z-index:2 !important;
+  }
+
+  /* 4) kill duplicate "logo" images anywhere except the keeper */
+  img[src*="logo"]:not([src*="images/logo.png"]) { display:none !important; }
+
+  /* 5) screenshot area: force non-overlap & tidy grid */
+  .screenshots, .screenshot-row, .screenshot-grid {
+    max-width:1200px !important; margin:0 auto 12px !important;
+    display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:12px !important;
+    position:relative !important; z-index:1 !important;
+  }
+  /* any image that looks like a screenshot OR any absolutely-positioned img in hero → make it behave */
+  img[src*="/screenshots/"], img[src^="screenshots/"],
+  .hero img[style*="position:absolute" i], .hero img[style*="position: absolute" i] {
+    position:static !important; max-width:320px !important; height:auto !important;
+    margin:8px !important; object-fit:contain !important; z-index:1 !important;
+  }
+
+  /* 6) exactly one Tech Support button, centered above screenshots */
+  .btn-support-wrap { display:flex !important; justify-content:center !important; margin:12px 0 18px !important; z-index:3 !important; }
+  .btn-support-wrap ~ .btn-support-wrap { display:none !important; }
+</style>
+
+<!-- deploy-marker 20251007-164133 -->
