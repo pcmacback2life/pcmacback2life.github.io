@@ -1253,3 +1253,42 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-164133 -->
+<style id="hero-reset">
+  /* nuke the ghost/top search bar */
+  #search, .search, .searchbar, [role="search"], input[type="search"]{
+    display:none !important; height:0 !important; margin:0 !important; padding:0 !important; border:0 !important;
+  }
+
+  /* make the hero a simple vertical stack */
+  #hero, .hero, .site-hero, .top{
+    display:flex !important; flex-direction:column !important; align-items:center !important; gap:12px !important;
+    position:relative !important;
+  }
+
+  /* kill any absolute positioning / transforms inside hero */
+  #hero *, .hero *{
+    position:static !important; transform:none !important; top:auto !important; left:auto !important; right:auto !important; bottom:auto !important;
+  }
+
+  /* keeper logo only, sane size */
+  #hero img[src*="images/logo.png"], .hero img[src*="images/logo.png"]{
+    max-height:110px !important; width:auto !important; height:auto !important; display:block !important; margin:10px auto !important;
+  }
+  #hero img[src*="logo"]:not([src*="images/logo.png"]),
+  .hero img[src*="logo"]:not([src*="images/logo.png"]){ display:none !important; }
+
+  /* exactly one Tech Support button, centered, above screenshots */
+  .btn-support-wrap{ display:flex !important; justify-content:center !important; }
+  .btn-support-wrap:not(:first-of-type){ display:none !important; }
+
+  /* screenshots tidy, no overlap */
+  .screenshots, .screenshot-row, .screenshot-grid{
+    display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:12px !important;
+    max-width:1200px !important; margin:0 auto 12px !important;
+  }
+  .screenshots img, .screenshot-row img, .screenshot-grid img{
+    max-width:320px !important; height:auto !important; object-fit:contain !important; margin:8px !important;
+  }
+</style>
+
+<!-- deploy-marker 20251007-164453 -->
