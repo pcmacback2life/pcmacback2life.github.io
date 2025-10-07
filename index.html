@@ -19,6 +19,16 @@
   .btn-support-wrap { width:100% !important; display:flex !important; justify-content:center !important; margin:12px 0 18px !important; }
   .logoTile{display:none !important}
 </style>
+  /* === hero cleanup overrides (inline) === */
+  header, .site-header, #header { display:none !important; }
+  #hero, .hero, .site-hero, .top { display:flex !important; flex-direction:column !important; align-items:center !important; gap:12px !important; }
+  #hero *, .hero * { position:static !important; transform:none !important; }
+  img[src*="logo"]:not([src*="images/logo.png"]) { display:none !important; }
+  img[src*="images/logo.png"]{ max-height:110px !important; width:auto !important; height:auto !important; display:block !important; margin:10px auto !important; }
+  .btn-support-wrap { display:none !important; }
+  .btn-support-wrap:first-of-type { display:flex !important; justify-content:center !important; margin:12px 0 18px !important; }
+  .screenshots, .screenshot-row, .screenshot-grid { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:12px !important; max-width:1200px !important; margin:0 auto 12px !important; }
+  .screenshots img, .screenshot-row img, .screenshot-grid img { max-width:320px !important; height:auto !important; object-fit:contain !important; margin:8px !important; }
 <style id="clean-logos-style" >
   /* Hide any image that looks like a logo BUT is not the keeper (#hero-logo / images/logo.png) */
   img[src*="logo"]:not([src*="images/logo.png"]):not(#hero-logo-img) { display: none !important; }
@@ -1381,3 +1391,5 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 <!-- deploy-marker 20251007-165541 -->
+
+<!-- deploy-marker 20251007-172040 -->
