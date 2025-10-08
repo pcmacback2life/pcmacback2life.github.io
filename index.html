@@ -25,6 +25,10 @@
     .muted{color:var(--muted); margin-top:10px; font-size:14px}
   </style>
 </head>
+  <style id="cta-dedupe-fix">
+    body a[href$="tech-support.html"]{display:none!important;}
+    .hero a[href$="tech-support.html"]{display:inline-flex!important;}
+  </style>
   <style id="cta-dedupe">body a[href$="tech-support.html"]:not(#hero-fixed a){display:none!important;}</style>
 <body>
   <main class="wrap">
@@ -1032,3 +1036,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- deploy-marker 20251007-211256 -->
 
 <!-- deploy-marker 20251007-211604 -->
+
+<!-- deploy-marker 20251007-211904 -->
