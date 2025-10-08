@@ -61,6 +61,31 @@
   /* Never show any legacy corner button */
   #fixed-cta{display:none !important;}
 </style>
+<style id="hero-logo-size">
+  /* Desktop default */
+  #logo,
+  img[alt*="PC • Mac • Back 2 Life"]{
+    max-height:160px !important;   /* <- change this number if you want even bigger */
+    height:auto !important;
+    width:auto !important;
+  }
+
+  /* Tablet */
+  @media (max-width: 900px){
+    #logo,
+    img[alt*="PC • Mac • Back 2 Life"]{
+      max-height:130px !important;
+    }
+  }
+
+  /* Phone */
+  @media (max-width: 600px){
+    #logo,
+    img[alt*="PC • Mac • Back 2 Life"]{
+      max-height:105px !important;
+    }
+  }
+</style>
 </head>
   <style id="hero-cta-inline">
     /* Center logo at top */
@@ -1085,3 +1110,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- add-cta-under 20251008-112924 -->
 
 <!-- cta-restore 20251008-115218 -->
+
+<!-- logo-size 20251008-125742 -->
