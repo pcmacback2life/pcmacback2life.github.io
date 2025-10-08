@@ -25,6 +25,14 @@
     .muted{color:var(--muted); margin-top:10px; font-size:14px}
   </style>
 </head>
+  <style id="hero-row-last">
+    .hero{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
+    #logo{display:block!important;max-height:110px!important;height:auto!important;width:auto!important;margin:0 12px 0 0!important}
+  </style>
+  <style id="cta-hero-only-last">
+    body a[href$="tech-support.html"]{display:none!important}
+    .hero a[href$="tech-support.html"]{display:inline-flex!important}
+  </style>
   <style id="hero-logo-force">.hero{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}#logo{display:block!important;max-height:110px!important;height:auto!important;width:auto!important;margin:0 12px 0 0!important}</style>
   <style id="cta-only-hero">body a[href$="tech-support.html"]{display:none!important}.hero a[href$="tech-support.html"]{display:inline-flex!important}</style>
   <style id="logo-bg-css">
@@ -47,6 +55,7 @@
 <body>
   <main class="wrap">
     <section class="hero" aria-label="Hero">
+  <span id="hero-first-child" aria-hidden="true" style="display:none"></span>
 <div class="logo-wrap" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
        style="max-height:110px;height:auto;width:auto;display:block;margin:0 12px 0 0"
        onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='block'"/>
@@ -1051,6 +1060,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!-- deploy-marker 20251007-202308 -->
   </main>
+  <style id="logo-override-final">#logo{display:block!important}</style>
 </body>
 </html>
 
@@ -1075,3 +1085,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- deploy-marker 20251007-220103 -->
 
 <!-- deploy-marker 20251007-220715 -->
+
+<!-- deploy-marker 20251007-221613 -->
