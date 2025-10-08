@@ -46,6 +46,42 @@
   #hero-clean a[href$="tech-support.html"]{display:inline-flex !important}
   #fixed-cta{display:none !important}
 </style>
+<style id="hero-layout-fix">
+  /* Make the hero occupy a full row and center its contents */
+  #hero-clean{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:16px !important;
+    flex-wrap:wrap !important;
+
+    /* force full-row even if parent uses flex/columns */
+    flex:0 0 100% !important;
+    width:100% !important;
+    margin:0 auto !important;
+  }
+  #hero-clean #logo{
+    display:block !important;
+    max-height:110px !important; height:auto !important; width:auto !important;
+    margin:0 12px 0 0 !important;     /* space between logo and button */
+  }
+  #hero-clean a[href$="tech-support.html"]{
+    display:inline-flex !important; position:static !important;
+    visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
+  }
+
+  /* Push the screenshots strip underneath the hero and stretch full width */
+  #screenshots-strip{
+    display:block !important;
+    width:100% !important;
+    clear:both !important;
+    margin-top:12px !important;
+  }
+
+  /* Safety: hide any stray fixed corner CTA if it somehow reappears */
+  #fixed-cta{ display:none !important; }
+</style>
 </head>
   <style id="cta-force-row">
     .hero{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -1116,3 +1152,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- hero-solid 20251008-101959 -->
 
 <!-- hero-single 20251008-102649 -->
+
+<!-- hero-layout 20251008-103638 -->
