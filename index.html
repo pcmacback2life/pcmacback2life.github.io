@@ -116,6 +116,12 @@
     overflow:hidden !important;
   }
 </style>
+<style id="scroller-ensure">
+  #screenshots-strip, iframe[src*="scroller.html"]{
+    display:block !important; width:100% !important; height:200px !important;
+    border:0 !important; overflow:hidden !important;
+  }
+</style>
 </head>
   <style id="hero-cta-inline">
     /* Center logo at top */
@@ -140,7 +146,7 @@
 </div>
 <!-- END: isolated CTA + scroller -->
 
-</iframe>
+
     <style>
       .shots{display:flex;flex-wrap:wrap;gap:12px}
       .shot{flex:1 1 220px;max-width:260px;margin:0}
@@ -1095,3 +1101,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- savehundreds-update 20251008-141139 -->
 
 <!-- scroller-fix 20251008-141503 -->
+
+<!-- scroller-rebuild 20251008-143910 -->
