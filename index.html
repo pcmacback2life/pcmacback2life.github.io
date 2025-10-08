@@ -41,6 +41,11 @@
   #logo{display:block !important; max-height:110px !important; height:auto !important; width:auto !important; margin:0 12px 0 0 !important}
   .hero a[href$="tech-support.html"]{display:inline-flex !important; position:static !important; visibility:visible !important; opacity:1 !important; pointer-events:auto !important}
 </style>
+<style id="hero-clean-guard">
+  body a[href$="tech-support.html"]{display:none !important}
+  #hero-clean a[href$="tech-support.html"]{display:inline-flex !important}
+  #fixed-cta{display:none !important}
+</style>
 </head>
   <style id="cta-force-row">
     .hero{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -48,20 +53,18 @@
   </style>
   <style id="cta-dedupe">body a[href$="tech-support.html"]:not(#hero-fixed a){display:none!important;}</style>
 <body>
-<section id="hero-solid" class="hero"
-  style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+<section id="hero-clean" class="hero" style="display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 12px;">
   <img id="logo" src="images/logo.png" alt="PC • Mac • Back 2 Life"
-       style="display:block;max-height:110px;height:auto;width:auto;margin:0 12px 0 0">
-  <a id="support-cta-hero" class="btn" href="tech-support.html"
-     style="display:inline-flex !important;padding:16px 28px;border-radius:9999px;background:#e63946;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.25);position:static !important;">
+       style="display:block;max-height:110px;height:auto;width:auto;margin:0 12px 0 0;">
+  <a class="btn" href="tech-support.html"
+     style="display:inline-flex;padding:16px 28px;border-radius:9999px;background:#e63946;color:#fff;
+            font-weight:800;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.25);">
      Just looking for tech support for my PC
   </a>
 </section>
+
   <main class="wrap">
-    <section class="hero" aria-label="Hero">
-      <img id="logo" src="images/logo.png" alt="PC • Mac • Back 2 Life" />
-      <a class="btn" href="tech-support.html">Just looking for tech support for my PC</a>
-    </section>
+    
 <iframe id="screenshots-strip" title="Scrolling screenshots" src="/scroller.html" loading="lazy" style="width:100%;height:180px;border:0;display:block;overflow:hidden" scrolling="no"></iframe>
 <!-- END: isolated CTA + scroller -->
 <!-- screenshots-strip (embedded) -->
@@ -1111,3 +1114,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- hero-repair 20251008-100840 -->
 
 <!-- hero-solid 20251008-101959 -->
+
+<!-- hero-single 20251008-102649 -->
