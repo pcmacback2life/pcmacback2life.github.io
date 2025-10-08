@@ -25,6 +25,10 @@
     .muted{color:var(--muted); margin-top:10px; font-size:14px}
   </style>
 </head>
+  <style id="cta-force-row">
+    .hero{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+    #logo{display:block;max-height:110px;height:auto;width:auto;margin:0 12px 0 0}
+  </style>
   <style id="cta-dedupe">body a[href$="tech-support.html"]:not(#hero-fixed a){display:none!important;}</style>
 <body>
   <main class="wrap">
@@ -1022,6 +1026,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!-- deploy-marker 20251007-202308 -->
   </main>
+  <style id="cta-final">
+    body a[href$="tech-support.html"]{display:none !important}
+    .hero a[href$="tech-support.html"]{display:inline-flex !important}
+  </style>
 </body>
 </html>
 
@@ -1030,3 +1038,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- deploy-marker 20251007-210918 -->
 
 <!-- rollback 20251007-232138 -->
+
+<!-- button-fix 20251008-085813 -->
