@@ -10,12 +10,12 @@
     html,body{height:100%}
     body{
       margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
-      display:flex; align-items:flex-start; justify-content:center; align-items:center;
+      display:flex; align-items:flex-start; justify-content:center;
     }
     .wrap{width:100%; max-width:1100px; padding:32px 16px;}
     .hero{
       background:var(--card); border-radius:18px; padding:28px 18px; box-shadow:0 6px 18px rgba(0,0,0,.25);
-      display:flex; flex-direction:row; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; align-items:center; gap:14px;
+      display:flex; flex-direction:column; align-items:center; gap:14px;
     }
     #logo{max-height:110px; height:auto; width:auto; display:block}
     .btn{
@@ -24,52 +24,12 @@
     }
     .muted{color:var(--muted); margin-top:10px; font-size:14px}
   </style>
-<style id="hero-clean">
-  header, .site-header, #header { display:none !important; } /* kill top bar */
-  .hero{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
-  #logo{display:block !important;max-height:110px;height:auto;width:auto;margin:0 12px 0 0}
-  .btn{display:inline-block;padding:16px 28px;border-radius:9999px;background:#e63946;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.25)}
-</style>
 </head>
-    .hero{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
-    #logo-svg{display:block!important;height:110px!important;width:auto!important;margin:0 12px 0 0!important}
-    body a[href$="tech-support.html"]{display:none!important}.hero a[href$="tech-support.html"]{display:inline-flex!important}
-    .hero{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
-    #logo{display:block!important;max-height:110px!important;height:auto!important;width:auto!important;margin:0 12px 0 0!important}
-    body a[href$="tech-support.html"]{display:none!important}
-    .hero a[href$="tech-support.html"]{display:inline-flex!important}
-    .hero{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
-    #logo-bg{width:clamp(280px,42vw,640px);height:110px;margin:0 12px 0 0;
-             background:url(/images/logo.png?v= TS ) no-repeat center/contain; display:block}
-  <style id="cta-dedupe-fix">
-    body a[href$="tech-support.html"]{display:none!important;}
-    .hero a[href$="tech-support.html"]{display:inline-flex!important;}
+  <style id="cta-dedupe">body a[href$="tech-support.html"]:not(#hero-fixed a){display:none!important;}</style>
 <body>
-<section class="hero" aria-label="Hero">
-  <img id="logo" src="/images/logo.png?v=20251007-224442" alt="PC • Mac • Back 2 Life"
-       style="display:block;max-height:110px;height:auto;width:auto;margin:0 12px 0 0" />
-  <div class="btn-support-wrap" style="display:flex;justify-content:center;">
-    <a class="btn" href="tech-support.html">Just looking for tech support for my PC</a>
-  </div>
-</section>
   <main class="wrap">
     <section class="hero" aria-label="Hero">
-  <span id="hero-first-child" aria-hidden="true" style="display:none"></span>
-  <span id="hero-first-child" aria-hidden="true" style="display:none"></span>
-<div class="logo-wrap" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-       style="max-height:110px;height:auto;width:auto;display:block;margin:0 12px 0 0"
-       onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='block'"/>
-    <rect width="740" height="140" rx="16" fill="#141f2a"/>
-    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
-          font-family="Segoe UI, Roboto, Arial, sans-serif" font-weight="800"
-          font-size="42" fill="#e6edf3">PC • Mac • Back 2 Life</text>
-  </svg>
-</div>
-  <svg id="logo-svg" viewBox="0 0 1000 312" role="img" aria-label="PC • Mac • Back 2 Life"
-       style="display:block;height:110px;width:auto;margin:0 12px 0 0">
-    <image href="/images/logo.png?v=20251007-223532" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"/>
-    <title>PC • Mac • Back 2 Life</title>
-  </svg>
+      <img id="logo" src="images/logo.png" alt="PC • Mac • Back 2 Life" />
       <a class="btn" href="tech-support.html">Just looking for tech support for my PC</a>
     </section>
 <iframe id="screenshots-strip" title="Scrolling screenshots" src="/scroller.html" loading="lazy" style="width:100%;height:180px;border:0;display:block;overflow:hidden" scrolling="no"></iframe>
@@ -89,9 +49,10 @@
       .shot{flex:1 1 220px;max-width:260px;margin:0}
       .shot a{display:block;border:1px solid rgba(255,255,255,.15);border-radius:10px;overflow:hidden;cursor:zoom-in}
       .shot img{display:block;width:100%;height:auto}
-      #viewer{position:fixed;inset:0;display:none;align-items:center;justify-content:center; align-items:center;background:rgba(0,0,0,.88);z-index:9999}
+      #viewer{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88);z-index:9999}
       #viewer img{max-width:95%;max-height:90%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
       #viewer .close{position:absolute;top:14px;right:14px;font-size:22px;padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;cursor:pointer}
+    </style>
     <div class="shots">
       <figure class="shot">
         <a href="screenshots/screenshot1.png?v=1758670348" data-full="screenshots/screenshot1.png?v=1758670348" title="Click to enlarge">
@@ -241,7 +202,7 @@
 
   <!-- Modal: Zorin Learn More -->
   <div id="zorinModal" role="dialog" aria-modal="true" aria-label="Zorin OS Learn More"
-       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center; align-items:center;background:rgba(0,0,0,.85);z-index:10000">
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
     <div style="position:relative;max-width:900px;width:min(900px,96vw);max-height:90vh;overflow:auto;
                 background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
                 border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
@@ -471,7 +432,7 @@
 
   <!-- Modal: Data Migration Learn More -->
   <div id="dataModal" role="dialog" aria-modal="true" aria-label="Data migration — Learn More"
-       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center; align-items:center;background:rgba(0,0,0,.85);z-index:10000">
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
     <div style="position:relative;max-width:900px;width:min(900px,96vw);max-height:90vh;overflow:auto;
                 background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
                 border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
@@ -554,7 +515,7 @@
 
   <!-- Modal: Plex Learn More -->
   <div id="plexModal" role="dialog" aria-modal="true" aria-label="Plex setup — Learn More"
-       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center; align-items:center;background:rgba(0,0,0,.85);z-index:10000">
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
     <div style="position:relative;max-width:900px;width:min(900px,96vw);max-height:90vh;overflow:auto;
                 background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
                 border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
@@ -639,7 +600,7 @@
 
   <!-- Modal: ZORIN advantages -->
   <div id="zorinAdvModal" role="dialog" aria-modal="true" aria-label="Zorin advantages"
-       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center; align-items:center;background:rgba(0,0,0,.85);z-index:10000">
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:10000">
     <div style="position:relative;max-width:920px;width:min(920px,96vw);max-height:90vh;overflow:auto;
                 background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
                 border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px">
@@ -1034,7 +995,7 @@ document.addEventListener('DOMContentLoaded', function(){
         hero.parentNode.insertBefore(wrap, hero.nextSibling);
       }
       // make sure it’s centered and visible
-      wrap.style.cssText = 'width:100%;display:flex;justify-content:center; align-items:center;margin:0;';
+      wrap.style.cssText = 'width:100%;display:flex;justify-content:center;margin:12px 0 18px;';
       btn.style.cssText += ';display:inline-block;text-align:center;';
     }
   }catch(e){}
@@ -1068,30 +1029,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!-- deploy-marker 20251007-210918 -->
 
-<!-- deploy-marker 20251007-211256 -->
-
-<!-- deploy-marker 20251007-211604 -->
-
-<!-- deploy-marker 20251007-211904 -->
-
-<!-- deploy-marker 20251007-213531 -->
-
-<!-- deploy-marker 20251007-213818 -->
-
-<!-- deploy-marker 20251007-214242 -->
-
-<!-- deploy-marker 20251007-214529 -->
-
-<!-- deploy-marker 20251007-220103 -->
-
-<!-- deploy-marker 20251007-220715 -->
-
-<!-- deploy-marker 20251007-221613 -->
-
-<!-- deploy-marker 20251007-223532 -->
-
-<!-- deploy-marker 20251007-224442 -->
-
-<!-- deploy-marker 20251007-225755 -->
-
-<!-- rollback marker 20251007-231820 -->
+<!-- rollback 20251007-232138 -->
