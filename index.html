@@ -48,6 +48,15 @@
   </style>
   <style id="cta-dedupe">body a[href$="tech-support.html"]:not(#hero-fixed a){display:none!important;}</style>
 <body>
+<section id="hero-solid" class="hero"
+  style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+  <img id="logo" src="images/logo.png" alt="PC • Mac • Back 2 Life"
+       style="display:block;max-height:110px;height:auto;width:auto;margin:0 12px 0 0">
+  <a id="support-cta-hero" class="btn" href="tech-support.html"
+     style="display:inline-flex !important;padding:16px 28px;border-radius:9999px;background:#e63946;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.25);position:static !important;">
+     Just looking for tech support for my PC
+  </a>
+</section>
   <main class="wrap">
     <section class="hero" aria-label="Hero">
       <img id="logo" src="images/logo.png" alt="PC • Mac • Back 2 Life" />
@@ -1073,6 +1082,7 @@ document.addEventListener('DOMContentLoaded', function(){
   /* nuke any leftover corner button */
   #fixed-cta{display:none !important}
 </style>
+  <style id="hero-solid-final">#fixed-cta{display:none!important} #hero-solid{position:relative;z-index:1} #support-cta-hero{position:static !important;visibility:visible !important;opacity:1 !important;pointer-events:auto !important}</style>
 </body>
 </html>
 
@@ -1099,3 +1109,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- hero-cta-fix 20251008-095648 -->
 
 <!-- hero-repair 20251008-100840 -->
+
+<!-- hero-solid 20251008-101959 -->
