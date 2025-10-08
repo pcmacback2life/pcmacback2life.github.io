@@ -62,7 +62,17 @@
   #fixed-cta{display:none !important;}
 </style>
 </head>
-  <style id="cta-dedupe">body a[href$="tech-support.html"]:not(#hero-fixed a){display:none!important;}</style>
+  <style id="hero-cta-inline">
+    /* Center logo at top */
+    img[alt*="PC • Mac • Back 2 Life"]{display:block;margin:20px auto 8px !important;height:auto;max-height:110px}
+
+    /* Make the Tech Support link a visible button under the logo */
+    a[href$="tech-support.html"]{
+      display:inline-flex !important;align-items:center;justify-content:center;
+      padding:16px 28px;border-radius:9999px;background:#e63946;color:#fff;text-decoration:none;font-weight:800;
+      box-shadow:0 10px 20px rgba(0,0,0,.25);margin:12px auto 0 !important;
+    }
+  </style>
 <body>
   <main class="wrap">
     <section class="hero" aria-label="Hero">
@@ -1073,3 +1083,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- add-cta-under 20251008-112225 -->
 
 <!-- add-cta-under 20251008-112924 -->
+
+<!-- cta-restore 20251008-115218 -->
