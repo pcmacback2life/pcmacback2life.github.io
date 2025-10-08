@@ -1050,14 +1050,6 @@ document.addEventListener('DOMContentLoaded', function(){
       outline:3px solid rgba(0,255,144,.6) !important; /* temporary visual cue */
     }
   </style>
-<a id="fixed-cta" href="tech-support.html"
-   style="position:fixed !important; right:16px !important; bottom:16px !important;
-          display:inline-flex !important; padding:16px 28px; border-radius:9999px;
-          background:#e63946; color:#fff; font-weight:800; text-decoration:none;
-          box-shadow:0 10px 20px rgba(0,0,0,.25);
-          z-index:2147483647 !important; outline:3px solid rgba(0,255,144,.6) !important;">
-  Just looking for tech support for my PC
-</a>
   <style id="cta-unfix-final">
     /* hide any legacy fixed CTA */
     #fixed-cta{display:none !important}
@@ -1067,6 +1059,15 @@ document.addEventListener('DOMContentLoaded', function(){
     body a[href$="tech-support.html"]{display:none !important}           /* hide duplicates elsewhere */
     .hero a[href$="tech-support.html"]{display:inline-flex !important; position:static !important; right:auto !important; bottom:auto !important; left:auto !important; top:auto !important}
   </style>
+<style id="hero-enforce">
+  .hero{display:flex !important; flex-direction:row !important; align-items:center !important; justify-content:center !important; gap:16px !important; flex-wrap:wrap !important}
+  #logo{display:block !important; max-height:110px !important; height:auto !important; width:auto !important; margin:0 12px 0 0 !important}
+  /* show ONLY the hero CTA; hide duplicates elsewhere */
+  body a[href$="tech-support.html"]{display:none !important}
+  .hero a[href$="tech-support.html"]{display:inline-flex !important; position:static !important}
+  /* nuke any leftover corner button */
+  #fixed-cta{display:none !important}
+</style>
 </body>
 </html>
 
@@ -1089,3 +1090,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- remove-fixed-cta 20251008-093823 -->
 
 <!-- remove-fixed-cta 20251008-094026 -->
+
+<!-- hero-cta-fix 20251008-095648 -->
