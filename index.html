@@ -1046,6 +1046,15 @@ document.addEventListener('DOMContentLoaded', function(){
           z-index:2147483647 !important; outline:3px solid rgba(0,255,144,.6) !important;">
   Just looking for tech support for my PC
 </a>
+  <style id="cta-unfix-final">
+    /* hide any legacy fixed CTA */
+    #fixed-cta{display:none !important}
+    /* keep ONLY the hero CTA visible, right of the logo */
+    .hero{display:flex !important; flex-direction:row !important; align-items:center !important; justify-content:center !important; gap:16px !important; flex-wrap:wrap !important}
+    #logo{display:block !important; max-height:110px !important; height:auto !important; width:auto !important; margin:0 12px 0 0 !important}
+    body a[href$="tech-support.html"]{display:none !important}           /* hide duplicates elsewhere */
+    .hero a[href$="tech-support.html"]{display:inline-flex !important; position:static !important; right:auto !important; bottom:auto !important; left:auto !important; top:auto !important}
+  </style>
 </body>
 </html>
 
@@ -1062,3 +1071,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- sticky-cta 20251008-091224 -->
 
 <!-- fixed-cta 20251008-091749 -->
+
+<!-- cta-unfix 20251008-093344 -->
