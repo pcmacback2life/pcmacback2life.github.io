@@ -106,6 +106,16 @@
   #revive-bubble p{ margin:8px 0 2px !important; font-size:18px; line-height:1.4 }
   #revive-bubble .tag{ display:none !important; } /* safety if any tag remains */
 </style>
+<style id="scroller-fix-final">
+  #screenshots-strip,
+  iframe[src*="scroller.html"]{
+    display:block !important;
+    width:100% !important;
+    height:200px !important;
+    border:0 !important;
+    overflow:hidden !important;
+  }
+</style>
 </head>
   <style id="hero-cta-inline">
     /* Center logo at top */
@@ -1083,3 +1093,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- remove-screenshots-title 20251008-140452 -->
 
 <!-- savehundreds-update 20251008-141139 -->
+
+<!-- scroller-fix 20251008-141503 -->
