@@ -101,6 +101,11 @@
   #revive-bubble p{ margin:8px 0 2px; font-size:18px; line-height:1.4 }
   @media (max-width:600px){ #revive-bubble p{ font-size:16px } }
 </style>
+<style id="revive-bubble-center">
+  #revive-bubble{ text-align:center !important; }
+  #revive-bubble p{ margin:8px 0 2px !important; font-size:18px; line-height:1.4 }
+  #revive-bubble .tag{ display:none !important; } /* safety if any tag remains */
+</style>
 </head>
   <style id="hero-cta-inline">
     /* Center logo at top */
@@ -121,7 +126,7 @@
     </section>
 <iframe id="screenshots-strip" title="Scrolling screenshots" src="/scroller.html" loading="lazy" style="width:100%;height:180px;border:0;display:block;overflow:hidden" scrolling="no"></iframe>
 <div id="revive-bubble" role="note" aria-label="Revive note">
-  <span class="tag">REVIVE</span>
+  
   <p>REVIVE YOUR OLD COMPUTER</p>
 </div>
 <!-- END: isolated CTA + scroller -->
@@ -1137,3 +1142,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- revive-bubble-text 20251008-132824 -->
 
 <!-- bubble-text 20251008-135417 -->
+
+<!-- bubble-center 20251008-135930 -->
