@@ -82,6 +82,51 @@
   /* Safety: hide any stray fixed corner CTA if it somehow reappears */
   #fixed-cta{ display:none !important; }
 </style>
+<style id="hero-layout-hard">
+  /* Make the hero span a full row, even if parent uses grid or flex columns */
+  :where(#hero-clean,#hero-solid,.hero){
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:16px !important;
+    flex-wrap:wrap !important;
+    /* full-row in flex/grid contexts */
+    flex:0 0 100% !important;
+    width:100% !important;
+    grid-column:1 / -1 !important;
+    margin:0 auto !important;
+  }
+  /* Logo sizing + space before the button */
+  :where(#hero-clean,#hero-solid,.hero) #logo{
+    display:block !important;
+    max-height:110px !important;
+    height:auto !important;
+    width:auto !important;
+    margin:0 12px 0 0 !important;
+  }
+  /* Keep ONLY the CTA inside the hero visible; hide duplicates elsewhere */
+  body a[href$="tech-support.html"]{ display:none !important; }
+  :where(#hero-clean,#hero-solid,.hero) a[href$="tech-support.html"]{
+    display:inline-flex !important;
+    position:static !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+  }
+
+  /* Force the screenshots strip UNDER the hero and across the full width */
+  :where(#screenshots-strip, iframe[src*="scroller.html"]){
+    display:block !important;
+    width:100% !important;
+    grid-column:1 / -1 !important;
+    clear:both !important;
+    margin-top:12px !important;
+  }
+
+  /* Safety: never show any legacy corner button */
+  #fixed-cta{ display:none !important; }
+</style>
 </head>
   <style id="cta-force-row">
     .hero{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -1154,3 +1199,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- hero-single 20251008-102649 -->
 
 <!-- hero-layout 20251008-103638 -->
+
+<!-- hero-layout-hard 20251008-105033 -->
