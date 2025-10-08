@@ -1030,6 +1030,14 @@ document.addEventListener('DOMContentLoaded', function(){
     body a[href$="tech-support.html"]{display:none !important}
     .hero a[href$="tech-support.html"]{display:inline-flex !important}
   </style>
+  <style id="cta-visibility-final">
+    .hero{position:relative !important; z-index:9999 !important;}
+    .hero a[href$="tech-support.html"]{
+      display:inline-flex !important; visibility:visible !important; opacity:1 !important;
+      pointer-events:auto !important; position:relative !important; z-index:10000 !important;
+      outline:3px solid rgba(0,255,144,.6) !important; /* temporary visual cue */
+    }
+  </style>
 </body>
 </html>
 
@@ -1040,3 +1048,5 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- rollback 20251007-232138 -->
 
 <!-- button-fix 20251008-085813 -->
+
+<!-- cta-visibility 20251008-090422 -->
