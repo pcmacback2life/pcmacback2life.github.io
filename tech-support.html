@@ -34,6 +34,25 @@
     <h1>Request Tech Support</h1>
     <p class="lead">Fill this out and we’ll get back to you ASAP.</p>
 
+  <div class="notice-mb" style="margin:14px 0 18px;padding:12px 14px;border-radius:12px;background:#0b2534;color:#e6edf3;box-shadow:0 4px 12px rgba(0,0,0,.25);">
+    <strong>Having trouble submitting?</strong> Some Malwarebytes setups block web forms. Try one of these:
+    <ol style="margin:10px 0 0 18px;">
+      <li><b>Click the blue</b> “Submit (Malwarebytes-safe)” button below.</li>
+      <li><b>Email us directly:</b>
+        <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=support@pc-mac-back-2-life.com&su=Tech%20Support%20Request"
+           style="margin-left:8px;display:inline-block;padding:8px 12px;border-radius:9999px;background:#2563eb;color:#fff;text-decoration:none;font-weight:700">Email with Gmail</a>
+        <a class="btn" href="mailto:support@pc-mac-back-2-life.com?subject=Tech%20Support%20Request"
+           style="margin-left:8px;display:inline-block;padding:8px 12px;border-radius:9999px;background:#334155;color:#fff;text-decoration:none;font-weight:700">Email with default app</a>
+      </li>
+      <li><b>Temporarily allow this site</b> in Malwarebytes, submit, then re-enable.</li>
+    </ol>
+    <details style="margin-top:10px"><summary style="cursor:pointer;color:#9fb1c3">How to allow this site (Malwarebytes)</summary>
+      <ul style="margin:8px 0 0 18px">
+        <li><b>Browser Guard (extension):</b> click the blue MB shield → toggle “Malware Protection” off for this site, submit, then turn it back on.</li>
+        <li><b>Desktop app:</b> Settings → Allow List → Add → Domain → <code>pc-mac-back-2-life.com</code> → Save → submit → remove the allow entry later.</li>
+      </ul>
+    </details>
+  </div>
     <form class="card" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="New Tech Support Request">
       <input type="hidden" name="_template" value="table">
@@ -126,7 +145,7 @@
                 formmethod="get"
                 formaction="#thanks"
                 style="background:#0ea5e9">
-          Submit (no internet)
+          Submit (Malwarebytes-safe)
         </button>
   <a class="btn btn-ghost" href="/">Cancel</a>
 </div>
