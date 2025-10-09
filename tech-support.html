@@ -147,4 +147,15 @@
     if (thanks) obs.observe(thanks,{attributes:true,attributeFilter:["style","class"]});
   })();
   </script>
+  <script id="thanks-hydrate-get">(function(){
+    function qs(k){return new URLSearchParams(location.search).get(k)||""}
+    if(location.hash==="#thanks"){
+      var echo=document.getElementById("echo"), mailto=document.getElementById("mailto"), gmail=document.getElementById("mailto-gmail");
+      var text="Name: "+qs("name")+"\nEmail: "+qs("email")+"\nPhone: "+qs("phone")+"\nDetails:\n"+qs("details")+"\nWhen: "+new Date().toISOString();
+      if(echo) echo.textContent=text;
+      var addr="support@pc-mac-back-2-life.com", subj="Tech Support Request";
+      if(mailto) mailto.href="mailto:"+encodeURIComponent(addr)+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(text);
+      if(gmail)  gmail.href ="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(addr)+"&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(text);
+    }
+  })();</script>
 </body></html>
