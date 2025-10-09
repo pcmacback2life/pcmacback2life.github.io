@@ -123,4 +123,27 @@
 </div>
     </form>
   </div>
+  <script id="mailto-dual">
+  (function(){
+    var fallbackAddress="support@pc-mac-back-2-life.com";
+    var subject="Tech Support Request";
+    var thanks=document.getElementById("thanks");
+    var echo=document.getElementById("echo");
+    var mailto=document.getElementById("mailto");
+    var gmail=document.getElementById("mailto-gmail");
+    function update(){
+      if(!thanks||!echo||!mailto||!gmail) return;
+      var text=(echo.textContent||"");
+      var mailtoHref = "mailto:"+encodeURIComponent(fallbackAddress)+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(text);
+      var gmailHref  = "https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(fallbackAddress)+"&su="+encodeURIComponent(subject)+"&body="+encodeURIComponent(text);
+      mailto.textContent = "Email with default app";
+      mailto.href = mailtoHref;
+      gmail.href  = gmailHref;
+    }
+    var obs=new MutationObserver(function(){
+      if (getComputedStyle(thanks).display!=="none") update();
+    });
+    if (thanks) obs.observe(thanks,{attributes:true,attributeFilter:["style","class"]});
+  })();
+  </script>
 </body></html>
