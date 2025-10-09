@@ -1,3 +1,9 @@
-* text=auto eol=lf
-CNAME text eol=lf
+* text=auto
+
+# Force LF where it matters for static sites/scripts
 *.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
