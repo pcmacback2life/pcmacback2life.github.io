@@ -117,7 +117,6 @@
 <style id="marquee-scroll-fix">
     display:flex; gap:12px; align-items:center;
     will-change: transform;
-    animation: marquee-scroll 42s linear infinite;
   }
     height:118px !important; width:auto !important;
     border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
@@ -160,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
     display:flex; gap:12px; align-items:center;
     will-change: transform;
-    animation: marquee-scroll 42s linear infinite;
   }
     height:118px !important; width:auto !important;
     border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
@@ -185,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function(){
   .shot-strip .track{
     display:flex; gap:12px; align-items:center;
     will-change: transform;
-    animation: marquee-scroll 42s linear infinite;
   }
   .shot-strip:hover .track{animation-play-state:paused}
   .shot-strip img{height:118px !important; width:auto !important; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30)}
@@ -197,3 +194,61 @@ document.addEventListener('DOMContentLoaded', function(){
   Need help right now?
   <a href="tech-support.html" style="display:inline-block;margin-left:8px;padding:8px 12px;border-radius:9999px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">Open Tech Support</a>
 </footer>
+
+<!-- ===== START: injected packages & contact (safe) ===== -->
+<section id="packages" style="margin:18px 0 8px">
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <article class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px">
+      <h3 style="margin:0 0 8px">Package A — Speed-Up & Clean</h3>
+      <ul style="margin:8px 0 0 18px">
+        <li>Deep clean + updates</li>
+        <li>Startup/services tune</li>
+        <li>Disk health check</li>
+        <li>Basic malware sweep</li>
+      </ul>
+    </article>
+    <article class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px">
+      <h3 style="margin:0 0 8px">Package B — Refresh & Upgrade</h3>
+      <ul style="margin:8px 0 0 18px">
+        <li>Everything in A</li>
+        <li>SSD/RAM guidance</li>
+        <li>Fresh OS / Linux setup</li>
+        <li>Data move & app setup</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="contact" style="margin:18px 0 22px">
+  <div class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px">
+    <h3 style="margin:0 0 8px">Quick contact</h3>
+    <form action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Website Inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr">
+        <input name="name" placeholder="Your name" required
+               style="padding:10px;border-radius:10px;background:#0f172a;border:1px solid #2b2e34;color:#e6edf3">
+        <input type="email" name="email" placeholder="Your email" required
+               style="padding:10px;border-radius:10px;background:#0f172a;border:1px solid #2b2e34;color:#e6edf3">
+      </div>
+      <textarea name="details" placeholder="What you have and what you want done" required
+                style="margin-top:10px;padding:10px;border-radius:10px;background:#0f172a;border:1px solid #2b2e34;color:#e6edf3;min-height:110px"></textarea>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <button type="submit" style="padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;border:0;font-weight:800;cursor:pointer">Send</button>
+        <a href="mailto:pcmacback2life@gmail.com?subject=Website%20Inquiry"
+           style="padding:8px 12px;border-radius:9999px;background:#334155;color:#fff;text-decoration:none">Email instead</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var header = document.querySelector('header') || document.querySelector('.site-header');
+  var pkg = document.getElementById('packages');
+  var cnt = document.getElementById('contact');
+  if (header && pkg) header.insertAdjacentElement('afterend', pkg);
+  if (pkg && cnt) pkg.insertAdjacentElement('afterend', cnt);
+});
+</script>
+<!-- ===== END: injected packages & contact (safe) ===== -->
