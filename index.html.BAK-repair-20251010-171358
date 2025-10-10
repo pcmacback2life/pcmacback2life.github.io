@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PC-Mac-Back-2-Life — Refurb • Rescue • Revive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://www.pc-mac-back-2-life.com/" />
+  <meta name="description" content="Refurbish, rescue, and revive older PCs & Macs. Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex, and more." />
+  <meta property="og:title" content="PC-Mac-Back-2-Life" />
+  <meta property="og:description" content="Refurbish, rescue, and revive older PCs & Macs. Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex, and more." />
+  <meta property="og:url" content="https://www.pc-mac-back-2-life.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root { --bg:#0b1220; --fg:#e6edf3; --muted:#aab8c6; --card:#111a2b; --accent:#8ecbff; }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Arial,sans-serif}
+    .wrap{max-width:1080px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;gap:16px;margin:4px 0 24px}
+    .site-logo{height:140px;width:auto}
+    @media (max-width:600px){ .site-logo{height:84px} }
+    .brand{font-weight:700;font-size:22px;letter-spacing:.2px}
+    .hero{background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);
+          border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px 24px;margin-bottom:24px;
+          box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .hero h1{margin:0 0 10px;font-size:32px}
+    .hero p{margin:0;color:var(--muted)}
+    .grid{display:grid;gap:16px;margin:24px 0;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--card);border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,.08)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    ul{padding-left:18px;margin:10px 0}
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);
+         text-decoration:none;color:var(--fg);background:#0f172a}
+    .btn.primary{background:var(--accent);color:#04121e;border-color:transparent}
+    footer{margin:28px 0 8px;color:var(--muted);font-size:14px;text-align:center}
+  </style>
+  <link rel="stylesheet" href="assets/marquee.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo">
+<section class="shot-strip">
+  <div class="marquee"><div class="track">
+    <img loading="lazy" src="images/screenshots/screenshot1.png" alt="screenshot">
+    <img loading="lazy" src="images/screenshots/screenshot2.png" alt="screenshot">
+    <img loading="lazy" src="images/screenshots/screenshot3.png" alt="screenshot">
+    <img loading="lazy" src="images/screenshots/screenshot4.png" alt="screenshot">
+    <!-- duplicate once for seamless scroll -->
+    <img loading="lazy" src="images/screenshots/screenshot1.png" alt="screenshot">
+    <img loading="lazy" src="images/screenshots/screenshot2.png" alt="screenshot">
+    <img loading="lazy" src="images/screenshots/screenshot3.png" alt="screenshot">
+    <img loading="lazy" src="images/screenshots/screenshot4.png" alt="screenshot">
+  </div></div>
+</section>
+  <div id="logo-after-anchor"></div>
+  <a class="btn-red" href="tech-support.html" style="display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">I just need tech support for my PC →</a>
+      <div class="brand">PC-Mac-Back-2-Life</div>
+    </header>
+
+    <section class="hero">
+      <h1>Refurb • Rescue • Revive your PC or Mac</h1>
+      <p>Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex builds, and more — done right.</p>
+      <div class="cta">
+        <a class="btn primary" href="tech-support.html">I just need tech support for my PC →</a>
+        <a class="btn" href="mailto:youremail@example.com?subject=PC-Mac-Back-2-Life">Email me</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Popular services</h3>
+        <ul>
+          <li>SSD/RAM upgrades &amp; tune-ups</li>
+          <li>Linux installs (Mint/Ubuntu), dual-boot</li>
+          <li>Data rescue &amp; migrations</li>
+          <li>Plex/media server setups</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What you get</h3>
+        <ul>
+          <li>No-nonsense advice</li>
+          <li>Fixed-price quotes</li>
+          <li>Clear hand-off docs</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> PC-Mac-Back-2-Life</footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
+<style id="header-wrap-fix">
+  header{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px}
+  header img.site-logo{height:160px !important;width:auto !important;order:1}
+  @media (max-width:600px){ header img.site-logo{height:96px !important} }
+  header a.btn-red:hover{filter:brightness(1.06)}
+  /* Hide any header brand text blocks so only the image logo shows */
+  header .brand, header .site-name, header h1.brand, header .brand-text { display:none !important; }
+</style>
+<style id="marquee-size-fix">
+  /* Thumbnail sizing & layout for the scrolling screenshots */
+    display:flex; align-items:center; gap:12px; overflow:hidden;
+  }
+    height:118px !important;          /* desktop thumb height */
+    width:auto !important;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,.30);
+  }
+  @media (max-width:640px){
+  }
+</style>
+    display:flex; gap:12px; align-items:center;
+  }
+    height:118px !important; width:auto !important;
+    border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
+  }
+    from{transform:translateX(0)} to{transform:translateX(-50%)}
+  }
+</style>
+<script id="marquee-under-logo">
+document.addEventListener('DOMContentLoaded', function(){
+  const anchor = document.getElementById('logo-after-anchor');
+  const logo   = document.querySelector('header img.site-logo');
+  if(!anchor || !logo) return;
+
+  // Find the *current* screenshot group (wherever it is)
+  if(!currentStrip) return;
+
+  // Collect the current images
+  const imgs = Array.from(currentStrip.querySelectorAll('img'));
+  if(!imgs.length) return;
+
+  // Build a clean strip inside the anchor (seamless loop by duplicating once)
+  const marquee= document.createElement('div');    marquee.className = 'marquee';
+  const track  = document.createElement('div');    track.className   = 'track';
+
+  const cloneSet = () => imgs.map(img => {
+    const c = document.createElement('img');
+    c.src = img.getAttribute('src'); c.alt = img.getAttribute('alt') || '';
+    return c;
+  });
+  [...cloneSet(), ...cloneSet()].forEach(n => track.appendChild(n));
+  marquee.appendChild(track); strip.appendChild(marquee);
+
+  // Place the strip *right after the logo* via the anchor
+  anchor.replaceChildren(strip);
+
+  // Remove the old location
+  if (currentStrip !== strip) currentStrip.remove();
+});
+</script>
+    display:flex; gap:12px; align-items:center;
+  }
+    height:118px !important; width:auto !important;
+    border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
+  }
+    from{transform:translateX(0)} to{transform:translateX(-50%)}
+  }
+</style>
+  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+</style>
+<style id="header-stack-fix">
+  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  header .shot-strip{order:3;width:100%;padding-top:6px}
+</style>
+  .shot-strip{padding:4px 0}
+  .shot-strip .marquee{overflow:hidden}
+  .shot-strip .track{
+    display:flex; gap:12px; align-items:center;
+  }
+  .shot-strip:hover .track{animation-play-state:paused}
+  @media (max-width:640px){ .shot-strip img{height:88px !important} }
+  @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
+</style>
+<footer class="site-footer-cta" style="margin:28px 0 8px;text-align:center;color:#aab8c6;font-size:14px">
+  Need help right now?
+  <a href="tech-support.html" style="display:inline-block;margin-left:8px;padding:8px 12px;border-radius:9999px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">Open Tech Support</a>
+</footer>
+
+<!-- ===== START: injected packages & contact (safe) ===== -->
+<section id="packages" style="margin:18px 0 8px">
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <article class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px">
+      <h3 style="margin:0 0 8px">Package A — Speed-Up & Clean</h3>
+      <ul style="margin:8px 0 0 18px">
+        <li>Deep clean + updates</li>
+        <li>Startup/services tune</li>
+        <li>Disk health check</li>
+        <li>Basic malware sweep</li>
+      </ul>
+    </article>
+    <article class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px">
+      <h3 style="margin:0 0 8px">Package B — Refresh & Upgrade</h3>
+      <ul style="margin:8px 0 0 18px">
+        <li>Everything in A</li>
+        <li>SSD/RAM guidance</li>
+        <li>Fresh OS / Linux setup</li>
+        <li>Data move & app setup</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="contact" style="margin:18px 0 22px">
+  <div class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px">
+    <h3 style="margin:0 0 8px">Quick contact</h3>
+    <form action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Website Inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr">
+        <input name="name" placeholder="Your name" required
+               style="padding:10px;border-radius:10px;background:#0f172a;border:1px solid #2b2e34;color:#e6edf3">
+        <input type="email" name="email" placeholder="Your email" required
+               style="padding:10px;border-radius:10px;background:#0f172a;border:1px solid #2b2e34;color:#e6edf3">
+      </div>
+      <textarea name="details" placeholder="What you have and what you want done" required
+                style="margin-top:10px;padding:10px;border-radius:10px;background:#0f172a;border:1px solid #2b2e34;color:#e6edf3;min-height:110px"></textarea>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <button type="submit" style="padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;border:0;font-weight:800;cursor:pointer">Send</button>
+        <a href="mailto:pcmacback2life@gmail.com?subject=Website%20Inquiry"
+           style="padding:8px 12px;border-radius:9999px;background:#334155;color:#fff;text-decoration:none">Email instead</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var header = document.querySelector('header') || document.querySelector('.site-header');
+  var pkg = document.getElementById('packages');
+  var cnt = document.getElementById('contact');
+  if (header && pkg) header.insertAdjacentElement('afterend', pkg);
+  if (pkg && cnt) pkg.insertAdjacentElement('afterend', cnt);
+});
+</script>
+<!-- ===== END: injected packages & contact (safe) ===== -->
