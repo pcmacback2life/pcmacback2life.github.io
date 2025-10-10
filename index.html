@@ -97,7 +97,6 @@
   header{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px}
   header img.site-logo{height:160px !important;width:auto !important;order:1}
   @media (max-width:600px){ header img.site-logo{height:96px !important} }
-  header a.btn-red{order:2;flex-basis:100%;max-width:max-content;margin:10px 0 0 0}
   header a.btn-red:hover{filter:brightness(1.06)}
   /* Hide any header brand text blocks so only the image logo shows */
   header .brand, header .site-name, header h1.brand, header .brand-text { display:none !important; }
@@ -114,14 +113,11 @@
   @media (max-width:640px){
   }
 </style>
-<style id="marquee-scroll-fix">
     display:flex; gap:12px; align-items:center;
-    will-change: transform;
   }
     height:118px !important; width:auto !important;
     border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
   }
-  @keyframes marquee-scroll{
     from{transform:translateX(0)} to{transform:translateX(-50%)}
   }
 </style>
@@ -158,36 +154,26 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
     display:flex; gap:12px; align-items:center;
-    will-change: transform;
   }
     height:118px !important; width:auto !important;
     border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
   }
-  @keyframes marquee-scroll{
     from{transform:translateX(0)} to{transform:translateX(-50%)}
   }
 </style>
   header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-  header img.site-logo{order:1}
-  header a.btn-red{order:2;flex-basis:auto;margin:10px 0 0 0}
 </style>
 <style id="header-stack-fix">
   header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-  header img.site-logo{order:1}
-  header a.btn-red{order:2;flex-basis:auto;margin:10px 0 0 0}
   header .shot-strip{order:3;width:100%;padding-top:6px}
 </style>
-<style id="marquee-scroll-css">
   .shot-strip{padding:4px 0}
   .shot-strip .marquee{overflow:hidden}
   .shot-strip .track{
     display:flex; gap:12px; align-items:center;
-    will-change: transform;
   }
   .shot-strip:hover .track{animation-play-state:paused}
-  .shot-strip img{height:118px !important; width:auto !important; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30)}
   @media (max-width:640px){ .shot-strip img{height:88px !important} }
-  @keyframes marquee-scroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
   @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
 </style>
 <footer class="site-footer-cta" style="margin:28px 0 8px;text-align:center;color:#aab8c6;font-size:14px">
