@@ -94,3 +94,13 @@ header .brand, header .site-name, header h1.brand, header .brand-text { display:
   /* hover nicety */
   header a.btn-red:hover{filter:brightness(1.06)}
 </style>
+<style id="header-fix">
+  .site-header{display:block;padding:8px 0}
+  .logo-col{display:inline-flex;flex-direction:column;align-items:flex-start}
+  .logo-col .site-logo{height:160px;width:auto}
+  .logo-col .btn-red{
+    margin-top:8px;display:inline-block;padding:10px 14px;border-radius:10px;
+    background:#dc2626;color:#fff;text-decoration:none;font-weight:800
+  }
+  @media (max-width:600px){ .logo-col .site-logo{height:96px} }
+</style>
