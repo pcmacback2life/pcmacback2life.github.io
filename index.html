@@ -55,7 +55,71 @@
   </div></div>
 </section>
   <div id="logo-after-anchor"></div>
-  <a class="btn-red" href="tech-support.html" style="display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">I just need tech support for my PC →</a>
+  <a class="btn-red" href="tech-support.html" style="display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">
+<!-- data-sections-inserted -->I just need tech support for my PC →</a>
+<section class="services" style="margin:18px 0 10px">
+  <h2 style="margin:0 0 12px;font:800 22px/1.2 system-ui">Popular services</h2>
+  <div class="grid" style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <div class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px">
+      <h3 style="margin:0 0 8px;font:700 18px/1.2 system-ui">Package A — Tune-Up + Linux</h3>
+      <ul style="margin:8px 0 0 18px">
+        <li>SSD/HDD health check, cleanup, updates</li>
+        <li>Fast, modern Linux install (or dual-boot)</li>
+        <li>Apps, backups, and browser carry-over</li>
+      </ul>
+    </div>
+    <div class="card" style="background:#111a2b;border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px">
+      <h3 style="margin:0 0 8px;font:700 18px/1.2 system-ui">Package B — Plex + Media</h3>
+      <ul style="margin:8px 0 0 18px">
+        <li>Plex server setup & library organization</li>
+        <li>Remote streaming to TVs/phones/tablets</li>
+        <li>Storage planning & backup strategy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" style="margin:18px 0 28px">
+  <h2 style="margin:0 0 12px;font:800 22px/1.2 system-ui">Tell me what you need fixed</h2>
+  <form class="card" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data"
+        style="background:#111a2b;border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px">
+    <input type="hidden" name="_subject" value="New Tech Support Request">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div>
+        <label>Your name</label>
+        <input class="control" name="name" required
+               style="display:block;width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#0f172a;color:#e6edf3">
+      </div>
+      <div>
+        <label>Your email</label>
+        <input class="control" type="email" name="email" required
+               style="display:block;width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#0f172a;color:#e6edf3">
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <label>What you have (PC/Mac, model, storage, issues)</label>
+      <textarea class="control" name="have" rows="4" required
+                style="display:block;width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#0f172a;color:#e6edf3;resize:vertical"></textarea>
+    </div>
+    <div style="margin-top:12px">
+      <label>What you want done</label>
+      <textarea class="control" name="want" rows="4" required
+                style="display:block;width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#0f172a;color:#e6edf3;resize:vertical"></textarea>
+    </div>
+    <div class="actions" style="display:flex;gap:12px;align-items:center;justify-content:flex-start;margin-top:14px">
+      <button class="btn-primary" type="submit"
+              style="border:0;border-radius:9999px;padding:12px 18px;font-weight:800;background:#8ecbff;color:#04121e;cursor:pointer">
+        Send details
+      </button>
+      <a class="btn-ghost" href="mailto:pcmacback2life@gmail.com?subject=Tech%20Support%20Request"
+         style="display:inline-block;border-radius:9999px;padding:12px 18px;text-decoration:none;border:1px solid rgba(255,255,255,.2);color:#aab8c6">
+        Or email me instead
+      </a>
+    </div>
+  </form>
+</section>
       <div class="brand">PC-Mac-Back-2-Life</div>
     </header>
 
