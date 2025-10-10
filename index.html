@@ -42,6 +42,7 @@
     <header>
       <!-- Drop images/logo.png into the repo if you want a logo -->
       <img class="site-logo" src="images/logo.png" srcset="images/logo@2x.png 2x" alt="" onerror="this.style.display='none'">
+            <img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo">
       <div class="brand">PC-Mac-Back-2-Life</div>
     </header>
 
@@ -95,4 +96,10 @@
 /* gentle logo size bump, loads after earlier styles */
 header img{height:96px !important; width:auto !important}
 @media (max-width:600px){ header img{height:64px !important} }
+</style>
+
+<style>
+/* logo sizing override */
+.site-logo{height:96px !important;width:auto !important}
+@media (max-width:600px){ .site-logo{height:64px !important} }
 </style>
