@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>PC-Mac-Back-2-Life — Refurb • Rescue • Revive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://www.pc-mac-back-2-life.com/" />
   <meta name="description" content="Refurbish, rescue, and revive older PCs & Macs. Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex, and more." />
+  <meta property="og:title" content="PC-Mac-Back-2-Life" />
   <meta property="og:description" content="Refurbish, rescue, and revive older PCs & Macs. Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex, and more." />
   <meta property="og:url" content="https://www.pc-mac-back-2-life.com/" />
   <meta property="og:type" content="website" />
@@ -37,6 +39,9 @@
 <body>
   <div class="wrap">
     <header>
+      <img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo">
+  <a class="btn-red" href="tech-support.html" style="display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">Tech support details →</a>
+      <div class="brand">PC-Mac-Back-2-Life</div>
 </header>
 
     <section class="hero">
@@ -44,6 +49,7 @@
       <p>Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex builds, and more — done right.</p>
       <div class="cta">
         <a class="btn primary" href="tech-support.html">Tech support details →</a>
+        <a class="btn" href="mailto:youremail@example.com?subject=PC-Mac-Back-2-Life">Email me</a>
       </div>
     </section>
 
@@ -67,6 +73,7 @@
       </div>
     </section>
 
+    <footer>© <span id="y"></span> PC-Mac-Back-2-Life</footer>
   </div>
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
@@ -75,22 +82,3 @@
 <style>header img.site-logo{height:160px !important;width:auto !important}@media (max-width:600px){header img.site-logo{height:96px !important}}</style>
 
 <style>.btn-red:hover{filter:brightness(1.06)}</style>
-
-<style>
-/* header layout overrides */
-header{display:flex;align-items:center;gap:14px}
-header .brand-left{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-header .btn-red{
-  display:inline-block;padding:10px 14px;border-radius:10px;
-  background:#dc2626;color:#fff;text-decoration:none;font-weight:800
-}
-header .btn-red:hover{filter:brightness(1.06)}
-@media (max-width:600px){
-  header .btn-red{padding:8px 12px}
-}
-</style>
-
-<style>
-/* header spacing tweak */
-header{margin:8px 0 10px !important}
-</style>
