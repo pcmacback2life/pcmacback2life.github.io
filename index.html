@@ -39,7 +39,10 @@
 <body>
   <div class="wrap">
     <header>
-      <img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo">
+      <div class="logo-stack">
+  <img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo">
+  <a class="btn-red" href="tech-support.html" style="display:inline-block;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">I just need tech support for my PC →</a>
+</div>
       <div class="brand">PC-Mac-Back-2-Life</div>
     </header>
 
@@ -77,3 +80,8 @@
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
+<style id="logo-stack-css">
+  header .logo-stack{display:inline-flex;flex-direction:column;align-items:flex-start;gap:10px}
+  /* keep any brand text to the right hidden, image stays */
+  header .brand, header .site-name, header .brand-text{display:none !important}
+</style>
