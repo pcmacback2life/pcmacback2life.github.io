@@ -3,27 +3,107 @@
 <title>Tech Support — PC-Mac-Back-2-Life</title>
 <link rel="canonical" href="https://www.pc-mac-back-2-life.com/tech-support.html">
 <style>
-  body{margin:0;background:#0b1220;color:#e6edf3;font:16px/1.6 system-ui,Arial,sans-serif}
-  .wrap{max-width:900px;margin:0 auto;padding:32px}
-  .card{background:#111a2b;padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}
-  label{display:block;margin:10px 0 4px}
-  input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:#0f172a;color:#e6edf3}
-  button{margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0f172a;color:#e6edf3;cursor:pointer}
-  a{color:#8ecbff}
+  :root{--bg:#0b1220;--fg:#e6edf3;--mut:#aab8c6;--panel:#111a2b;--bd:rgba(255,255,255,.10);--accent:#8ecbff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Arial,sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 16px}
+  h1{margin:0 0 10px;font-size:28px;text-align:center}
+  .lead{margin:0 0 16px;color:var(--mut);text-align:center}
+  .card{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  fieldset{border:1px solid var(--bd);border-radius:14px;padding:16px;margin:14px 0 18px}
+  legend{padding:0 8px;font-weight:800}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
+  label{display:block;margin:6px 0 6px;font-weight:650}
+  .control{display:block;width:100%;padding:12px 14px;background:#0f172a;border:1px solid #2b2e34;border-radius:12px;color:var(--fg)}
+  textarea.control{min-height:110px;resize:vertical}
+  .hint{color:var(--mut);font-size:14px;margin-top:6px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin:12px 0}
+  .btn{display:inline-block;border-radius:9999px;padding:12px 20px;font-weight:800;text-decoration:none;cursor:pointer;border:0}
+  .btn-primary{background:var(--accent);color:#04121e}
+  .btn-ghost{background:transparent;color:var(--mut);border:1px solid var(--bd)}
+  .notice{margin:14px 0;padding:12px 14px;border-radius:12px;background:#0b2534;border:1px solid rgba(255,255,255,.12)}
 </style>
-</head><body><div class="wrap">
-  <h1>Tell me what you need fixed</h1>
-  <div class="card">
-    <form action="mailto:pcmacback2life@gmail.com" method="post" enctype="text/plain">
-      <label>Your name</label><input name="name" required>
-      <label>Your email</label><input type="email" name="email" required>
-      <label>What you have (PC/Mac, model, storage, issues)</label><textarea name="have" rows="5" required></textarea>
-      <label>What you want done</label><textarea name="want" rows="5" required></textarea>
-      <button type="submit">Send details</button>
-    </form>
-    <p style="margin-top:8px">Prefer email? <a href="mailto:pcmacback2life@gmail.com?subject=Tech%20Support%20Request">pcmacback2life@gmail.com</a></p>
-    <p><a href="/">← Back to homepage</a></p>
-  </div>
-</div></body></html>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Request Tech Support</h1>
+    <p class="lead">Give me the details and I’ll get back to you ASAP.</p>
 
-<!-- ts-marker 1760112411 -->
+    <div class="notice">
+      <strong>Having trouble submitting?</strong> Some security suites (e.g., Malwarebytes) can block web forms.
+      Try the blue button below, or email <a href="mailto:pcmacback2life@gmail.com?subject=Tech%20Support%20Request">pcmacback2life@gmail.com</a>.
+    </div>
+
+    <form class="card" action="https://formsubmit.co/pcmacback2life@gmail.com" method="POST" enctype="multipart/form-data">
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_subject" value="New Tech Support Request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <fieldset>
+        <legend>Your info</legend>
+        <div class="grid-2">
+          <div><label>Name</label><input class="control" name="name" required></div>
+          <div><label>Email</label><input class="control" type="email" name="email" required></div>
+        </div>
+        <div class="grid-2">
+          <div><label>Phone (optional)</label><input class="control" name="phone"></div>
+          <div>
+            <label>Preferred contact</label>
+            <select class="control" name="contact_pref">
+              <option>Email</option><option>Phone</option><option>Either</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your device</legend>
+        <div class="grid-2">
+          <div><label>Type</label>
+            <select class="control" name="device_type">
+              <option>Windows PC</option><option>Mac</option><option>Laptop</option><option>Desktop</option><option>Other</option>
+            </select>
+          </div>
+          <div><label>Make / Model</label><input class="control" name="make_model" placeholder="e.g., Dell OptiPlex 7050, MacBook Pro 2015"></div>
+        </div>
+        <div class="grid-2">
+          <div><label>RAM (approx)</label><input class="control" name="ram" placeholder="e.g., 8 GB"></div>
+          <div><label>Storage</label><input class="control" name="storage" placeholder="e.g., 256 GB SSD"></div>
+        </div>
+        <div><label>Operating system</label><input class="control" name="os" placeholder="e.g., Windows 10, macOS 12, Linux Mint"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>What’s going on?</legend>
+        <label>Describe the issue(s)</label>
+        <textarea class="control" name="issues" placeholder="Slow, won’t boot, malware, broken screen, Wi-Fi problems, etc." required></textarea>
+        <div class="grid-2">
+          <div>
+            <label>Urgency</label>
+            <select class="control" name="urgency">
+              <option>Whenever</option><option>Soon</option><option>Urgent</option>
+            </select>
+          </div>
+          <div><label>Budget (optional)</label><input class="control" name="budget" placeholder="$"></div>
+        </div>
+        <label>What outcome do you want?</label>
+        <textarea class="control" name="desired" placeholder="What does 'fixed' look like for you?" required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Attachments (optional)</legend>
+        <div class="hint">Screenshots or photos help (max size depends on email gateway).</div>
+        <input class="control" type="file" name="attachment" accept="image/*,application/pdf">
+      </fieldset>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Submit (recommended)</button>
+        <a class="btn btn-ghost" href="mailto:pcmacback2life@gmail.com?subject=Tech%20Support%20Request">Email instead</a>
+        <a class="btn btn-ghost" href="/">← Back to homepage</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
