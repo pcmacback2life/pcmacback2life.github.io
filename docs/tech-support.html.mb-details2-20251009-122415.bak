@@ -197,38 +197,15 @@
       }
     }, true); // capture=true runs before bubble-handlers
   })();</script>
-  <script id="auto-gmail-open">(function(){
-    function ready(fn){document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn)}
-    ready(function(){
-      if(location.hash!=="#thanks") return;
-      var a=document.getElementById("mailto-gmail");
-      var href=a && a.getAttribute("href");
-      if(!href){
-        function qs(k){return new URLSearchParams(location.search).get(k)||""}
-        var addr="support@pc-mac-back-2-life.com", subj="Tech Support Request";
-        var text="Name: "+qs("name")+"\nEmail: "+qs("email")+"\nPhone: "+qs("phone")+"\nDetails:\n"+qs("details")+"\nWhen: "+new Date().toISOString();
-        href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(addr)+"&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(text);
-      }
-      setTimeout(function(){
-        var w=window.open(href, "_blank", "noopener");
-        if(!w){
-          var note=document.getElementById("send-help");
-          if(note){ note.textContent="Popup blocked — click \"Email with Gmail\" to send."; note.style.color="#ffd166"; }
-        }
-      },150);
-    });
-  })();</script>
 </body></html>
   <div id="thanks" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;z-index:9999">
     <div style="background:#141f2a;color:#e6edf3;max-width:720px;width:92%;padding:16px 18px;border-radius:12px;">
       <h2 style="margin:0 0 8px">Thanks — we received your info</h2>
       <pre id="echo" style="white-space:pre-wrap;background:#0f1a24;padding:10px;border-radius:8px"></pre>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-      <p id="send-help" style="margin:8px 0 0;color:#9fb1c3;font-size:14px">Step 2 of 2: choose Gmail or your computer’s mail app to send.</p>
-        <a id="mailto" class="btn" href="mailto:support@pc-mac-back-2-life.com?subject=Tech%20Support%20Request">Email with default app</a>
-        <a id="mailto-gmail" class="btn" href="https://mail.google.com/mail/?view=cm<a id="mailto-gmail" class="btn" href="#"fs=1<a id="mailto-gmail" class="btn" href="#"to=support@pc-mac-back-2-life.com<a id="mailto-gmail" class="btn" href="#"su=Tech%20Support%20Request">Email with Gmail</a>
+        <a id="mailto" class="btn" href="#">Email with default app</a>
+        <a id="mailto-gmail" class="btn" href="#">Email with Gmail</a>
         <a class="btn" href="#" onclick="document.getElementById(thanks).style.display=none;return false;">Close</a>
       </div>
     </div>
   </div>
->
