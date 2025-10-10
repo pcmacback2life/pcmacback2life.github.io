@@ -105,3 +105,19 @@
   /* Hide any header brand text blocks so only the image logo shows */
   header .brand, header .site-name, header h1.brand, header .brand-text { display:none !important; }
 </style>
+<style id="marquee-size-fix">
+  /* Thumbnail sizing & layout for the scrolling screenshots */
+  .shot-strip{padding:6px 0}
+  .shot-strip .marquee{
+    display:flex; align-items:center; gap:12px; overflow:hidden;
+  }
+  .shot-strip .marquee img{
+    height:118px !important;          /* desktop thumb height */
+    width:auto !important;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,.30);
+  }
+  @media (max-width:640px){
+    .shot-strip .marquee img{height:88px !important;}  /* smaller on phones */
+  }
+</style>
