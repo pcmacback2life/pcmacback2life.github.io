@@ -33,13 +33,15 @@
     footer{margin:28px 0 8px;color:var(--muted);font-size:14px;text-align:center}
     @media (min-width:900px){ .hero h1{font-size:34px} }
     @media (max-width:600px){ header img{height:56px} }
+    .site-logo{height:140px !important;width:auto !important}
+    @media (max-width:600px){ .site-logo{height:80px !important} }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <!-- Drop images/logo.png into the repo if you want a logo -->
-      <img src="images/logo.png" alt="" onerror="this.style.display='none'">
+      <img class="site-logo" src="images/logo.png" alt="" onerror="this.style.display='none'">
       <div class="brand">PC-Mac-Back-2-Life</div>
     </header>
 
