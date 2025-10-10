@@ -197,27 +197,6 @@
       }
     }, true); // capture=true runs before bubble-handlers
   })();</script>
-  <script id="auto-gmail-open">(function(){
-    function ready(fn){document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn)}
-    ready(function(){
-      if(location.hash!=="#thanks") return;
-      var a=document.getElementById("mailto-gmail");
-      var href=a && a.getAttribute("href");
-      if(!href){
-        function qs(k){return new URLSearchParams(location.search).get(k)||""}
-        var addr="support@pc-mac-back-2-life.com", subj="Tech Support Request";
-        var text="Name: "+qs("name")+"\nEmail: "+qs("email")+"\nPhone: "+qs("phone")+"\nDetails:\n"+qs("details")+"\nWhen: "+new Date().toISOString();
-        href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(addr)+"&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(text);
-      }
-      setTimeout(function(){
-        var w=window.open(href, "_blank", "noopener");
-        if(!w){
-          var note=document.getElementById("send-help");
-          if(note){ note.textContent="Popup blocked — click \"Email with Gmail\" to send."; note.style.color="#ffd166"; }
-        }
-      },150);
-    });
-  })();</script>
 </body></html>
   <div id="thanks" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;z-index:9999">
     <div style="background:#141f2a;color:#e6edf3;max-width:720px;width:92%;padding:16px 18px;border-radius:12px;">
