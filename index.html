@@ -225,10 +225,8 @@ document.addEventListener('DOMContentLoaded', function(){
     from{transform:translateX(0)} to{transform:translateX(-50%)}
   }
 </style>
-  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 </style>
 <style id="header-stack-fix">
-  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   header .shot-strip{order:3;width:100%;padding-top:6px}
 </style>
   .shot-strip{padding:4px 0}
@@ -306,4 +304,18 @@ document.addEventListener('DOMContentLoaded', function(){
   /* logo sizing (wins because it’s last) */
   header img.site-logo{height:160px !important;width:auto !important;display:block}
   @media (max-width:600px){ header img.site-logo{height:96px !important} }
+</style>
+<style id="final-fixes">
+  /* Header layout: stack logo, then red button */
+  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  header img.site-logo{height:160px !important;width:auto !important;display:block}
+  @media (max-width:600px){ header img.site-logo{height:96px !important} }
+  header a.btn-red{margin-top:10px}
+
+  /* Scroller under logo, smooth and contained */
+  .marquee-wrap{overflow:hidden; width:100%; margin:12px 0 0 0}
+  .marquee-track{display:flex; gap:12px; align-items:center; will-change:transform; animation:marquee-scroll 42s linear infinite}
+  .marquee-item{flex:0 0 auto}
+  .marquee-item img{height:118px !important; width:auto !important; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30)}
+  @keyframes marquee-scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
 </style>
