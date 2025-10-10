@@ -42,37 +42,6 @@
   <div class="wrap">
     <header>
       <img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo">
-  <div id="logo-after-anchor"></div>
-<section class="shot-strip">
-  <div class="marquee">
-    <div class="track">
-      <img loading="lazy" src="images/screenshots/screenshot1.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot10.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot11.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot12.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot2.jpeg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot3.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot4.jpg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot5.jpeg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot6.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot7.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot8.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot9.jpg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot1.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot10.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot11.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot12.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot2.jpeg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot3.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot4.jpg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot5.jpeg" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot6.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot7.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot8.png" alt="screenshot">
-      <img loading="lazy" src="images/screenshots/screenshot9.jpg" alt="screenshot">
-    </div>
-  </div>
-</section>
   <a class="btn-red" href="tech-support.html" style="display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">I just need tech support for my PC →</a>
       <div class="brand">PC-Mac-Back-2-Life</div>
     </header>
@@ -106,6 +75,22 @@
       </div>
     </section>
 
+<section class="shot-strip" style="margin:24px 0">
+  <div class="marquee">
+    <img src="images/screenshots/screenshot1.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot10.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot11.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot12.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot2.jpeg" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot3.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot4.jpg" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot5.jpeg" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot6.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot7.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot8.png" alt="screenshot" loading="lazy">
+    <img src="images/screenshots/screenshot9.jpg" alt="screenshot" loading="lazy">
+  </div>
+</section>
     <footer>© <span id="y"></span> PC-Mac-Back-2-Life</footer>
   </div>
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
@@ -189,22 +174,3 @@ document.addEventListener('DOMContentLoaded', function(){
   if (currentStrip !== strip) currentStrip.remove();
 });
 </script>
-<style id="marquee-scroll-css">
-  .shot-strip{padding:8px 0}
-  .shot-strip .marquee{overflow:hidden}
-  .shot-strip .track{
-    display:flex; gap:12px; align-items:center;
-    will-change: transform;
-    animation: marquee-scroll 42s linear infinite;
-  }
-  .shot-strip:hover .track{ animation-play-state: paused }
-  .shot-strip img{
-    height:118px !important; width:auto !important;
-    border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
-  }
-  @media (max-width:640px){ .shot-strip img{height:88px !important} }
-  @keyframes marquee-scroll{
-    from{transform:translateX(0)} to{transform:translateX(-50%)}
-  }
-  @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
-</style>
