@@ -121,3 +121,68 @@
     .shot-strip .marquee img{height:88px !important;}  /* smaller on phones */
   }
 </style>
+<style id="marquee-scroll-fix">
+  .shot-strip{padding:6px 0}
+  .shot-strip .marquee { overflow: hidden; }
+  .shot-strip .track{
+    display:flex; gap:12px; align-items:center;
+    will-change: transform;
+    animation: marquee-scroll 42s linear infinite;
+  }
+  /* pause on hover */
+  .shot-strip:hover .track{ animation-play-state: paused; }
+
+  /* thumbnail sizing (keeps what you already liked) */
+  .shot-strip img{
+    height:118px !important; width:auto !important;
+    border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
+  }
+  @media (max-width:640px){ .shot-strip img{height:88px !important} }
+
+  @keyframes marquee-scroll{
+    from{ transform: translateX(0) }
+    to  { transform: translateX(-50%) }
+  }
+  /* reduce motion respects user pref */
+  @media (prefers-reduced-motion: reduce){
+    .shot-strip .track{ animation: none }
+  }
+</style>
+<script id="marquee-under-logo">
+document.addEventListener('DOMContentLoaded', function(){
+  const logo = document.querySelector('header img.site-logo');
+  const existing = document.querySelector('.shot-strip');
+  if(!logo || !existing) return;
+
+  // Build a fresh strip under the logo
+  const strip = document.createElement('section');
+  strip.className = 'shot-strip';
+  const marquee = document.createElement('div');
+  marquee.className = 'marquee';
+  const track = document.createElement('div');
+  track.className = 'track';
+
+  // Collect all existing images from the old strip
+  const imgs = Array.from(existing.querySelectorAll('img'));
+  if (!imgs.length) return;
+
+  // For a seamless loop, duplicate the sequence once (total width ~200%)
+  const makeSet = () => imgs.map(img => {
+    const c = document.createElement('img');
+    c.src = img.getAttribute('src');
+    c.alt = img.getAttribute('alt') || '';
+    return c;
+  });
+  [...makeSet(), ...makeSet()].forEach(el => track.appendChild(el));
+
+  marquee.appendChild(track);
+  strip.appendChild(marquee);
+
+  // Insert right after the logo
+  const parent = logo.closest('header') || logo.parentElement;
+  parent.insertBefore(strip, logo.nextSibling);
+
+  // Remove the old location
+  existing.remove();
+});
+</script>
