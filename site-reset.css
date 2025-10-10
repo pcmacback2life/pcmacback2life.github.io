@@ -1,0 +1,22 @@
+/* Header: logo left, Tech Support right */
+header{display:grid !important;grid-template-columns:1fr auto !important;align-items:center !important;gap:12px !important}
+header img.site-logo, header img[src*="images/logo.png"]{max-height:96px !important;width:auto !important;justify-self:start !important;display:block !important}
+header a.btn-red{grid-column:2 !important;justify-self:end !important;margin:0 !important;display:inline-block !important}
+
+/* Thumbnails: small, horizontal scroll, directly under header */
+#thumb-strip{margin:12px 0 16px;overflow:hidden}
+#thumb-track{display:flex;gap:12px;align-items:center;animation:thumbs-scroll 42s linear infinite;will-change:transform}
+#thumb-track img, img[src^="/screenshots/"], img[src*="/screenshots/"]{height:118px !important;width:auto !important;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.30);flex:0 0 auto}
+@keyframes thumbs-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Packages grid */
+#packages{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:16px;margin:20px 0}
+.package{border:1px solid #e5e9ef;border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.package h3{margin:0 0 8px}.package .price{font-weight:700;font-size:18px;margin:6px 0 12px}.package ul{margin:0 0 10px 18px}
+
+/* Contact block */
+#contact{margin:24px 0 40px;padding:16px;border:1px solid #e5e9ef;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+#contact form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#contact form .full{grid-column:1 / -1}
+#contact input,#contact textarea{width:100%;padding:10px;border:1px solid #cfd8e3;border-radius:10px;font-size:14px}
+#contact button{padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
