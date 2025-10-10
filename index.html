@@ -191,3 +191,9 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
 </style>
+<style id="header-stack-fix">
+  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  header img.site-logo{order:1}
+  header a.btn-red{order:2;flex-basis:auto;margin:10px 0 0 0}
+  header .shot-strip{order:3;width:100%;padding-top:6px}
+</style>
