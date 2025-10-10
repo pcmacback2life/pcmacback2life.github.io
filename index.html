@@ -36,7 +36,6 @@
     footer{margin:28px 0 8px;color:var(--muted);font-size:14px;text-align:center}
   </style>
   <link rel="stylesheet" href="assets/marquee.css">
-  <script src="assets/marquee.js" defer></script>
 </head>
 <body>
   <div class="wrap">
@@ -105,38 +104,27 @@
 </style>
 <style id="marquee-size-fix">
   /* Thumbnail sizing & layout for the scrolling screenshots */
-  .shot-strip{padding:6px 0}
-  .shot-strip .marquee{
     display:flex; align-items:center; gap:12px; overflow:hidden;
   }
-  .shot-strip .marquee img{
     height:118px !important;          /* desktop thumb height */
     width:auto !important;
     border-radius:10px;
     box-shadow:0 6px 18px rgba(0,0,0,.30);
   }
   @media (max-width:640px){
-    .shot-strip .marquee img{height:88px !important;}  /* smaller on phones */
   }
 </style>
 <style id="marquee-scroll-fix">
-  .shot-strip{padding:6px 0}
-  .shot-strip .marquee{overflow:hidden}
-  .shot-strip .track{
     display:flex; gap:12px; align-items:center;
     will-change: transform;
     animation: marquee-scroll 42s linear infinite;
   }
-  .shot-strip:hover .track{ animation-play-state: paused }
-  .shot-strip img{
     height:118px !important; width:auto !important;
     border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
   }
-  @media (max-width:640px){ .shot-strip img{height:88px !important} }
   @keyframes marquee-scroll{
     from{transform:translateX(0)} to{transform:translateX(-50%)}
   }
-  @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
 </style>
 <script id="marquee-under-logo">
 document.addEventListener('DOMContentLoaded', function(){
@@ -145,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!anchor || !logo) return;
 
   // Find the *current* screenshot group (wherever it is)
-  const currentStrip = document.querySelector('.shot-strip');
   if(!currentStrip) return;
 
   // Collect the current images
@@ -153,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!imgs.length) return;
 
   // Build a clean strip inside the anchor (seamless loop by duplicating once)
-  const strip  = document.createElement('section'); strip.className = 'shot-strip';
   const marquee= document.createElement('div');    marquee.className = 'marquee';
   const track  = document.createElement('div');    track.className   = 'track';
 
@@ -172,28 +158,38 @@ document.addEventListener('DOMContentLoaded', function(){
   if (currentStrip !== strip) currentStrip.remove();
 });
 </script>
-<style id="marquee-scroll-css">
-  .shot-strip{padding:8px 0}
-  .shot-strip .marquee{overflow:hidden}
-  .shot-strip .track{
     display:flex; gap:12px; align-items:center;
     will-change: transform;
     animation: marquee-scroll 42s linear infinite;
   }
-  .shot-strip:hover .track{ animation-play-state: paused }
-  .shot-strip img{
     height:118px !important; width:auto !important;
     border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30);
   }
-  @media (max-width:640px){ .shot-strip img{height:88px !important} }
   @keyframes marquee-scroll{
     from{transform:translateX(0)} to{transform:translateX(-50%)}
   }
-  @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
+</style>
+  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  header img.site-logo{order:1}
+  header a.btn-red{order:2;flex-basis:auto;margin:10px 0 0 0}
 </style>
 <style id="header-stack-fix">
   header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   header img.site-logo{order:1}
   header a.btn-red{order:2;flex-basis:auto;margin:10px 0 0 0}
   header .shot-strip{order:3;width:100%;padding-top:6px}
+</style>
+<style id="marquee-scroll-css">
+  .shot-strip{padding:4px 0}
+  .shot-strip .marquee{overflow:hidden}
+  .shot-strip .track{
+    display:flex; gap:12px; align-items:center;
+    will-change: transform;
+    animation: marquee-scroll 42s linear infinite;
+  }
+  .shot-strip:hover .track{animation-play-state:paused}
+  .shot-strip img{height:118px !important; width:auto !important; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30)}
+  @media (max-width:640px){ .shot-strip img{height:88px !important} }
+  @keyframes marquee-scroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){ .shot-strip .track{animation:none} }
 </style>
