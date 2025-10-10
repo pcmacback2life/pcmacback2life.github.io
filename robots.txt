@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.pc-mac-back-2-life.com/sitemap.xml
