@@ -104,3 +104,20 @@ header .brand, header .site-name, header h1.brand, header .brand-text { display:
   }
   @media (max-width:600px){ .logo-col .site-logo{height:96px} }
 </style>
+<style id="force-under-logo">
+  /* Make header wrap and order elements */
+  header{display:flex;flex-wrap:wrap;align-items:flex-start}
+  header img.site-logo{order:1}
+
+  /* Force the red button onto the next line under the logo */
+  header .btn-red{
+    order:2;
+    display:inline-block !important;
+    flex-basis:100% !important;   /* occupy its own row */
+    max-width:max-content !important;
+    margin:8px 0 0 0 !important;
+  }
+
+  /* Hide any brand text blocks that may sit to the right */
+  header .brand, header .site-name, header .brand-text{display:none !important}
+</style>
