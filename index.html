@@ -66,3 +66,35 @@
     }catch(e){}
   })();
 </script>
+<style id="fix-header-1010">
+  /* stack header: logo on top, red button beneath */
+  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  header img.site-logo{height:160px !important;width:auto !important}
+  @media (max-width:600px){header img.site-logo{height:96px !important}}
+  /* hide leftover brand words, keep image */
+  header .brand, header .site-name, header h1.brand, header .brand-text{display:none !important}
+  /* red button style */
+  a.btn-red{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800}
+  a.btn-red:hover{filter:brightness(1.06)}
+</style>
+<script id="fix-header-js-1010">
+  (function(){
+    try{
+      var h=document.querySelector('header'); if(!h) return;
+      var img=h.querySelector('img.site-logo'); if(!img) return;
+      // remove any right-side CTA block if present
+      var nav=h.querySelector('.nav-tech'); if(nav) nav.remove();
+      // ensure the red button exists directly under the logo with exact text
+      var btn=h.querySelector('a.btn-red');
+      if(!btn){
+        btn=document.createElement('a');
+        btn.className='btn-red';
+        btn.href='tech-support.html';
+        btn.textContent='I just need tech support for my PC \u2192';
+        img.insertAdjacentElement('afterend', btn);
+      } else {
+        btn.textContent='I just need tech support for my PC \u2192';
+      }
+    }catch(e){}
+  })();
+</script>
