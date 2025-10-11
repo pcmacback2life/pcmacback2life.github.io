@@ -1,0 +1,17 @@
+/* Header: logo left, button right */
+header{display:grid !important;grid-template-columns:1fr auto !important;align-items:center !important;gap:12px !important}
+.site-logo{height:96px !important;width:auto !important;display:block !important}
+
+/* Screenshot strip under header; small thumbs */
+.shot-strip{grid-column:1 / -1 !important;margin:8px 0 0 !important;overflow:hidden !important}
+.marquee .track{display:flex !important;gap:12px !important;align-items:center !important;will-change:transform !important;animation:marquee-scroll 42s linear infinite !important}
+.marquee .track img,
+img[src*="/images/screenshots/"]{height:118px !important;width:auto !important;flex:0 0 auto !important;border-radius:10px !important;box-shadow:0 6px 18px rgba(0,0,0,.30) !important}
+
+@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Mobile tidy */
+@media (max-width:720px){
+  header{grid-template-columns:1fr !important}
+  .site-logo{height:80px !important}
+}
