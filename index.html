@@ -64,6 +64,7 @@
 #lightbox .close{position:absolute;top:14px;right:18px;background:rgba(17,24,39,.9);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:24px;line-height:1;padding:8px 12px;border-radius:10px;cursor:pointer}
 #lightbox .close:hover{filter:brightness(1.15)}
 </style>
+<style>/* STRIP OVERRIDE */ .shot-strip{display:none} #auto-strip{display:block}</style>
 </head>
 <body>
 <div class="page">
@@ -72,7 +73,7 @@
     <div><a class="btn-red" href="tech-support.html">I just want Tech Support for Windows 11</a></div>
   </header>
       <!-- BEGIN AUTO STRIP -->
-      <div class="shot-strip"><div class="marquee"><div class="track">
+      <div id="auto-strip" class="shot-strip"><div class="marquee"><div class="track">
         <img src="/screenshots/S1.png"  alt="">
         <img src="/screenshots/S2.jpeg" alt="">
         <img src="/screenshots/S3.png"  alt="">
