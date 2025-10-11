@@ -296,3 +296,11 @@
 <!-- deploy-marker 20251010-205704 -->
 
 <!-- deploy-marker 20251010-205840 -->
+<style id="mobile-scroll-speed">
+@media (max-width:600px){
+  /* Make the marquee scroll faster on phones */
+  .marquee .track{
+    animation: marquee-scroll 18s linear infinite !important; /* was ~40s */
+  }
+}
+</style>
