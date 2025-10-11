@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Setup, refurb, data rescue, Plex servers, Zorin OS conversions, and remote tech support.">
 <link rel="icon" href="images/logo.png">
-<!-- RESET HOMEPAGE v5 (bigger logo, verified marquee, Win11 CTA, img fallbacks) -->
+<!-- HOMEPAGE v6 (12-shot marquee wired from /screenshots) -->
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#0f172a;background:#0b1220}
@@ -16,17 +16,12 @@
 
   /* Header */
   header{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px}
-  .site-logo{height:180px;width:auto}                 /* BIGGER desktop logo */
-  @media (max-width:640px){.site-logo{height:120px}}  /* scale on phones */
-
-  .btn-red{
-    display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;
-    background:#dc2626;color:#fff;font-weight:800;border:2px solid rgba(255,255,255,.2);
-    box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .05s ease;text-align:center
-  }
+  .site-logo{height:180px;width:auto}
+  @media (max-width:640px){.site-logo{height:120px}}
+  .btn-red{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;background:#dc2626;color:#fff;font-weight:800;border:2px solid rgba(255,255,255,.2);box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .05s ease;text-align:center}
   .btn-red:hover{transform:translateY(-1px)}
 
-  /* Scrolling screenshot strip under header */
+  /* Scrolling screenshot strip */
   .shot-strip{margin:14px 0 8px;overflow:hidden}
   .marquee{position:relative;mask-image:linear-gradient(90deg,transparent 0,black 6%,black 94%,transparent 100%)}
   .track{display:flex;gap:12px;align-items:center;will-change:transform;animation:marquee 36s linear infinite}
@@ -37,10 +32,7 @@
   /* Cards + contact */
   .grid{display:grid;gap:16px;grid-template-columns:1fr}
   @media(min-width:850px){.grid{grid-template-columns:1fr 1fr}}
-  .card{
-    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
-    border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)
-  }
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
   .card h2{margin:0 0 8px;color:#e5e7eb;font-size:22px}
   .card p,.card li{color:#cbd5e1;line-height:1.45}
   .contact{grid-column:1 / -1}
@@ -59,17 +51,9 @@
     <div><a class="btn-red" href="tech-support.html">I just want Tech Support for Windows 11</a></div>
   </header>
 
-  <!-- Marquee: duplicates s1..s4 for seamless loop; if an image is missing, it auto-swaps a placeholder -->
   <div class="shot-strip">
     <div class="marquee"><div class="track">
-      <img src="/screenshots/s1.png" alt="S1" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22><rect width=%22400%22 height=%22250%22 fill=%22%23131c2c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23cbd5e1%22 font-size=%2222%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Screenshot</text></svg>'">
-      <img src="/screenshots/s2.png" alt="S2" onerror="this.onerror=null;this.src=this.previousSibling.src">
-      <img src="/screenshots/s3.png" alt="S3" onerror="this.onerror=null;this.src=this.previousSibling.previousSibling.src">
-      <img src="/screenshots/s4.png" alt="S4" onerror="this.onerror=null;this.src=this.previousSibling.previousSibling.previousSibling.src">
-      <img src="/screenshots/s1.png" alt="S1 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
-      <img src="/screenshots/s2.png" alt="S2 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
-      <img src="/screenshots/s3.png" alt="S3 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
-      <img src="/screenshots/s4.png" alt="S4 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
+
     </div></div>
   </div>
 
@@ -115,10 +99,4 @@
 </body>
 </html>
 
-<!-- deploy-marker 20251010-193859 -->
-
-<!-- deploy-marker 20251010-193904 -->
-
 <!-- snapshot 10-10-739pm -->
-
-<!-- deploy-marker 20251010-194040 -->
