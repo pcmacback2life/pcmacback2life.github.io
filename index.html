@@ -206,13 +206,6 @@
   <!-- END LIGHTBOX -->
   <script src="assets/lightbox.js"></script>
 </body>
-<style id="mobile-scroll-speed">
-@media (max-width:600px){
-  /* Speed up the mobile marquee scroll */
-  @keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
-  .marquee .track{animation:marquee-scroll 22s linear infinite!important}
-}
-</style>
 </html>
 
 <!-- snapshot 10-10-739pm -->
@@ -296,13 +289,17 @@
 <!-- deploy-marker 20251010-205704 -->
 
 <!-- deploy-marker 20251010-205840 -->
-<style id="mobile-scroll-speed">
+
+<!-- deploy-marker 20251010-205933 -->
+<style id="mobile-scroll-speed-override">
 @media (max-width:600px){
-  /* Make the marquee scroll faster on phones */
+  /* Phone-only: make the marquee faster */
   .marquee .track{
-    animation: marquee-scroll 18s linear infinite !important; /* was ~40s */
+    animation-name: marquee-scroll !important;
+    animation-duration: 14s !important;   /* tweak this: 14s = faster; use 12s for even snappier */
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
+    will-change: transform;
   }
 }
 </style>
-
-<!-- deploy-marker 20251010-205933 -->
