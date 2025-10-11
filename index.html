@@ -305,20 +305,55 @@
 <!-- deploy-marker 20251010-210633 -->
 
 <!-- deploy-marker 20251010-210752 -->
-<style id="mobile-logo-size">
+
+<!-- deploy-marker 20251010-210923 -->
+<style id="mobile-header-stack-v2">
 @media (max-width:600px){
+  /* Stack header items vertically on phones */
+  header{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:10px !important;
+  }
+
+  /* Make the logo clearly visible and not compressed */
   header img.site-logo,
   header img[src*="images/logo.png"]{
-    height: 100px !important;      /* <- make it taller (try 108–120px if you want bigger) */
-    max-height: none !important;    /* uncap to prevent compression */
-    width: auto !important;         /* preserve aspect ratio */
-    max-width: 90vw !important;     /* keep it inside the viewport */
-    object-fit: contain !important;
-    display: block !important;
-    align-self: center !important;
-    justify-self: center !important;
+    height:110px !important;       /* adjust: 110→120px for larger */
+    max-height:none !important;
+    width:auto !important;
+    max-width:90vw !important;
+    object-fit:contain !important;
+    display:block !important;
+    order:1;
+  }
+
+  /* Ensure the Tech Support button sits UNDER the logo, centered */
+  header a[href*="tech-support"],
+  header a.btn-red{
+    order:2;
+    align-self:center !important;
+    justify-self:center !important;
+    display:inline-block !important;
+    float:none !important;
+    position:relative !important;
+    margin:2px 0 0 !important;
+    text-align:center !important;
+    white-space:normal !important;   /* allow wrap if needed */
+    max-width:90vw !important;
+    padding:8px 12px !important;
+    border-radius:9999px !important;
+    background-image:none !important;
+    box-shadow:none !important;
+    border:0 !important;
+  }
+
+  /* If the button has an inner span, allow it to wrap too */
+  header a[href*="tech-support"] span,
+  header a.btn-red span{
+    white-space:normal !important;
   }
 }
 </style>
-
-<!-- deploy-marker 20251010-210923 -->
