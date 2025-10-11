@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PC-Mac-Back-2-Life • Fast, No-Nonsense Tech Help</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Setup, refurb, data rescue, Plex servers, Zorin OS conversions, and remote tech support.">
+<link rel="icon" href="images/logo.png">
+<!-- HOMEPAGE v6 (12-shot marquee wired from /screenshots) -->
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#0f172a;background:#0b1220}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .page{max-width:980px;margin:0 auto;padding:16px}
+
+  /* Header */
+  header{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px}
+  .site-logo{height:180px;width:auto}
+  @media (max-width:640px){.site-logo{height:120px}}
+  .btn-red{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;background:#dc2626;color:#fff;font-weight:800;border:2px solid rgba(255,255,255,.2);box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .05s ease;text-align:center}
+  .btn-red:hover{transform:translateY(-1px)}
+
+  /* Scrolling screenshot strip */
+  .shot-strip{margin:14px 0 8px;overflow:hidden}
+  .marquee{position:relative;mask-image:linear-gradient(90deg,transparent 0,black 6%,black 94%,transparent 100%)}
+  .track{display:flex;gap:12px;align-items:center;will-change:transform;animation:marquee 36s linear infinite}
+  .track img{height:118px;width:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.30);background:#131c2c}
+  @keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.track{animation:none}}
+
+  /* Cards + contact */
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:850px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .card h2{margin:0 0 8px;color:#e5e7eb;font-size:22px}
+  .card p,.card li{color:#cbd5e1;line-height:1.45}
+  .contact{grid-column:1 / -1}
+  label{display:block;font-size:14px;color:#9fb1c3;margin:8px 0 4px}
+  input,textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#0f172a;color:#e5e7eb}
+  .row{display:grid;gap:12px;grid-template-columns:1fr}
+  @media(min-width:700px){.row{grid-template-columns:1fr 1fr}}
+  .submit{margin-top:12px}
+  footer{margin:24px 0 6px;color:#94a3b8;font-size:13px;text-align:center}
+</style>
+<style>/* LIGHTBOX CSS */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:9999}
+#lightbox.open{display:flex}
+#lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+#lightbox .close{position:absolute;top:18px;right:22px;background:rgba(17,24,39,.9);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:22px;line-height:1;padding:10px 14px;border-radius:10px;cursor:pointer}
+#lightbox .close:hover{filter:brightness(1.15)}
+</style>
+<style>/* LIGHTBOX CSS */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:9999}
+#lightbox.open{display:flex}
+#lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+#lightbox .close{position:absolute;top:18px;right:22px;background:rgba(17,24,39,.9);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:22px;line-height:1;padding:10px 14px;border-radius:10px;cursor:pointer}
+#lightbox .close:hover{filter:brightness(1.15)}
+</style>
+<style>/* LIGHTBOX CSS */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.86);display:none;align-items:center;justify-content:center;z-index:9999}
+#lightbox.open{display:flex}
+#lightbox img{max-width:92vw;max-height:92vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+#lightbox .close{position:absolute;top:14px;right:18px;background:rgba(17,24,39,.9);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:24px;line-height:1;padding:8px 12px;border-radius:10px;cursor:pointer}
+#lightbox .close:hover{filter:brightness(1.15)}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <a href="/" title="Home"><img class="site-logo" src="images/logo.png" alt="PC-Mac-Back-2-Life logo"></a>
+    <div><a class="btn-red" href="tech-support.html">I just want Tech Support for Windows 11</a></div>
+  </header>
+      <!-- BEGIN AUTO STRIP -->
+      <div class="shot-strip"><div class="marquee"><div class="track">
+  <!-- 12 real shots -->
+  <img src="/screenshots/S1.png"  alt="">
+  <img src="/screenshots/S2.jpeg" alt="">
+  <img src="/screenshots/S3.png"  alt="">
+  <img src="/screenshots/S4.jpg"  alt="">
+  <img src="/screenshots/S5.jpeg" alt="">
+  <img src="/screenshots/S6.png"  alt="">
+  <img src="/screenshots/S7.png"  alt="">
+  <img src="/screenshots/S8.png"  alt="">
+  <img src="/screenshots/S9.jpg"  alt="">
+  <img src="/screenshots/S10.png" alt="">
+  <img src="/screenshots/S11.png" alt="">
+  <img src="/screenshots/S12.png" alt="">
+
+  <!-- duplicate 12 for seamless scroll -->
+  <img src="/screenshots/S1.png"  alt="">
+  <img src="/screenshots/S2.jpeg" alt="">
+  <img src="/screenshots/S3.png"  alt="">
+  <img src="/screenshots/S4.jpg"  alt="">
+  <img src="/screenshots/S5.jpeg" alt="">
+  <img src="/screenshots/S6.png"  alt="">
+  <img src="/screenshots/S7.png"  alt="">
+  <img src="/screenshots/S8.png"  alt="">
+  <img src="/screenshots/S9.jpg"  alt="">
+  <img src="/screenshots/S10.png" alt="">
+  <img src="/screenshots/S11.png" alt="">
+  <img src="/screenshots/S12.png" alt="">
+      </div></div></div>
+      <!-- END AUTO STRIP -->
+
+  <div class="shot-strip">
+    <div class="marquee"><div class="track">
+      <!-- BEGIN AUTO TRACK -->
+  <!-- 12 real shots -->
+  <img src="/screenshots/S1.png"  alt="">
+  <img src="/screenshots/S2.jpeg" alt="">
+  <img src="/screenshots/S3.png"  alt="">
+  <img src="/screenshots/S4.jpg"  alt="">
+  <img src="/screenshots/S5.jpeg" alt="">
+  <img src="/screenshots/S6.png"  alt="">
+  <img src="/screenshots/S7.png"  alt="">
+  <img src="/screenshots/S8.png"  alt="">
+  <img src="/screenshots/S9.jpg"  alt="">
+  <img src="/screenshots/S10.png" alt="">
+  <img src="/screenshots/S11.png" alt="">
+  <img src="/screenshots/S12.png" alt="">
+
+  <!-- duplicate 12 for seamless scroll -->
+  <img src="/screenshots/S1.png"  alt="">
+  <img src="/screenshots/S2.jpeg" alt="">
+  <img src="/screenshots/S3.png"  alt="">
+  <img src="/screenshots/S4.jpg"  alt="">
+  <img src="/screenshots/S5.jpeg" alt="">
+  <img src="/screenshots/S6.png"  alt="">
+  <img src="/screenshots/S7.png"  alt="">
+  <img src="/screenshots/S8.png"  alt="">
+  <img src="/screenshots/S9.jpg"  alt="">
+  <img src="/screenshots/S10.png" alt="">
+  <img src="/screenshots/S11.png" alt="">
+  <img src="/screenshots/S12.png" alt="">
+      <!-- END AUTO TRACK -->
+  <!-- 12 real shots -->
+  <img src="/screenshots/S1.png"  alt="">
+  <img src="/screenshots/S2.jpeg" alt="">
+  <img src="/screenshots/S3.png"  alt="">
+  <img src="/screenshots/S4.jpg"  alt="">
+  <img src="/screenshots/S5.jpeg" alt="">
+  <img src="/screenshots/S6.png"  alt="">
+  <img src="/screenshots/S7.png"  alt="">
+  <img src="/screenshots/S8.png"  alt="">
+  <img src="/screenshots/S9.jpg"  alt="">
+  <img src="/screenshots/S10.png" alt="">
+  <img src="/screenshots/S11.png" alt="">
+  <img src="/screenshots/S12.png" alt="">
+
+  <!-- duplicate 12 for seamless scroll -->
+  <img src="/screenshots/S1.png"  alt="">
+  <img src="/screenshots/S2.jpeg" alt="">
+  <img src="/screenshots/S3.png"  alt="">
+  <img src="/screenshots/S4.jpg"  alt="">
+  <img src="/screenshots/S5.jpeg" alt="">
+  <img src="/screenshots/S6.png"  alt="">
+  <img src="/screenshots/S7.png"  alt="">
+  <img src="/screenshots/S8.png"  alt="">
+  <img src="/screenshots/S9.jpg"  alt="">
+  <img src="/screenshots/S10.png" alt="">
+  <img src="/screenshots/S11.png" alt="">
+  <img src="/screenshots/S12.png" alt="">
+    </div></div>
+  </div>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Package A — Tune-Up + Linux</h2>
+      <ul>
+        <li>SSD/HDD health check, cleanup, updates</li>
+        <li>Fast Linux install (or dual-boot)</li>
+        <li>Apps, backups, and browser carry-over</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Package B — Plex + Media</h2>
+      <ul>
+        <li>Plex server setup &amp; library organization</li>
+        <li>Remote streaming to TVs/phones/tablets</li>
+        <li>Storage planning &amp; backup strategy</li>
+      </ul>
+    </section>
+
+    <section class="card contact">
+      <h2>Tell me what you need fixed</h2>
+      <form action="mailto:help@pc-mac-back-2-life.com" method="post" enctype="text/plain">
+        <div class="row">
+          <div><label for="name">Your name</label><input id="name" name="Name" required></div>
+          <div><label for="email">Your email</label><input id="email" name="Email" type="email" required></div>
+        </div>
+        <label for="have">What you have (PC/Mac, model, storage, issues)</label>
+        <textarea id="have" name="Have" rows="4"></textarea>
+        <label for="want">What you want done</label>
+        <textarea id="want" name="Want" rows="4"></textarea>
+        <div class="submit"><button class="btn-red" type="submit">Send</button></div>
+      </form>
+      <p style="margin-top:10px;color:#9fb1c3;font-size:13px">Prefer your mail app? Email <a href="mailto:help@pc-mac-back-2-life.com">help@pc-mac-back-2-life.com</a></p>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> PC-Mac-Back-2-Life • Florissant, CO</footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <!-- BEGIN LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <button class="close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+  <!-- END LIGHTBOX -->
+  <script src="assets/lightbox.js"></script>
+</body>
+</html>
+
+<!-- snapshot 10-10-739pm -->
+
+<!-- deploy-marker 20251010-194306 -->
+
+<!-- deploy-marker 20251010-195425 -->
+
+<!-- deploy-marker 20251010-195628 -->
+
+<!-- deploy-marker 20251010-195840 -->
+
+<!-- deploy-marker 20251010-195945 -->
+
+<!-- snapshot good10-10-8pm -->
+
+<!-- deploy-marker 20251010-200117 -->
+
+<!-- deploy-marker 20251010-200308 -->
