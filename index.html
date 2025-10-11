@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Setup, refurb, data rescue, Plex servers, Zorin OS conversions, and remote tech support.">
 <link rel="icon" href="images/logo.png">
-<!-- RESET HOMEPAGE v4 (bigger logo + verified marquee + Win11 CTA) -->
+<!-- RESET HOMEPAGE v5 (bigger logo, verified marquee, Win11 CTA, img fallbacks) -->
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#0f172a;background:#0b1220}
@@ -16,17 +16,17 @@
 
   /* Header */
   header{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px}
-  .site-logo{height:168px;width:auto}           /* BIGGER logo */
-  @media (max-width:640px){.site-logo{height:110px}} /* scale down on phones */
+  .site-logo{height:180px;width:auto}                 /* BIGGER desktop logo */
+  @media (max-width:640px){.site-logo{height:120px}}  /* scale on phones */
 
   .btn-red{
     display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;
     background:#dc2626;color:#fff;font-weight:800;border:2px solid rgba(255,255,255,.2);
-    box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .05s ease; text-align:center
+    box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .05s ease;text-align:center
   }
   .btn-red:hover{transform:translateY(-1px)}
 
-  /* Scrolling screenshot strip directly under header */
+  /* Scrolling screenshot strip under header */
   .shot-strip{margin:14px 0 8px;overflow:hidden}
   .marquee{position:relative;mask-image:linear-gradient(90deg,transparent 0,black 6%,black 94%,transparent 100%)}
   .track{display:flex;gap:12px;align-items:center;will-change:transform;animation:marquee 36s linear infinite}
@@ -59,13 +59,17 @@
     <div><a class="btn-red" href="tech-support.html">I just want Tech Support for Windows 11</a></div>
   </header>
 
-  <!-- Verified marquee: requires s1..s4 to exist; we duplicate the set for seamless loop -->
+  <!-- Marquee: duplicates s1..s4 for seamless loop; if an image is missing, it auto-swaps a placeholder -->
   <div class="shot-strip">
     <div class="marquee"><div class="track">
-      <img src="/screenshots/s1.jpg" alt="S1"><img src="/screenshots/s2.jpg" alt="S2">
-      <img src="/screenshots/s3.jpg" alt="S3"><img src="/screenshots/s4.jpg" alt="S4">
-      <img src="/screenshots/s1.jpg" alt="S1 dup"><img src="/screenshots/s2.jpg" alt="S2 dup">
-      <img src="/screenshots/s3.jpg" alt="S3 dup"><img src="/screenshots/s4.jpg" alt="S4 dup">
+      <img src="/screenshots/s1.jpg" alt="S1" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22><rect width=%22400%22 height=%22250%22 fill=%22%23131c2c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23cbd5e1%22 font-size=%2222%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Screenshot</text></svg>'">
+      <img src="/screenshots/s2.jpg" alt="S2" onerror="this.onerror=null;this.src=this.previousSibling.src">
+      <img src="/screenshots/s3.jpg" alt="S3" onerror="this.onerror=null;this.src=this.previousSibling.previousSibling.src">
+      <img src="/screenshots/s4.jpg" alt="S4" onerror="this.onerror=null;this.src=this.previousSibling.previousSibling.previousSibling.src">
+      <img src="/screenshots/s1.jpg" alt="S1 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
+      <img src="/screenshots/s2.jpg" alt="S2 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
+      <img src="/screenshots/s3.jpg" alt="S3 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
+      <img src="/screenshots/s4.jpg" alt="S4 dup" onerror="this.onerror=null;this.src=document.querySelector('.track img').src">
     </div></div>
   </div>
 
@@ -111,6 +115,4 @@
 </body>
 </html>
 
-<!-- deploy-marker 20251010-193704 -->
-
-<!-- deploy-marker 20251010-193716 -->
+<!-- deploy-marker 20251010-193859 -->
