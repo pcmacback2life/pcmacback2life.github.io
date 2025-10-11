@@ -291,17 +291,19 @@
 <!-- deploy-marker 20251010-205840 -->
 
 <!-- deploy-marker 20251010-205933 -->
-<style id="mobile-scroll-speed-override">
+
+<!-- deploy-marker 20251010-210123 -->
+<style id="mobile-marquee-fast">
 @media (max-width:600px){
-  /* Phone-only: make the marquee faster */
+  /* Use a separate animation name so desktop rules don't interfere */
+  @keyframes marquee-scroll-fast {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); } /* full pass */
+  }
+
   .marquee .track{
-    animation-name: marquee-scroll !important;
-    animation-duration: 14s !important;   /* tweak this: 14s = faster; use 12s for even snappier */
-    animation-timing-function: linear !important;
-    animation-iteration-count: infinite !important;
+    animation: marquee-scroll-fast 10s linear infinite !important; /* adjust: 10s = fast; try 12s/14s if needed */
     will-change: transform;
   }
 }
 </style>
-
-<!-- deploy-marker 20251010-210123 -->
