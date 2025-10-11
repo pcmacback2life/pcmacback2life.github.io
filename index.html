@@ -303,17 +303,20 @@
 <!-- snapshot good-10-10-905pm -->
 
 <!-- deploy-marker 20251010-210633 -->
+
+<!-- deploy-marker 20251010-210752 -->
 <style id="mobile-logo-size">
 @media (max-width:600px){
-  /* Bigger logo on phones; desktop unchanged */
   header img.site-logo,
   header img[src*="images/logo.png"]{
-    max-height:84px !important;   /* was 72px; try 90–96px if you want even bigger */
-    width:auto !important;
-    object-fit:contain !important;
-    display:block !important;
+    height: 100px !important;      /* <- make it taller (try 108–120px if you want bigger) */
+    max-height: none !important;    /* uncap to prevent compression */
+    width: auto !important;         /* preserve aspect ratio */
+    max-width: 90vw !important;     /* keep it inside the viewport */
+    object-fit: contain !important;
+    display: block !important;
+    align-self: center !important;
+    justify-self: center !important;
   }
 }
 </style>
-
-<!-- deploy-marker 20251010-210752 -->
