@@ -98,17 +98,6 @@
 .btn-zorin:focus{outline:3px solid rgba(37,99,235,.4);outline-offset:2px}
 </style>
 </head>
-<style id="mobile-header-fix">
-/* MOBILE ONLY: keep logo visible and compress Tech Support button */
-@media (max-width:600px){
-  /* Use a light grid only on small screens */
-  header{display:grid!important;grid-template-columns:auto 1fr!important;align-items:center!important;gap:12px!important}
-  /* Smaller logo ONLY on mobile */
-  header img.site-logo, header img[src*="images/logo.png"]{max-height:56px!important;width:auto!important;object-fit:contain!important;display:block!important}
-  /* Compress the Tech Support button ONLY on mobile */
-  header .btn, header a[class*="btn"]{justify-self:end!important;padding:6px 10px!important;font-size:13px!important;line-height:1.2!important;margin:0!important;white-space:nowrap!important;max-width:46vw!important;width:auto!important}
-}
-</style>
 <body>
 <div class="page">
   <header>
@@ -200,6 +189,22 @@
   <!-- END LIGHTBOX -->
   <script src="assets/lightbox.js"></script>
 </body>
+<style id="mobile-header-fix">
+@media (max-width:600px){
+  /* Keep logo visible on iPhone ONLY (desktop untouched) */
+  header{display:grid!important;grid-template-columns:auto 1fr!important;align-items:center!important;gap:12px!important}
+  header img.site-logo, header img[src*="images/logo.png"]{max-height:56px!important;width:auto!important;object-fit:contain!important;display:block!important}
+
+  /* Compress Tech Support button ONLY on mobile */
+  header a[href*="tech-support"], header a.btn-red{
+    justify-self:end!important;
+    padding:6px 10px!important;
+    font-size:13px!important; line-height:1.2!important;
+    margin:0!important; white-space:nowrap!important;
+    max-width:46vw!important; width:auto!important;
+  }
+}
+</style>
 </html>
 
 <!-- snapshot 10-10-739pm -->
