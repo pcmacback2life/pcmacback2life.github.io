@@ -98,31 +98,15 @@
 .btn-zorin:focus{outline:3px solid rgba(37,99,235,.4);outline-offset:2px}
 </style>
 </head>
-<style id="mobile-header-stack">
-/* Desktop: keep two-column header */
-@media (min-width:601px){
-  header{display:grid!important;grid-template-columns:auto 1fr!important;align-items:center!important;gap:12px!important}
-  header img.site-logo{max-height:72px!important;width:auto!important;object-fit:contain!important;display:block!important}
-  header a[href*="tech-support"], header a.btn-red{justify-self:end!important}
-}
-
-/* Mobile (iPhone, small screens): stack button under logo and let text wrap nicely */
+<style id="mobile-header-fix">
+/* MOBILE ONLY: keep logo visible and compress Tech Support button */
 @media (max-width:600px){
-  header{display:grid!important;grid-template-columns:1fr!important;grid-auto-rows:auto!important;align-items:center!important;justify-items:center!important;gap:8px!important}
-  header img.site-logo{max-height:56px!important;width:auto!important;object-fit:contain!important;display:block!important;order:1}
-  /* Put Tech Support under the logo */
-  header a[href*="tech-support"], header a.btn-red{
-    order:2; display:inline-block!important;
-    background:#e60000!important; color:#ffffff!important;
-    padding:8px 12px!important; border-radius:9999px!important;
-    line-height:1.2!important; font-size:14px!important; margin:4px 0 0!important;
-    white-space:normal!important;        /* allow wrap */
-    text-align:center!important;
-    max-width:90vw!important; width:auto!important;
-    background-image:none!important; box-shadow:none!important; border:0!important;
-  }
-  /* Ensure inner span can wrap too */
-  header a[href*="tech-support"] span, header a.btn-red span{white-space:normal!important}
+  /* Use a light grid only on small screens */
+  header{display:grid!important;grid-template-columns:auto 1fr!important;align-items:center!important;gap:12px!important}
+  /* Smaller logo ONLY on mobile */
+  header img.site-logo, header img[src*="images/logo.png"]{max-height:56px!important;width:auto!important;object-fit:contain!important;display:block!important}
+  /* Compress the Tech Support button ONLY on mobile */
+  header .btn, header a[class*="btn"]{justify-self:end!important;padding:6px 10px!important;font-size:13px!important;line-height:1.2!important;margin:0!important;white-space:nowrap!important;max-width:46vw!important;width:auto!important}
 }
 </style>
 <body>
