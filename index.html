@@ -57,7 +57,7 @@
 </section>
   <div id="logo-after-anchor"></div>
   <a class="btn-red" href="tech-support.html" style="display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#dc2626;color:#fff;text-decoration:none;font-weight:800">
-<!-- data-sections-inserted -->I just need tech support for my PC →</a>
+<!-- data-sections-inserted -->Just need Tech Support for Windows 11?</a>
 <section class="services" style="margin:18px 0 10px">
   <h2 style="margin:0 0 12px;font:800 22px/1.2 system-ui">Popular services</h2>
   <div class="grid" style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
@@ -128,7 +128,7 @@
       <h1>Refurb • Rescue • Revive your PC or Mac</h1>
       <p>Speed-ups, Linux installs, data moves, Wi-Fi/Starlink optimization, Plex builds, and more — done right.</p>
       <div class="cta">
-        <a class="btn primary" href="tech-support.html">I just need tech support for my PC →</a>
+        <a class="btn primary" href="tech-support.html">Just need Tech Support for Windows 11?</a>
         <a class="btn" href="mailto:youremail@example.com?subject=PC-Mac-Back-2-Life">Email me</a>
       </div>
     </section>
@@ -306,20 +306,6 @@ document.addEventListener('DOMContentLoaded', function(){
   /* logo sizing (wins because it’s last) */
   header img.site-logo{height:160px !important;width:auto !important;display:block}
   @media (max-width:600px){ header img.site-logo{height:96px !important} }
-</style>
-<style id="final-fixes">
-  /* Header layout: stack logo, then red button */
-  header{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-  header img.site-logo{height:160px !important;width:auto !important;display:block}
-  @media (max-width:600px){ header img.site-logo{height:96px !important} }
-  header a.btn-red{margin-top:10px}
-
-  /* Scroller under logo, smooth and contained */
-  .marquee-wrap{overflow:hidden; width:100%; margin:12px 0 0 0}
-  .marquee-track{display:flex; gap:12px; align-items:center; will-change:transform; animation:marquee-scroll 42s linear infinite}
-  .marquee-item{flex:0 0 auto}
-  .marquee-item img{height:118px !important; width:auto !important; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.30)}
-  @keyframes marquee-scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
 </style>
 
 <!-- deploy-marker 20251010-172954 -->
