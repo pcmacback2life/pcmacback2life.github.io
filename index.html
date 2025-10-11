@@ -293,19 +293,24 @@
 <!-- deploy-marker 20251010-205933 -->
 
 <!-- deploy-marker 20251010-210123 -->
+
+<!-- deploy-marker 20251010-210304 -->
 <style id="mobile-marquee-fast">
 @media (max-width:600px){
-  /* Use a separate animation name so desktop rules don't interfere */
+  /* iOS Safari-compatible keyframes */
+  @-webkit-keyframes marquee-scroll-fast {
+    from { -webkit-transform: translateX(0); transform: translateX(0); }
+    to   { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+  }
   @keyframes marquee-scroll-fast {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-100%); } /* full pass */
+    from { -webkit-transform: translateX(0); transform: translateX(0); }
+    to   { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
   }
 
   .marquee .track{
-    animation: marquee-scroll-fast 10s linear infinite !important; /* adjust: 10s = fast; try 12s/14s if needed */
+    -webkit-animation: marquee-scroll-fast 10s linear infinite !important;
+            animation: marquee-scroll-fast 10s linear infinite !important;
     will-change: transform;
   }
 }
 </style>
-
-<!-- deploy-marker 20251010-210304 -->
